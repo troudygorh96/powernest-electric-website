@@ -1,0 +1,3089 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="PowerNest Electric provides reliable electrical installation, maintenance, repair, wiring, solar and energy solutions for residential, commercial and industrial customers.">
+
+    <meta name="keywords"
+        content="PowerNest Electric, electrical services, electrical installation, electrical wiring, electrical repairs, maintenance, solar energy, Liberia electrician">
+
+    <meta name="author" content="PowerNest Electric">
+
+    <meta name="theme-color" content="#0b1f3a">
+
+    <title>PowerNest Electric | Reliable Electrical Solutions</title>
+
+
+    <style>
+
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fa;
+            color: #222;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font-family: inherit;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 31, 58, 0.97);
+            color: white;
+            padding: 14px 5%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            max-width: 1250px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo img {
+            width: 150px;
+            height: auto;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .nav-links a:not(.nav-quote)::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+            width: 0;
+            height: 2px;
+            background: #f5a623;
+            transition: 0.3s;
+        }
+
+        .nav-links a:not(.nav-quote):hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: #f5a623;
+        }
+
+        .nav-quote {
+            background: #f5a623;
+            color: #111 !important;
+            padding: 10px 18px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .nav-quote:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            min-height: 680px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 110px 20px;
+            color: white;
+            position: relative;
+
+            background:
+                linear-gradient(
+                    rgba(5, 20, 40, 0.82),
+                    rgba(11, 31, 58, 0.82)
+                ),
+                url("photos/01.jpg")
+                center / cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 920px;
+            animation: heroFade 1s ease;
+        }
+
+        @keyframes heroFade {
+
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        .hero-badge {
+            display: inline-block;
+            border: 1px solid #f5a623;
+            background: rgba(245, 166, 35, 0.12);
+            color: #f5a623;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            line-height: 1.1;
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+        }
+
+        .hero h2 {
+            color: #f5a623;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 780px;
+            margin: 0 auto 32px;
+            font-size: 19px;
+            line-height: 1.8;
+            color: #f1f4f7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #f5a623;
+            color: #111;
+            padding: 15px 30px;
+            border-radius: 7px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        .button:hover {
+            background: white;
+            color: #0b1f3a;
+            transform: translateY(-3px);
+        }
+
+        .button-outline {
+            display: inline-block;
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 13px 28px;
+            border-radius: 7px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .button-outline:hover {
+            background: white;
+            color: #0b1f3a;
+            transform: translateY(-3px);
+        }
+
+
+        /* =====================================================
+           TRUST STRIP
+        ===================================================== */
+
+        .trust-strip {
+            background: white;
+            padding: 28px 20px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            position: relative;
+            z-index: 2;
+        }
+
+        .trust-box {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .trust-item {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .trust-item strong {
+            display: block;
+            color: #0b1f3a;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .trust-item span {
+            color: #666;
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           GENERAL SECTIONS
+        ===================================================== */
+
+        .section {
+            padding: 90px 5%;
+        }
+
+        .section-light {
+            background: #f5f7fa;
+        }
+
+        .section-white {
+            background: white;
+        }
+
+        .section-blue {
+            background: #eef3f8;
+        }
+
+        .section-header {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+
+        .section-title {
+            color: #0b1f3a;
+            font-size: 40px;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #f5a623;
+            margin: 13px auto 0;
+            border-radius: 5px;
+        }
+
+        .section-intro {
+            color: #5a5a5a;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           SERVICES
+        ===================================================== */
+
+        .service-box {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 35px 28px;
+            border-radius: 14px;
+            border: 1px solid #e5e9ee;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #f5a623;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: 0.3s;
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .service-icon {
+            width: 65px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #eef3f8;
+            border-radius: 12px;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: #0b1f3a;
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #5b5b5b;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .service-button {
+            display: inline-block;
+            background: #0b1f3a;
+            color: white;
+            padding: 10px 17px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .service-button:hover {
+            background: #f5a623;
+            color: #111;
+        }
+
+
+        /* =====================================================
+           STATS
+        ===================================================== */
+
+        .stats {
+            background: #0b1f3a;
+            color: white;
+            padding: 65px 5%;
+        }
+
+        .stats-container {
+            max-width: 1050px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            text-align: center;
+        }
+
+        .stat {
+            padding: 15px;
+        }
+
+        .stat-number {
+            display: block;
+            color: #f5a623;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #dbe2eb;
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           WHY CHOOSE US
+        ===================================================== */
+
+        .why-container {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .why-card {
+            text-align: center;
+            padding: 32px 20px;
+            background: #f5f7fa;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .why-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .why-icon {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .why-card h3 {
+            color: #0b1f3a;
+            margin-bottom: 10px;
+        }
+
+        .why-card p {
+            color: #555;
+            font-size: 15px;
+        }
+
+
+        /* =====================================================
+           PROJECT GALLERY
+        ===================================================== */
+
+        .gallery-box {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 14px;
+            height: 285px;
+            background: white;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-item::after {
+            content: "VIEW PROJECT";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: rgba(245,166,35,0.95);
+            color: #111;
+            padding: 10px 17px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: bold;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 50px 18px 16px;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            background:
+                linear-gradient(
+                    transparent,
+                    rgba(0,0,0,0.88)
+                );
+        }
+
+        .gallery-hint {
+            text-align: center;
+            margin-top: 25px;
+            color: #666;
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           IMAGE MODAL
+        ===================================================== */
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 3000;
+            inset: 0;
+            background: rgba(0,0,0,0.94);
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal img {
+            max-width: 92%;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 30px;
+            color: white;
+            font-size: 45px;
+            line-height: 1;
+            cursor: pointer;
+            z-index: 2;
+            transition: 0.3s;
+        }
+
+        .close-modal:hover {
+            color: #f5a623;
+        }
+
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about-container {
+            max-width: 1050px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-container > p {
+            max-width: 800px;
+            margin: 15px auto;
+            color: #555;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .about-boxes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 45px;
+        }
+
+        .about-card {
+            background: #f5f7fa;
+            padding: 32px 25px;
+            border-radius: 12px;
+            border: 1px solid #e5e9ee;
+        }
+
+        .about-card h3 {
+            color: #0b1f3a;
+            margin-bottom: 10px;
+        }
+
+        .about-card p {
+            color: #555;
+            font-size: 15px;
+        }
+
+
+        /* =====================================================
+           TESTIMONIALS
+        ===================================================== */
+
+        .testimonial-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e5e9ee;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.10);
+        }
+
+        .testimonial::before {
+            content: "“";
+            position: absolute;
+            top: 8px;
+            right: 20px;
+            font-size: 60px;
+            color: #f5a623;
+            opacity: 0.3;
+        }
+
+        .stars {
+            color: #f5a623;
+            font-size: 18px;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .testimonial p {
+            color: #555;
+            line-height: 1.7;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .customer-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-top: 1px solid #e5e9ee;
+            padding-top: 15px;
+        }
+
+        .customer-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #0b1f3a;
+            color: #f5a623;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .customer-details strong {
+            display: block;
+            color: #0b1f3a;
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+
+        .customer-details span {
+            color: #777;
+            font-size: 12px;
+        }
+
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+
+        .cta {
+            background:
+                linear-gradient(
+                    rgba(11,31,58,0.96),
+                    rgba(11,31,58,0.96)
+                );
+            color: white;
+            text-align: center;
+            padding: 80px 25px;
+        }
+
+        .cta h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width: 720px;
+            margin: 0 auto 28px;
+            color: #dbe2eb;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: start;
+        }
+
+        .contact-info h3,
+        .contact-form h3 {
+            color: #0b1f3a;
+            font-size: 25px;
+            margin-bottom: 18px;
+        }
+
+        .contact-info > p {
+            color: #555;
+            margin-bottom: 22px;
+        }
+
+        .contact-detail {
+            background: #f5f7fa;
+            padding: 17px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            border-left: 4px solid #f5a623;
+        }
+
+        .contact-detail strong {
+            color: #0b1f3a;
+        }
+
+        .contact-detail a {
+            color: #0b1f3a;
+            font-weight: bold;
+            word-break: break-word;
+        }
+
+        .contact-buttons {
+            margin-top: 20px;
+        }
+
+        .whatsapp-button,
+        .facebook-button {
+            display: inline-block;
+            color: white !important;
+            padding: 13px 20px;
+            border-radius: 7px;
+            font-weight: bold;
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        .whatsapp-button {
+            background: #25D366;
+        }
+
+        .whatsapp-button:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+
+        .facebook-button {
+            background: #1877F2;
+        }
+
+        .facebook-button:hover {
+            background: #0d5dcc;
+            transform: translateY(-2px);
+        }
+
+
+        /* =====================================================
+           CONTACT FORM
+        ===================================================== */
+
+        .contact-form {
+            background: #f5f7fa;
+            padding: 32px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            border: 1px solid #e5e9ee;
+        }
+
+        .form-group {
+            margin-bottom: 17px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            color: #0b1f3a;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #d3dae2;
+            border-radius: 7px;
+            background: white;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #f5a623;
+            box-shadow: 0 0 0 3px rgba(245,166,35,0.12);
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            width: 100%;
+            border: none;
+            background: #f5a623;
+            color: #111;
+            padding: 14px;
+            border-radius: 7px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-button:hover {
+            background: #0b1f3a;
+            color: white;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            background: #07172c;
+            color: white;
+            padding: 55px 5% 25px;
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 45px;
+            padding-bottom: 35px;
+        }
+
+        .footer-column h3 {
+            color: #f5a623;
+            margin-bottom: 17px;
+            font-size: 18px;
+        }
+
+        .footer-column p {
+            color: #cbd3dd;
+            font-size: 14px;
+            margin-bottom: 9px;
+            line-height: 1.7;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #cbd3dd;
+            margin-bottom: 9px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: #f5a623;
+            transform: translateX(3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.12);
+            padding-top: 22px;
+            text-align: center;
+            color: #aeb8c4;
+            font-size: 13px;
+        }
+
+        .footer-bottom p {
+            margin: 5px;
+        }
+
+
+        /* =====================================================
+           FLOATING WHATSAPP
+        ===================================================== */
+
+        .floating-whatsapp {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 58px;
+            height: 58px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 27px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            z-index: 1500;
+            transition: 0.3s;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+            background: #128C7E;
+        }
+
+
+        /* =====================================================
+           BACK TO TOP
+        ===================================================== */
+
+        .back-to-top {
+            position: fixed;
+            right: 25px;
+            bottom: 92px;
+            width: 42px;
+            height: 42px;
+            background: #0b1f3a;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+            z-index: 1400;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #f5a623;
+            color: #111;
+        }
+
+
+        /* =====================================================
+           SCROLL ANIMATION
+        ===================================================== */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =====================================================
+           MOBILE / TABLET
+        ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .service-box {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-box {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonial-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 750px) {
+
+            header {
+                padding: 12px 18px;
+            }
+
+            nav {
+                position: relative;
+            }
+
+            .logo img {
+                width: 130px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 58px;
+                left: 0;
+                right: 0;
+                background: #0b1f3a;
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 12px 20px 20px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 12px;
+                margin: 0;
+                text-align: center;
+            }
+
+            .nav-links a:not(.nav-quote)::after {
+                display: none;
+            }
+
+            .nav-quote {
+                margin-top: 8px !important;
+            }
+
+            .hero {
+                min-height: 650px;
+                padding: 90px 20px;
+            }
+
+            .hero h1 {
+                font-size: 39px;
+            }
+
+            .hero h2 {
+                font-size: 23px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .button,
+            .button-outline {
+                width: 90%;
+                max-width: 310px;
+                text-align: center;
+            }
+
+            .trust-box {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .section {
+                padding: 65px 20px;
+            }
+
+            .section-title {
+                font-size: 31px;
+            }
+
+            .section-intro {
+                font-size: 16px;
+            }
+
+            .service-box,
+            .why-container,
+            .gallery-box,
+            .about-boxes {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-item {
+                height: 270px;
+            }
+
+            .contact-form {
+                padding: 25px 20px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .footer-column a:hover {
+                transform: none;
+            }
+
+            .floating-whatsapp {
+                width: 54px;
+                height: 54px;
+                right: 16px;
+                bottom: 16px;
+            }
+
+            .back-to-top {
+                right: 22px;
+                bottom: 82px;
+            }
+
+        }
+
+
+        @media (max-width: 450px) {
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero h2 {
+                font-size: 21px;
+            }
+
+            .trust-box {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .trust-item strong {
+                font-size: 14px;
+            }
+
+            .trust-item span {
+                font-size: 12px;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+            .stat-number {
+                font-size: 30px;
+            }
+
+            .contact-buttons a {
+                display: block;
+                text-align: center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
+
+    <header>
+
+        <nav>
+
+            <a href="#home" class="logo">
+
+                <img
+                    src="logo.png"
+                    alt="PowerNest Electric Logo">
+
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+
+                ☰
+
+            </button>
+
+
+            <div class="nav-links" id="navLinks">
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#services">
+                    Services
+                </a>
+
+                <a href="#projects">
+                    Projects
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+                <a
+                    href="#contact"
+                    class="nav-quote">
+
+                    Get a Quote
+
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section
+        class="hero"
+        id="home">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+
+                RELIABLE • SAFE • PROFESSIONAL
+
+            </div>
+
+
+            <h1>
+
+                POWERNEST ELECTRIC
+
+            </h1>
+
+
+            <h2>
+
+                Future is Bright. So We Are.
+
+            </h2>
+
+
+            <p>
+
+                Reliable electrical installation,
+                maintenance, repair, wiring, solar
+                and energy solutions for homes,
+                businesses, and industries.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#services"
+                    class="button">
+
+                    Explore Our Services
+
+                </a>
+
+
+                <a
+                    href="#contact"
+                    class="button-outline">
+
+                    Get a Free Quote
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TRUST STRIP
+    ===================================================== -->
+
+    <section class="trust-strip">
+
+        <div class="trust-box">
+
+            <div class="trust-item">
+
+                <strong>
+                    ⚡ Electrical Solutions
+                </strong>
+
+                <span>
+                    For homes & businesses
+                </span>
+
+            </div>
+
+
+            <div class="trust-item">
+
+                <strong>
+                    🛡️ Safety First
+                </strong>
+
+                <span>
+                    Quality-focused work
+                </span>
+
+            </div>
+
+
+            <div class="trust-item">
+
+                <strong>
+                    🔧 Maintenance
+                </strong>
+
+                <span>
+                    Repairs & troubleshooting
+                </span>
+
+            </div>
+
+
+            <div class="trust-item">
+
+                <strong>
+                    ☀️ Energy Solutions
+                </strong>
+
+                <span>
+                    Modern power solutions
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SERVICES
+    ===================================================== -->
+
+    <section
+        class="section section-light"
+        id="services">
+
+        <div class="section-header reveal">
+
+            <h2 class="section-title">
+                Our Services
+            </h2>
+
+            <p class="section-intro">
+
+                PowerNest Electric provides dependable
+                electrical solutions designed for
+                residential, commercial, and industrial
+                customers.
+
+            </p>
+
+        </div>
+
+
+        <div class="service-box">
+
+
+            <div class="card reveal">
+
+                <div class="service-icon">
+                    🏠
+                </div>
+
+                <h3>
+                    Residential Electrical
+                </h3>
+
+                <p>
+
+                    Electrical installation, house wiring,
+                    lighting, repairs, and maintenance
+                    for homes.
+
+                </p>
+
+                <a
+                    href="#contact"
+                    class="service-button">
+
+                    Request Service
+
+                </a>
+
+            </div>
+
+
+
+            <div class="card reveal">
+
+                <div class="service-icon">
+                    🏢
+                </div>
+
+                <h3>
+                    Commercial Electrical
+                </h3>
+
+                <p>
+
+                    Professional electrical solutions
+                    for offices, shops, businesses,
+                    and buildings.
+
+                </p>
+
+                <a
+                    href="#contact"
+                    class="service-button">
+
+                    Request Service
+
+                </a>
+
+            </div>
+
+
+
+            <div class="card reveal">
+
+                <div class="service-icon">
+                    🏭
+                </div>
+
+                <h3>
+                    Industrial Electrical
+                </h3>
+
+                <p>
+
+                    Electrical solutions for industrial
+                    facilities, equipment, and
+                    power systems.
+
+                </p>
+
+                <a
+                    href="#contact"
+                    class="service-button">
+
+                    Request Service
+
+                </a>
+
+            </div>
+
+
+
+            <div class="card reveal">
+
+                <div class="service-icon">
+                    💡
+                </div>
+
+                <h3>
+                    Installation & Wiring
+                </h3>
+
+                <p>
+
+                    Safe electrical installation,
+                    wiring, lighting, and
+                    power distribution.
+
+                </p>
+
+                <a
+                    href="#contact"
+                    class="service-button">
+
+                    Request Service
+
+                </a>
+
+            </div>
+
+
+
+            <div class="card reveal">
+
+                <div class="service-icon">
+                    🔧
+                </div>
+
+                <h3>
+                    Maintenance & Repairs
+                </h3>
+
+                <p>
+
+                    Electrical troubleshooting,
+                    inspections, repairs, and
+                    regular maintenance.
+
+                </p>
+
+                <a
+                    href="#contact"
+                    class="service-button">
+
+                    Request Service
+
+                </a>
+
+            </div>
+
+
+
+            <div class="card reveal">
+
+                <div class="service-icon">
+                    ☀️
+                </div>
+
+                <h3>
+                    Solar & Energy
+                </h3>
+
+                <p>
+
+                    Modern solar and energy
+                    solutions for reliable
+                    and efficient power.
+
+                </p>
+
+                <a
+                    href="#contact"
+                    class="service-button">
+
+                    Request Service
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         STATS
+    ===================================================== -->
+
+    <section class="stats">
+
+        <div class="stats-container">
+
+
+            <div class="stat">
+
+                <span class="stat-number">
+                    6+
+                </span>
+
+                <span class="stat-label">
+                    Service Areas
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <span class="stat-number">
+                    10+
+                </span>
+
+                <span class="stat-label">
+                    Project Photos
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <span class="stat-number">
+                    24/7
+                </span>
+
+                <span class="stat-label">
+                    Communication
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <span class="stat-number">
+                    100%
+                </span>
+
+                <span class="stat-label">
+                    Commitment
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         WHY CHOOSE US
+    ===================================================== -->
+
+    <section class="section section-white">
+
+        <div class="section-header reveal">
+
+            <h2 class="section-title">
+                Why Choose PowerNest?
+            </h2>
+
+            <p class="section-intro">
+
+                We are committed to delivering dependable
+                electrical solutions with safety, quality,
+                and professionalism at the center.
+
+            </p>
+
+        </div>
+
+
+        <div class="why-container">
+
+
+            <div class="why-card reveal">
+
+                <div class="why-icon">
+                    🛡️
+                </div>
+
+                <h3>
+                    Safety First
+                </h3>
+
+                <p>
+
+                    We place safety and quality
+                    at the center of our
+                    electrical work.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card reveal">
+
+                <div class="why-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Reliable Solutions
+                </h3>
+
+                <p>
+
+                    Practical electrical solutions
+                    designed around your power needs.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card reveal">
+
+                <div class="why-icon">
+                    👷
+                </div>
+
+                <h3>
+                    Professional Service
+                </h3>
+
+                <p>
+
+                    We focus on professional service
+                    and attention to detail.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card reveal">
+
+                <div class="why-icon">
+                    🔧
+                </div>
+
+                <h3>
+                    Practical Support
+                </h3>
+
+                <p>
+
+                    From installation to maintenance,
+                    we are ready to help.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROJECTS
+    ===================================================== -->
+
+    <section
+        class="section section-blue"
+        id="projects">
+
+        <div class="section-header reveal">
+
+            <h2 class="section-title">
+                Our Projects & Work
+            </h2>
+
+            <p class="section-intro">
+
+                Take a look at some of our electrical,
+                installation, maintenance, and
+                energy-related work.
+
+            </p>
+
+        </div>
+
+
+        <div class="gallery-box">
+
+
+            <div
+                class="gallery-item reveal"
+                onclick="openModal(this)">
+
+                <img
+                    src="photos/01.jpg"
+                    alt="PowerNest Electric electrical installation project"
+                    loading="lazy">
+
+                <div class="gallery-caption">
+                    Electrical Installation
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="gallery-item reveal"
+                onclick="openModal(this)">
+
+                <img
+                    src="photos/02.jpg"
+                    alt="PowerNest Electric professional electrical work"
+                    loading="lazy">
+
+                <div class="gallery-caption">
+                    Professional Electrical Work
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="gallery-item reveal"
+                onclick="openModal(this)">
+
+                <img
+                    src="photos/03.jpg"
+                    alt="PowerNest Electric electrical services"
+                    loading="lazy">
+
+                <div class="gallery-caption">
+                    Electrical Services
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="gallery-item reveal"
+                onclick="openModal(this)">
+
+                <img
+                    src="photos/04.jpg"
+                    alt="PowerNest Electric installation and wiring"
+                    loading="lazy">
+
+                <div class="gallery-caption">
+                    Installation & Wiring
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="gallery-item reveal"
+                onclick="openModal(this)">
+
+                <img
+                    src="photos/1000145846.jpg"
+                    alt="PowerNest Electric electrical project"
+                    loading="lazy">
+
+                <div class="gallery-caption">
+                    Electrical Project
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="gallery-item reveal"
+                onclick="openModal(this)">
+
+                <img
+                    src="photos/1000217035.jpg"
+                    alt="PowerNest Electric electrical maintenance"
+                    loading="lazy">
+
+                <div class="gallery-caption">
+                    Electrical Maintenance
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="gallery-item reveal"
+                onclick="openModal(this)">
+
+                <img
+                    src="photos/1000217037.jpg"
+                    alt="PowerNest Electric electrical installation"
+                    loading="lazy">
+
+                <div class="gallery-caption">
+                    Electrical Installation
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="gallery-item reveal"
+                onclick="openModal(this)">
+
+                <img
+                    src="photos/1000217039.jpg"
+                    alt="PowerNest Electric power and energy solutions"
+                    loading="lazy">
+
+                <div class="gallery-caption">
+                    Power & Energy Solutions
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="gallery-item reveal"
+                onclick="openModal(this)">
+
+                <img
+                    src="photos/1000217041.jpg"
+                    alt="PowerNest Electric professional project work"
+                    loading="lazy">
+
+                <div class="gallery-caption">
+                    Professional Project Work
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="gallery-item reveal"
+                onclick="openModal(this)">
+
+                <img
+                    src="photos/1000258072.jpg"
+                    alt="PowerNest Electric electrical solutions"
+                    loading="lazy">
+
+                <div class="gallery-caption">
+                    Electrical Solutions
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <p class="gallery-hint">
+
+            Click any project photo to view it larger.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         IMAGE MODAL
+    ===================================================== -->
+
+    <div
+        class="modal"
+        id="imageModal"
+        onclick="backgroundClose(event)">
+
+        <span
+            class="close-modal"
+            onclick="closeModal()"
+            aria-label="Close image">
+
+            &times;
+
+        </span>
+
+        <img
+            id="modalImage"
+            src=""
+            alt="Enlarged PowerNest Electric project">
+
+    </div>
+
+
+
+    <!-- =====================================================
+         ABOUT
+    ===================================================== -->
+
+    <section
+        class="section section-white"
+        id="about">
+
+        <div class="about-container">
+
+            <div class="section-header reveal">
+
+                <h2 class="section-title">
+                    About PowerNest Electric
+                </h2>
+
+                <p class="section-intro">
+
+                    Powering homes, businesses and
+                    communities with dependable
+                    electrical solutions.
+
+                </p>
+
+            </div>
+
+
+            <p class="reveal">
+
+                PowerNest Electric is focused on providing
+                reliable, safe, and modern electrical
+                solutions for homes, businesses,
+                and industries.
+
+            </p>
+
+
+            <p class="reveal">
+
+                Our goal is to deliver quality electrical
+                services while building a brighter and
+                more dependable future.
+
+            </p>
+
+
+            <div class="about-boxes">
+
+
+                <div class="about-card reveal">
+
+                    <h3>
+                        🛡️ Reliable & Safe
+                    </h3>
+
+                    <p>
+
+                        We focus on dependable electrical
+                        work with safety and quality
+                        at the center.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="about-card reveal">
+
+                    <h3>
+                        👷 Professional Service
+                    </h3>
+
+                    <p>
+
+                        We are committed to providing
+                        professional service and practical
+                        electrical solutions.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="about-card reveal">
+
+                    <h3>
+                        ⚡ Modern Solutions
+                    </h3>
+
+                    <p>
+
+                        We provide modern electrical
+                        and energy solutions for
+                        today's power needs.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TESTIMONIALS
+    ===================================================== -->
+
+    <section class="section section-light">
+
+        <div class="section-header reveal">
+
+            <h2 class="section-title">
+                What Our Customers Say
+            </h2>
+
+            <p class="section-intro">
+
+                Professional service is built on
+                trust, communication, and quality work.
+
+            </p>
+
+        </div>
+
+
+        <div class="testimonial-container">
+
+
+            <!-- CUSTOMER 1 -->
+
+            <div class="testimonial reveal">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+
+                    "PowerNest Electric provided
+                    professional service and paid
+                    attention to the details of
+                    our electrical needs."
+
+                </p>
+
+                <div class="customer-info">
+
+                    <div class="customer-avatar">
+                        JD
+                    </div>
+
+                    <div class="customer-details">
+
+                        <strong>
+                            John Doe
+                        </strong>
+
+                        <span>
+                            Residential Client
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CUSTOMER 2 -->
+
+            <div class="testimonial reveal">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+
+                    "The team was responsive,
+                    professional, and focused
+                    on delivering a reliable
+                    electrical solution."
+
+                </p>
+
+                <div class="customer-info">
+
+                    <div class="customer-avatar">
+                        MJ
+                    </div>
+
+                    <div class="customer-details">
+
+                        <strong>
+                            Mary Johnson
+                        </strong>
+
+                        <span>
+                            Business Client
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CUSTOMER 3 -->
+
+            <div class="testimonial reveal">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+
+                    "A dependable choice for
+                    electrical installation,
+                    maintenance, and repair
+                    services."
+
+                </p>
+
+                <div class="customer-info">
+
+                    <div class="customer-avatar">
+                        PS
+                    </div>
+
+                    <div class="customer-details">
+
+                        <strong>
+                            Peter Smith
+                        </strong>
+
+                        <span>
+                            Client
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CALL TO ACTION
+    ===================================================== -->
+
+    <section class="cta">
+
+        <h2>
+
+            Need Electrical Services?
+
+        </h2>
+
+
+        <p>
+
+            Whether you need installation, wiring,
+            maintenance, repairs, or energy solutions,
+            PowerNest Electric is ready to discuss
+            your project.
+
+        </p>
+
+
+        <a
+            href="#contact"
+            class="button">
+
+            Get a Free Quote
+
+        </a>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CONTACT
+    ===================================================== -->
+
+    <section
+        class="section section-white"
+        id="contact">
+
+        <div class="section-header reveal">
+
+            <h2 class="section-title">
+                Contact PowerNest Electric
+            </h2>
+
+            <p class="section-intro">
+
+                Have a project or electrical problem?
+                Get in touch with us today.
+
+            </p>
+
+        </div>
+
+
+        <div class="contact-container">
+
+
+            <!-- CONTACT INFORMATION -->
+
+            <div class="contact-info reveal">
+
+                <h3>
+                    Let's Talk About Your Project
+                </h3>
+
+
+                <p>
+
+                    We are ready to help with your
+                    electrical needs. Contact us
+                    by phone, email, WhatsApp,
+                    or Facebook.
+
+                </p>
+
+
+                <div class="contact-detail">
+
+                    <strong>
+                        📧 Email
+                    </strong>
+
+                    <br>
+
+                    <a
+                        href="mailto:powernestelectric2025@gmail.com">
+
+                        powernestelectric2025@gmail.com
+
+                    </a>
+
+                </div>
+
+
+                <div class="contact-detail">
+
+                    <strong>
+                        📞 Phone
+                    </strong>
+
+                    <br>
+
+                    <a
+                        href="tel:+231880947513">
+
+                        +231 880 947 513
+
+                    </a>
+
+                </div>
+
+
+                <div class="contact-detail">
+
+                    <strong>
+                        💬 WhatsApp
+                    </strong>
+
+                    <br>
+
+                    <a
+                        href="https://wa.me/231880947513"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        +231 880 947 513
+
+                    </a>
+
+                </div>
+
+
+                <div class="contact-buttons">
+
+                    <a
+                        class="whatsapp-button"
+                        href="https://wa.me/231880947513"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        💬 WhatsApp Us
+
+                    </a>
+
+
+                    <a
+                        class="facebook-button"
+                        href="https://www.facebook.com/profile.php?id=61576923520194"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        📘 Facebook
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CONTACT FORM -->
+
+            <div class="contact-form reveal">
+
+                <h3>
+                    Request a Quote
+                </h3>
+
+
+                <form
+                    action="mailto:powernestelectric2025@gmail.com"
+                    method="post"
+                    enctype="text/plain">
+
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="Name"
+                            placeholder="Enter your name"
+                            autocomplete="name"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="Phone"
+                            placeholder="Enter your phone number"
+                            autocomplete="tel"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="Email"
+                            placeholder="Enter your email"
+                            autocomplete="email">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="service">
+                            Service Needed
+                        </label>
+
+                        <select
+                            id="service"
+                            name="Service">
+
+                            <option value="">
+                                Select a service
+                            </option>
+
+                            <option>
+                                Residential Electrical
+                            </option>
+
+                            <option>
+                                Commercial Electrical
+                            </option>
+
+                            <option>
+                                Industrial Electrical
+                            </option>
+
+                            <option>
+                                Installation & Wiring
+                            </option>
+
+                            <option>
+                                Maintenance & Repairs
+                            </option>
+
+                            <option>
+                                Solar & Energy
+                            </option>
+
+                            <option>
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="Message"
+                            placeholder="Tell us about your project or electrical needs..."
+                            required></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="submit-button">
+
+                        Send Quote Request
+
+                    </button>
+
+                </form>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer>
+
+        <div class="footer-container">
+
+
+            <div class="footer-column">
+
+                <h3>
+                    PowerNest Electric
+                </h3>
+
+                <p>
+
+                    Reliable electrical installation,
+                    maintenance, repair, wiring,
+                    solar and energy solutions.
+
+                </p>
+
+                <p>
+
+                    <strong>
+                        Future is Bright. So We Are.
+                    </strong>
+
+                </p>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#services">
+                    Services
+                </a>
+
+                <a href="#projects">
+                    Projects
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    📧 powernestelectric2025@gmail.com
+                </p>
+
+                <p>
+                    📞 +231 880 947 513
+                </p>
+
+                <a
+                    href="https://wa.me/231880947513"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    💬 WhatsApp
+
+                </a>
+
+                <a
+                    href="https://www.facebook.com/profile.php?id=61576923520194"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    📘 Facebook
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+
+                © 2025 PowerNest Electric.
+                All Rights Reserved.
+
+            </p>
+
+            <p>
+
+                Reliable Power. Better Future.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         FLOATING WHATSAPP
+    ===================================================== -->
+
+    <a
+        href="https://wa.me/231880947513"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="floating-whatsapp"
+        aria-label="Chat with PowerNest Electric on WhatsApp">
+
+        💬
+
+    </a>
+
+
+
+    <!-- =====================================================
+         BACK TO TOP
+    ===================================================== -->
+
+    <a
+        href="#home"
+        class="back-to-top"
+        id="backToTop"
+        aria-label="Back to top">
+
+        ↑
+
+    </a>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+
+        /* =====================================================
+           MOBILE MENU
+        ===================================================== */
+
+        const menuToggle =
+            document.getElementById("menuToggle");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        menuToggle.addEventListener(
+            "click",
+            function() {
+
+                navLinks.classList.toggle("active");
+
+                const isOpen =
+                    navLinks.classList.contains("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    isOpen
+                );
+
+                menuToggle.innerHTML =
+                    isOpen ? "✕" : "☰";
+
+            }
+        );
+
+
+        /* Close menu after clicking a link */
+
+        document.querySelectorAll(
+            ".nav-links a"
+        ).forEach(function(link) {
+
+            link.addEventListener(
+                "click",
+                function() {
+
+                    navLinks.classList.remove("active");
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    menuToggle.innerHTML = "☰";
+
+                }
+            );
+
+        });
+
+
+
+        /* =====================================================
+           IMAGE MODAL
+        ===================================================== */
+
+        function openModal(element) {
+
+            const image =
+                element.querySelector("img");
+
+            const modal =
+                document.getElementById("imageModal");
+
+            const modalImage =
+                document.getElementById("modalImage");
+
+
+            modalImage.src =
+                image.src;
+
+            modalImage.alt =
+                image.alt;
+
+            modal.classList.add("show");
+
+            document.body.style.overflow =
+                "hidden";
+
+        }
+
+
+        function closeModal() {
+
+            const modal =
+                document.getElementById("imageModal");
+
+            modal.classList.remove("show");
+
+            document.body.style.overflow =
+                "";
+
+        }
+
+
+        function backgroundClose(event) {
+
+            if (
+                event.target.id === "imageModal"
+            ) {
+
+                closeModal();
+
+            }
+
+        }
+
+
+        /* Close modal with ESC */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Escape") {
+
+                    closeModal();
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           BACK TO TOP
+        ===================================================== */
+
+        const backToTop =
+            document.getElementById("backToTop");
+
+
+        window.addEventListener(
+            "scroll",
+            function() {
+
+                if (window.scrollY > 500) {
+
+                    backToTop.classList.add("show");
+
+                } else {
+
+                    backToTop.classList.remove("show");
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           SCROLL REVEAL ANIMATION
+        ===================================================== */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+
+        const revealObserver =
+            new IntersectionObserver(
+                function(entries) {
+
+                    entries.forEach(
+                        function(entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.classList.add(
+                                    "active"
+                                );
+
+                                revealObserver.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(
+            function(element) {
+
+                revealObserver.observe(element);
+
+            }
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>
