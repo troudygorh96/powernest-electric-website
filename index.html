@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="vCLbX48hzLfEzz35arPZ1gBHdsMwhPBS7E-8HFpYJco" />
+    <meta name="google-site-verification"
+        content="vCLbX48hzLfEzz35arPZ1gBHdsMwhPBS7E-8HFpYJco">
 
     <meta name="description"
         content="PowerNest Electric provides reliable electrical installation, maintenance, repair, wiring, solar and energy solutions for residential, commercial and industrial customers.">
@@ -21,6 +21,10 @@
     <title>PowerNest Electric | Reliable Electrical Solutions</title>
 
     <style>
+
+        /* ==============================
+           GENERAL
+        ============================== */
 
         * {
             box-sizing: border-box;
@@ -56,7 +60,10 @@
             font-family: inherit;
         }
 
-        /* HEADER */
+
+        /* ==============================
+           HEADER
+        ============================== */
 
         header {
             position: sticky;
@@ -93,7 +100,6 @@
             color: white;
             font-weight: bold;
             font-size: 15px;
-            position: relative;
             transition: 0.3s;
         }
 
@@ -117,7 +123,10 @@
             cursor: pointer;
         }
 
-        /* HERO */
+
+        /* ==============================
+           HERO
+        ============================== */
 
         .hero {
             min-height: 680px;
@@ -205,6 +214,7 @@
             padding: 13px 28px;
             border-radius: 7px;
             font-weight: bold;
+            transition: 0.3s;
         }
 
         .button-outline:hover {
@@ -212,12 +222,15 @@
             color: #0b1f3a;
         }
 
-        /* TRUST */
+
+        /* ==============================
+           TRUST
+        ============================== */
 
         .trust-strip {
             background: white;
             padding: 28px 20px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
         }
 
         .trust-box {
@@ -245,7 +258,10 @@
             font-size: 13px;
         }
 
-        /* SECTIONS */
+
+        /* ==============================
+           SECTIONS
+        ============================== */
 
         .section {
             padding: 90px 5%;
@@ -291,7 +307,78 @@
             line-height: 1.8;
         }
 
-        /* SERVICES */
+
+        /* ==============================
+           COMPANY
+        ============================== */
+
+        .company-section {
+            background: #ffffff;
+        }
+
+        .company-gallery {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .company-gallery.single-feature {
+            grid-template-columns: minmax(240px, 500px);
+            justify-content: center;
+        }
+
+        .company-gallery.two-items {
+            grid-template-columns: repeat(2, minmax(240px, 500px));
+            justify-content: center;
+        }
+
+        .company-photo {
+            background: #f5f7fa;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e5e9ee;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+            cursor: pointer;
+        }
+
+        .company-photo img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .company-photo.ceo-photo img {
+            height: 430px;
+            object-fit: contain;
+            background: #f5f7fa;
+        }
+
+        .company-photo.logo-photo img {
+            height: 280px;
+            object-fit: contain;
+            background: white;
+            padding: 18px;
+        }
+
+        .company-photo.team-photo img {
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .company-caption {
+            padding: 15px 18px;
+            color: #0b1f3a;
+            font-weight: bold;
+            text-align: center;
+        }
+
+
+        /* ==============================
+           SERVICES
+        ============================== */
 
         .service-box {
             max-width: 1200px;
@@ -306,7 +393,7 @@
             padding: 35px 28px;
             border-radius: 14px;
             border: 1px solid #e5e9ee;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
             transition: 0.3s;
         }
 
@@ -346,6 +433,7 @@
             border-radius: 6px;
             font-size: 14px;
             font-weight: bold;
+            transition: 0.3s;
         }
 
         .service-button:hover {
@@ -353,7 +441,10 @@
             color: #111;
         }
 
-        /* STATS */
+
+        /* ==============================
+           STATS
+        ============================== */
 
         .stats {
             background: #0b1f3a;
@@ -382,7 +473,10 @@
             font-size: 14px;
         }
 
-        /* WHY */
+
+        /* ==============================
+           WHY CHOOSE US
+        ============================== */
 
         .why-container {
             max-width: 1150px;
@@ -415,82 +509,9 @@
         }
 
 
-        /* COMPANY / TEAM GALLERY */
-
-        .company-section {
-            background: #ffffff;
-        }
-
-        .company-gallery {
-            max-width: 1200px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
-        }
-
-        .company-gallery.single-feature {
-            grid-template-columns: minmax(240px, 500px);
-            justify-content: center;
-        }
-
-        .company-gallery.two-items {
-            grid-template-columns: repeat(2, minmax(240px, 500px));
-            justify-content: center;
-        }
-
-        .company-photo {
-            background: #f5f7fa;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #e5e9ee;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.07);
-            cursor: pointer;
-        }
-
-        .company-photo img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .company-photo.ceo-photo img {
-            height: 430px;
-            object-fit: contain;
-            background: #f5f7fa;
-        }
-
-        .company-photo.logo-photo img {
-            height: 280px;
-            object-fit: contain;
-            background: white;
-            padding: 18px;
-        }
-
-        .company-photo.team-photo img {
-            height: 300px;
-            object-fit: cover;
-        }
-
-        .company-caption {
-            padding: 15px 18px;
-            color: #0b1f3a;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        .company-note {
-            max-width: 800px;
-            margin: 25px auto 0;
-            text-align: center;
-            color: #555;
-            line-height: 1.7;
-        }
-
-        /* GALLERY */
-
-        /* PROJECT FILTERS */
+        /* ==============================
+           PROJECT FILTERS
+        ============================== */
 
         .project-filters {
             display: flex;
@@ -519,21 +540,6 @@
             border-color: #f5a623;
         }
 
-        .gallery-item.hidden {
-            display: none;
-        }
-
-        .no-projects {
-            display: none;
-            text-align: center;
-            max-width: 700px;
-            margin: 20px auto 0;
-            padding: 25px;
-            background: white;
-            border-radius: 12px;
-            color: #555;
-        }
-
         .gallery-box {
             max-width: 1200px;
             margin: auto;
@@ -548,8 +554,12 @@
             border-radius: 14px;
             height: 285px;
             background: white;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
             cursor: pointer;
+        }
+
+        .gallery-item.hidden {
+            display: none;
         }
 
         .gallery-item img {
@@ -575,7 +585,7 @@
             font-weight: bold;
             background: linear-gradient(
                 transparent,
-                rgba(0,0,0,0.88)
+                rgba(0, 0, 0, 0.88)
             );
         }
 
@@ -586,14 +596,17 @@
             font-size: 14px;
         }
 
-        /* MODAL */
+
+        /* ==============================
+           IMAGE MODAL
+        ============================== */
 
         .modal {
             display: none;
             position: fixed;
             z-index: 3000;
             inset: 0;
-            background: rgba(0,0,0,0.94);
+            background: rgba(0, 0, 0, 0.94);
             align-items: center;
             justify-content: center;
             padding: 25px;
@@ -617,9 +630,13 @@
             color: white;
             font-size: 45px;
             cursor: pointer;
+            line-height: 1;
         }
 
-        /* ABOUT */
+
+        /* ==============================
+           ABOUT
+        ============================== */
 
         .about-container {
             max-width: 1050px;
@@ -659,7 +676,10 @@
             font-size: 15px;
         }
 
-        /* TESTIMONIALS */
+
+        /* ==============================
+           TESTIMONIALS
+        ============================== */
 
         .testimonial-container {
             max-width: 1100px;
@@ -674,7 +694,7 @@
             padding: 30px;
             border-radius: 12px;
             border: 1px solid #e5e9ee;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
         }
 
         .stars {
@@ -721,7 +741,10 @@
             font-size: 12px;
         }
 
-        /* CTA */
+
+        /* ==============================
+           CTA
+        ============================== */
 
         .cta {
             background: #0b1f3a;
@@ -743,7 +766,10 @@
             line-height: 1.8;
         }
 
-        /* CONTACT */
+
+        /* ==============================
+           CONTACT
+        ============================== */
 
         .contact-container {
             max-width: 1100px;
@@ -806,13 +832,16 @@
             background: #1877F2;
         }
 
-        /* FORM */
+
+        /* ==============================
+           FORM
+        ============================== */
 
         .contact-form {
             background: #f5f7fa;
             padding: 32px;
             border-radius: 14px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
             border: 1px solid #e5e9ee;
         }
 
@@ -840,6 +869,12 @@
             outline: none;
         }
 
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #f5a623;
+        }
+
         .form-group textarea {
             min-height: 130px;
             resize: vertical;
@@ -855,13 +890,17 @@
             font-weight: bold;
             font-size: 16px;
             cursor: pointer;
+            transition: 0.3s;
         }
 
         .submit-button:hover {
             background: #128C7E;
         }
 
-        /* FOOTER */
+
+        /* ==============================
+           FOOTER
+        ============================== */
 
         footer {
             background: #07172c;
@@ -896,15 +935,22 @@
             display: block;
         }
 
+        .footer-column a:hover {
+            color: #f5a623;
+        }
+
         .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.12);
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
             padding-top: 22px;
             text-align: center;
             color: #aeb8c4;
             font-size: 13px;
         }
 
-        /* FLOATING WHATSAPP */
+
+        /* ==============================
+           FLOATING WHATSAPP
+        ============================== */
 
         .floating-whatsapp {
             position: fixed;
@@ -919,11 +965,19 @@
             align-items: center;
             justify-content: center;
             font-size: 27px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
             z-index: 1500;
+            transition: 0.3s;
         }
 
-        /* BACK TO TOP */
+        .floating-whatsapp:hover {
+            transform: scale(1.08);
+        }
+
+
+        /* ==============================
+           BACK TO TOP
+        ============================== */
 
         .back-to-top {
             position: fixed;
@@ -949,7 +1003,10 @@
             visibility: visible;
         }
 
-        /* MOBILE */
+
+        /* ==============================
+           TABLET
+        ============================== */
 
         @media (max-width: 1000px) {
 
@@ -965,11 +1022,17 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .company-gallery,
-            .company-gallery.two-items {
+            .company-gallery {
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .company-gallery.single-feature {
+                grid-template-columns: minmax(240px, 500px);
+            }
+
+            .company-gallery.two-items {
+                grid-template-columns: repeat(2, minmax(240px, 500px));
+            }
 
             .stats-container {
                 grid-template-columns: repeat(2, 1fr);
@@ -987,6 +1050,11 @@
                 grid-template-columns: 1fr 1fr;
             }
         }
+
+
+        /* ==============================
+           MOBILE
+        ============================== */
 
         @media (max-width: 750px) {
 
@@ -1021,6 +1089,7 @@
             .nav-links a {
                 padding: 12px;
                 text-align: center;
+                width: 100%;
             }
 
             .hero {
@@ -1071,8 +1140,18 @@
                 grid-template-columns: 1fr;
             }
 
+            .company-gallery,
+            .company-gallery.two-items,
+            .company-gallery.single-feature {
+                grid-template-columns: 1fr;
+            }
+
             .gallery-item {
                 height: 270px;
+            }
+
+            .company-photo.ceo-photo img {
+                height: 400px;
             }
 
             .contact-form {
@@ -1090,15 +1169,23 @@
                 right: 16px;
                 bottom: 16px;
             }
+
+            .back-to-top {
+                right: 20px;
+                bottom: 82px;
+            }
         }
 
     </style>
-
 </head>
+
 
 <body>
 
-<!-- HEADER -->
+
+<!-- ==============================
+     HEADER
+============================== -->
 
 <header>
 
@@ -1111,7 +1198,9 @@
         <button
             class="menu-toggle"
             id="menuToggle"
-            aria-label="Open navigation menu">
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
 
             ☰
 
@@ -1120,14 +1209,10 @@
         <div class="nav-links" id="navLinks">
 
             <a href="#home">Home</a>
-
             <a href="#company">Company</a>
-                <a href="#services">Services</a>
-
+            <a href="#services">Services</a>
             <a href="#projects">Projects</a>
-
             <a href="#about">About</a>
-
             <a href="#contact">Contact</a>
 
             <a href="#contact" class="nav-quote">
@@ -1141,7 +1226,9 @@
 </header>
 
 
-<!-- HERO -->
+<!-- ==============================
+     HERO
+============================== -->
 
 <section class="hero" id="home">
 
@@ -1183,7 +1270,9 @@
 </section>
 
 
-<!-- TRUST -->
+<!-- ==============================
+     TRUST
+============================== -->
 
 <section class="trust-strip">
 
@@ -1214,38 +1303,55 @@
 </section>
 
 
-
-<!-- COMPANY, CEO, LOGO & TEAM -->
+<!-- ==============================
+     COMPANY
+============================== -->
 
 <section class="section company-section" id="company">
 
     <div class="section-header">
-        <h2 class="section-title">Our Company</h2>
+
+        <h2 class="section-title">
+            Our Company
+        </h2>
+
         <p class="section-intro">
-            Meet the people and see the identity behind PowerNest Electric.
-            These photos represent our company, leadership, team, and brand.
+            Meet the people and see the identity behind
+            PowerNest Electric. These photos represent
+            our company, leadership, team, and brand.
         </p>
+
     </div>
 
 
     <!-- CEO -->
 
-    <div class="section-header" style="margin-top: 25px;">
-        <h2 class="section-title">Our CEO</h2>
+    <div class="section-header" style="margin-top:25px;">
+
+        <h2 class="section-title">
+            Our CEO
+        </h2>
+
         <p class="section-intro">
             Leadership and vision behind PowerNest Electric.
         </p>
+
     </div>
 
     <div class="company-gallery single-feature">
 
-        <div class="company-photo ceo-photo" onclick="openModal(this)">
+        <div
+            class="company-photo ceo-photo"
+            onclick="openModal(this)">
+
             <img
-                src="photos/CEO/1000258072.png"
+                src="photos/CEO/01.jpg"
                 alt="PowerNest Electric CEO">
+
             <div class="company-caption">
                 CEO — PowerNest Electric
             </div>
+
         </div>
 
     </div>
@@ -1253,31 +1359,47 @@
 
     <!-- OUR LOGO -->
 
-    <div class="section-header" style="margin-top: 65px;">
-        <h2 class="section-title">Our Logo</h2>
+    <div class="section-header" style="margin-top:65px;">
+
+        <h2 class="section-title">
+            Our Logo
+        </h2>
+
         <p class="section-intro">
             Our official PowerNest Electric brand identity.
         </p>
+
     </div>
 
     <div class="company-gallery two-items">
 
-        <div class="company-photo logo-photo" onclick="openModal(this)">
+        <div
+            class="company-photo logo-photo"
+            onclick="openModal(this)">
+
             <img
-                src="photos/OUR LOGO/04.jpg"
+                src="photos/OUR%20LOGO/04.jpg"
                 alt="PowerNest Electric logo">
+
             <div class="company-caption">
                 PowerNest Electric Logo
             </div>
+
         </div>
 
-        <div class="company-photo logo-photo" onclick="openModal(this)">
+
+        <div
+            class="company-photo logo-photo"
+            onclick="openModal(this)">
+
             <img
-                src="photos/OUR LOGO/LOGO 4.png"
+                src="photos/OUR%20LOGO/LOGO%204.png"
                 alt="PowerNest Electric official logo">
+
             <div class="company-caption">
                 Official PowerNest Electric Logo
             </div>
+
         </div>
 
     </div>
@@ -1285,55 +1407,125 @@
 
     <!-- OUR TEAM -->
 
-    <div class="section-header" style="margin-top: 65px;">
-        <h2 class="section-title">Our Team</h2>
+    <div class="section-header" style="margin-top:65px;">
+
+        <h2 class="section-title">
+            Our Team
+        </h2>
+
         <p class="section-intro">
-            Real members of the PowerNest Electric team and real field work.
+            Real members of the PowerNest Electric team
+            and real field work.
         </p>
+
     </div>
 
     <div class="company-gallery">
 
-        <div class="company-photo team-photo" onclick="openModal(this)">
-            <img src="photos/OUR TEAM/1000277396.jpg"
-                 alt="PowerNest Electric team member">
-            <div class="company-caption">PowerNest Electric Team</div>
+        <div
+            class="company-photo team-photo"
+            onclick="openModal(this)">
+
+            <img
+                src="photos/OUR%20TEAM/1000277396.jpg"
+                alt="PowerNest Electric team member">
+
+            <div class="company-caption">
+                PowerNest Electric Team
+            </div>
+
         </div>
 
-        <div class="company-photo team-photo" onclick="openModal(this)">
-            <img src="photos/OUR TEAM/1000277398.jpg"
-                 alt="PowerNest Electric electrical team">
-            <div class="company-caption">Electrical Team</div>
+
+        <div
+            class="company-photo team-photo"
+            onclick="openModal(this)">
+
+            <img
+                src="photos/OUR%20TEAM/1000277398.jpg"
+                alt="PowerNest Electric electrical team">
+
+            <div class="company-caption">
+                Electrical Team
+            </div>
+
         </div>
 
-        <div class="company-photo team-photo" onclick="openModal(this)">
-            <img src="photos/OUR TEAM/1000277400.jpg"
-                 alt="PowerNest Electric team at work">
-            <div class="company-caption">Team at Work</div>
+
+        <div
+            class="company-photo team-photo"
+            onclick="openModal(this)">
+
+            <img
+                src="photos/OUR%20TEAM/1000277400.jpg"
+                alt="PowerNest Electric team at work">
+
+            <div class="company-caption">
+                Team at Work
+            </div>
+
         </div>
 
-        <div class="company-photo team-photo" onclick="openModal(this)">
-            <img src="photos/OUR TEAM/1000277402.jpg"
-                 alt="PowerNest Electric field team">
-            <div class="company-caption">Field Team</div>
+
+        <div
+            class="company-photo team-photo"
+            onclick="openModal(this)">
+
+            <img
+                src="photos/OUR%20TEAM/1000277402.jpg"
+                alt="PowerNest Electric field team">
+
+            <div class="company-caption">
+                Field Team
+            </div>
+
         </div>
 
-        <div class="company-photo team-photo" onclick="openModal(this)">
-            <img src="photos/OUR TEAM/1000277404.jpg"
-                 alt="PowerNest Electric electrical workers">
-            <div class="company-caption">Electrical Workers</div>
+
+        <div
+            class="company-photo team-photo"
+            onclick="openModal(this)">
+
+            <img
+                src="photos/OUR%20TEAM/1000277404.jpg"
+                alt="PowerNest Electric electrical workers">
+
+            <div class="company-caption">
+                Electrical Workers
+            </div>
+
         </div>
 
-        <div class="company-photo team-photo" onclick="openModal(this)">
-            <img src="photos/OUR TEAM/1000277406.jpg"
-                 alt="PowerNest Electric team performing electrical work">
-            <div class="company-caption">Professional Field Work</div>
+
+        <div
+            class="company-photo team-photo"
+            onclick="openModal(this)">
+
+            <img
+                src="photos/OUR%20TEAM/1000277406.jpg"
+                alt="PowerNest Electric team performing electrical work">
+
+            <div class="company-caption">
+                Professional Field Work
+            </div>
+
         </div>
 
-        <div class="company-photo team-photo" onclick="openModal(this)">
-            <img src="photos/OUR TEAM/team7.jpg"
-                 alt="PowerNest Electric team">
-            <div class="company-caption">PowerNest Electric Team</div>
+
+        <!-- CORRECTED TEAM PHOTO -->
+
+        <div
+            class="company-photo team-photo"
+            onclick="openModal(this)">
+
+            <img
+                src="photos/OUR%20TEAM/1000277408.jpeg"
+                alt="PowerNest Electric team">
+
+            <div class="company-caption">
+                PowerNest Electric Team
+            </div>
+
         </div>
 
     </div>
@@ -1341,7 +1533,9 @@
 </section>
 
 
-<!-- SERVICES -->
+<!-- ==============================
+     SERVICES
+============================== -->
 
 <section class="section section-light" id="services">
 
@@ -1353,9 +1547,8 @@
 
         <p class="section-intro">
             PowerNest Electric provides dependable
-            electrical solutions designed for
-            residential, commercial, and industrial
-            customers.
+            electrical solutions designed for residential,
+            commercial, and industrial customers.
         </p>
 
     </div>
@@ -1367,7 +1560,9 @@
 
             <div class="service-icon">🏠</div>
 
-            <h3>Residential Electrical</h3>
+            <h3>
+                Residential Electrical
+            </h3>
 
             <p>
                 Electrical installation, house wiring,
@@ -1386,7 +1581,9 @@
 
             <div class="service-icon">🏢</div>
 
-            <h3>Commercial Electrical</h3>
+            <h3>
+                Commercial Electrical
+            </h3>
 
             <p>
                 Professional electrical solutions
@@ -1405,7 +1602,9 @@
 
             <div class="service-icon">🏭</div>
 
-            <h3>Industrial Electrical</h3>
+            <h3>
+                Industrial Electrical
+            </h3>
 
             <p>
                 Electrical solutions for industrial
@@ -1424,7 +1623,9 @@
 
             <div class="service-icon">💡</div>
 
-            <h3>Installation & Wiring</h3>
+            <h3>
+                Installation & Wiring
+            </h3>
 
             <p>
                 Safe electrical installation,
@@ -1443,7 +1644,9 @@
 
             <div class="service-icon">🔧</div>
 
-            <h3>Maintenance & Repairs</h3>
+            <h3>
+                Maintenance & Repairs
+            </h3>
 
             <p>
                 Electrical troubleshooting,
@@ -1462,7 +1665,9 @@
 
             <div class="service-icon">☀️</div>
 
-            <h3>Solar & Energy</h3>
+            <h3>
+                Solar & Energy
+            </h3>
 
             <p>
                 Modern solar and energy
@@ -1481,7 +1686,9 @@
 </section>
 
 
-<!-- STATS -->
+<!-- ==============================
+     STATS
+============================== -->
 
 <section class="stats">
 
@@ -1512,7 +1719,9 @@
 </section>
 
 
-<!-- WHY CHOOSE US -->
+<!-- ==============================
+     WHY CHOOSE US
+============================== -->
 
 <section class="section section-white">
 
@@ -1534,40 +1743,75 @@
     <div class="why-container">
 
         <div class="why-card">
-            <div class="why-icon">🛡️</div>
-            <h3>Safety First</h3>
+
+            <div class="why-icon">
+                🛡️
+            </div>
+
+            <h3>
+                Safety First
+            </h3>
+
             <p>
                 We place safety and quality
                 at the center of our
                 electrical work.
             </p>
+
         </div>
 
+
         <div class="why-card">
-            <div class="why-icon">⚡</div>
-            <h3>Reliable Solutions</h3>
+
+            <div class="why-icon">
+                ⚡
+            </div>
+
+            <h3>
+                Reliable Solutions
+            </h3>
+
             <p>
                 Practical electrical solutions
                 designed around your power needs.
             </p>
+
         </div>
 
+
         <div class="why-card">
-            <div class="why-icon">👷</div>
-            <h3>Professional Service</h3>
+
+            <div class="why-icon">
+                👷
+            </div>
+
+            <h3>
+                Professional Service
+            </h3>
+
             <p>
                 We focus on professional service
                 and attention to detail.
             </p>
+
         </div>
 
+
         <div class="why-card">
-            <div class="why-icon">🔧</div>
-            <h3>Practical Support</h3>
+
+            <div class="why-icon">
+                🔧
+            </div>
+
+            <h3>
+                Practical Support
+            </h3>
+
             <p>
                 From installation to maintenance,
                 we are ready to help.
             </p>
+
         </div>
 
     </div>
@@ -1575,200 +1819,448 @@
 </section>
 
 
-
-<!-- PROJECTS -->
+<!-- ==============================
+     PROJECTS
+============================== -->
 
 <section class="section section-blue" id="projects">
 
     <div class="section-header">
-        <h2 class="section-title">Our Projects & Work</h2>
+
+        <h2 class="section-title">
+            Our Projects & Work
+        </h2>
+
         <p class="section-intro">
-            Explore real electrical work completed by PowerNest Electric.
-            Browse our real project photos by category.
+            Explore real electrical work completed
+            by PowerNest Electric. Browse our real
+            project photos by category.
         </p>
+
     </div>
 
-    <!-- PROJECT FILTERS -->
+
+    <!-- PROJECT FILTER BUTTONS -->
 
     <div class="project-filters">
 
-        <button class="filter-button active" data-filter="all">
+        <button
+            type="button"
+            class="filter-button active"
+            data-filter="all">
             All
         </button>
 
-        <button class="filter-button" data-filter="residential">
+        <button
+            type="button"
+            class="filter-button"
+            data-filter="residential">
             Residential
         </button>
 
-        <button class="filter-button" data-filter="commercial">
+        <button
+            type="button"
+            class="filter-button"
+            data-filter="commercial">
             Commercial
         </button>
 
-        <button class="filter-button" data-filter="industrial">
+        <button
+            type="button"
+            class="filter-button"
+            data-filter="industrial">
             Industrial
         </button>
 
-        <button class="filter-button" data-filter="installation">
+        <button
+            type="button"
+            class="filter-button"
+            data-filter="installation">
             Installation & Wiring
         </button>
 
-        <button class="filter-button" data-filter="solar">
+        <button
+            type="button"
+            class="filter-button"
+            data-filter="solar">
             Solar & Energy
         </button>
 
     </div>
+
 
     <!-- PROJECT GALLERY -->
 
     <div class="gallery-box" id="projectGallery">
 
 
-        <div class="gallery-item" data-category="residential" onclick="openModal(this)">
-            <img src="photos/RESIDENTIAL%20WORK/01.jpg"
-                 alt="PowerNest Electric residential electrical work photo 1">
-            <div class="gallery-caption">Residential Electrical Work</div>
-        </div>
+        <!-- ==============================
+             RESIDENTIAL WORK
+        =============================== -->
 
-        <div class="gallery-item" data-category="residential" onclick="openModal(this)">
-            <img src="photos/RESIDENTIAL%20WORK/02.jpg"
-                 alt="PowerNest Electric residential electrical work photo 2">
-            <div class="gallery-caption">Residential Electrical Work</div>
-        </div>
+        <div
+            class="gallery-item"
+            data-category="residential"
+            onclick="openModal(this)">
 
-        <div class="gallery-item" data-category="residential" onclick="openModal(this)">
-            <img src="photos/RESIDENTIAL%20WORK/03.jpg"
-                 alt="PowerNest Electric residential electrical work photo 3">
-            <div class="gallery-caption">Residential Electrical Work</div>
-        </div>
+            <img
+                src="photos/RESIDENTIAL%20WORK/01.jpg"
+                alt="PowerNest Electric residential electrical work photo 1">
 
-        <div class="gallery-item" data-category="residential" onclick="openModal(this)">
-            <img src="photos/RESIDENTIAL%20WORK/1000217035.jpg"
-                 alt="PowerNest Electric residential electrical work photo 4">
-            <div class="gallery-caption">Residential Electrical Work</div>
-        </div>
+            <div class="gallery-caption">
+                Residential Electrical Work
+            </div>
 
-        <div class="gallery-item" data-category="residential" onclick="openModal(this)">
-            <img src="photos/RESIDENTIAL%20WORK/1000217037.jpg"
-                 alt="PowerNest Electric residential electrical work photo 5">
-            <div class="gallery-caption">Residential Electrical Work</div>
-        </div>
-
-        <div class="gallery-item" data-category="residential" onclick="openModal(this)">
-            <img src="photos/RESIDENTIAL%20WORK/1000217039.jpg"
-                 alt="PowerNest Electric residential electrical work photo 6">
-            <div class="gallery-caption">Residential Electrical Work</div>
-        </div>
-
-        <div class="gallery-item" data-category="residential" onclick="openModal(this)">
-            <img src="photos/RESIDENTIAL%20WORK/1000217041.jpg"
-                 alt="PowerNest Electric residential electrical work photo 7">
-            <div class="gallery-caption">Residential Electrical Work</div>
-        </div>
-
-        <div class="gallery-item" data-category="residential" onclick="openModal(this)">
-            <img src="photos/RESIDENTIAL%20WORK/1000277429.jpg"
-                 alt="PowerNest Electric residential electrical work photo 8">
-            <div class="gallery-caption">Residential Electrical Work</div>
-        </div>
-
-        <div class="gallery-item" data-category="residential" onclick="openModal(this)">
-            <img src="photos/RESIDENTIAL%20WORK/1000277430.jpg"
-                 alt="PowerNest Electric residential electrical work photo 9">
-            <div class="gallery-caption">Residential Electrical Work</div>
-        </div>
-
-        <div class="gallery-item" data-category="residential" onclick="openModal(this)">
-            <img src="photos/RESIDENTIAL%20WORK/1000277431.jpg"
-                 alt="PowerNest Electric residential electrical work photo 10">
-            <div class="gallery-caption">Residential Electrical Work</div>
-        </div>
-
-        <div class="gallery-item" data-category="residential" onclick="openModal(this)">
-            <img src="photos/RESIDENTIAL%20WORK/1000277432.jpg"
-                 alt="PowerNest Electric residential electrical work photo 11">
-            <div class="gallery-caption">Residential Electrical Work</div>
-        </div>
-
-        <div class="gallery-item" data-category="residential" onclick="openModal(this)">
-            <img src="photos/RESIDENTIAL%20WORK/1000277433.jpg"
-                 alt="PowerNest Electric residential electrical work photo 12">
-            <div class="gallery-caption">Residential Electrical Work</div>
-        </div>
-
-        <div class="gallery-item" data-category="residential" onclick="openModal(this)">
-            <img src="photos/RESIDENTIAL%20WORK/1000277434.jpg"
-                 alt="PowerNest Electric residential electrical work photo 13">
-            <div class="gallery-caption">Residential Electrical Work</div>
         </div>
 
 
-        <div class="gallery-item" data-category="industrial" onclick="openModal(this)">
-            <img src="photos/INDUSTRIAL%20WORK/1000277398.jpg"
-                 alt="PowerNest Electric industrial electrical work photo 1">
-            <div class="gallery-caption">Industrial Electrical Work</div>
+        <div
+            class="gallery-item"
+            data-category="residential"
+            onclick="openModal(this)">
+
+            <img
+                src="photos/RESIDENTIAL%20WORK/02.jpg"
+                alt="PowerNest Electric residential electrical work photo 2">
+
+            <div class="gallery-caption">
+                Residential Electrical Work
+            </div>
+
         </div>
 
-        <div class="gallery-item" data-category="industrial" onclick="openModal(this)">
-            <img src="photos/INDUSTRIAL%20WORK/1000277400.jpg"
-                 alt="PowerNest Electric industrial electrical work photo 2">
-            <div class="gallery-caption">Industrial Electrical Work</div>
+
+        <div
+            class="gallery-item"
+            data-category="residential"
+            onclick="openModal(this)">
+
+            <img
+                src="photos/RESIDENTIAL%20WORK/03.jpg"
+                alt="PowerNest Electric residential electrical work photo 3">
+
+            <div class="gallery-caption">
+                Residential Electrical Work
+            </div>
+
         </div>
 
-        <div class="gallery-item" data-category="industrial" onclick="openModal(this)">
-            <img src="photos/INDUSTRIAL%20WORK/1000277406.jpg"
-                 alt="PowerNest Electric industrial electrical work photo 3">
-            <div class="gallery-caption">Industrial Electrical Work</div>
+
+        <div
+            class="gallery-item"
+            data-category="residential"
+            onclick="openModal(this)">
+
+            <img
+                src="photos/RESIDENTIAL%20WORK/04.jpg"
+                alt="PowerNest Electric residential electrical work photo 4">
+
+            <div class="gallery-caption">
+                Residential Electrical Work
+            </div>
+
         </div>
 
-        <div class="gallery-item" data-category="industrial" onclick="openModal(this)">
-            <img src="photos/INDUSTRIAL%20WORK/1000277435.jpg"
-                 alt="PowerNest Electric industrial electrical work photo 4">
-            <div class="gallery-caption">Industrial Electrical Work</div>
+
+        <div
+            class="gallery-item"
+            data-category="residential"
+            onclick="openModal(this)">
+
+            <img
+                src="photos/RESIDENTIAL%20WORK/05.jpg"
+                alt="PowerNest Electric residential electrical work photo 5">
+
+            <div class="gallery-caption">
+                Residential Electrical Work
+            </div>
+
         </div>
 
-        <div class="gallery-item" data-category="industrial" onclick="openModal(this)">
-            <img src="photos/INDUSTRIAL%20WORK/1000277436.jpg"
-                 alt="PowerNest Electric industrial electrical work photo 5">
-            <div class="gallery-caption">Industrial Electrical Work</div>
+
+        <div
+            class="gallery-item"
+            data-category="residential"
+            onclick="openModal(this)">
+
+            <img
+                src="photos/RESIDENTIAL%20WORK/06.jpg"
+                alt="PowerNest Electric residential electrical work photo 6">
+
+            <div class="gallery-caption">
+                Residential Electrical Work
+            </div>
+
         </div>
 
-        <div class="gallery-item" data-category="industrial" onclick="openModal(this)">
-            <img src="photos/INDUSTRIAL%20WORK/1000277437.jpg"
-                 alt="PowerNest Electric industrial electrical work photo 6">
-            <div class="gallery-caption">Industrial Electrical Work</div>
+
+        <div
+            class="gallery-item"
+            data-category="residential"
+            onclick="openModal(this)">
+
+            <img
+                src="photos/RESIDENTIAL%20WORK/07.jpg"
+                alt="PowerNest Electric residential electrical work photo 7">
+
+            <div class="gallery-caption">
+                Residential Electrical Work
+            </div>
+
+        </div>
+
+
+        <div
+            class="gallery-item"
+            data-category="residential"
+            onclick="openModal(this)">
+
+            <img
+                src="photos/RESIDENTIAL%20WORK/08.jpg"
+                alt="PowerNest Electric residential electrical work photo 8">
+
+            <div class="gallery-caption">
+                Residential Electrical Work
+            </div>
+
+        </div>
+
+
+        <div
+            class="gallery-item"
+            data-category="residential"
+            onclick="openModal(this)">
+
+            <img
+                src="photos/RESIDENTIAL%20WORK/09.jpg"
+                alt="PowerNest Electric residential electrical work photo 9">
+
+            <div class="gallery-caption">
+                Residential Electrical Work
+            </div>
+
+        </div>
+
+
+        <div
+            class="gallery-item"
+            data-category="residential"
+            onclick="openModal(this)">
+
+            <img
+                src="photos/RESIDENTIAL%20WORK/10.jpg"
+                alt="PowerNest Electric residential electrical work photo 10">
+
+            <div class="gallery-caption">
+                Residential Electrical Work
+            </div>
+
+        </div>
+
+
+        <div
+            class="gallery-item"
+            data-category="residential"
+            onclick="openModal(this)">
+
+            <img
+                src="photos/RESIDENTIAL%20WORK/11.jpg"
+                alt="PowerNest Electric residential electrical work photo 11">
+
+            <div class="gallery-caption">
+                Residential Electrical Work
+            </div>
+
+        </div>
+
+
+        <div
+            class="gallery-item"
+            data-category="residential"
+            onclick="openModal(this)">
+
+            <img
+                src="photos/RESIDENTIAL%20WORK/12.jpg"
+                alt="PowerNest Electric residential electrical work photo 12">
+
+            <div class="gallery-caption">
+                Residential Electrical Work
+            </div>
+
+        </div>
+
+
+        <div
+            class="gallery-item"
+            data-category="residential"
+            onclick="openModal(this)">
+
+            <img
+                src="photos/RESIDENTIAL%20WORK/13.jpg"
+                alt="PowerNest Electric residential electrical work photo 13">
+
+            <div class="gallery-caption">
+                Residential Electrical Work
+            </div>
+
+        </div>
+
+
+        <!-- ==============================
+             INDUSTRIAL WORK
+        =============================== -->
+
+        <div
+            class="gallery-item"
+            data-category="industrial"
+            onclick="openModal(this)">
+
+            <img
+                src="photos/INDUSTRIAL%20WORK/1000277398.jpg"
+                alt="PowerNest Electric industrial electrical work photo 1">
+
+            <div class="gallery-caption">
+                Industrial Electrical Work
+            </div>
+
+        </div>
+
+
+        <div
+            class="gallery-item"
+            data-category="industrial"
+            onclick="openModal(this)">
+
+            <img
+                src="photos/INDUSTRIAL%20WORK/1000277400.jpg"
+                alt="PowerNest Electric industrial electrical work photo 2">
+
+            <div class="gallery-caption">
+                Industrial Electrical Work
+            </div>
+
+        </div>
+
+
+        <div
+            class="gallery-item"
+            data-category="industrial"
+            onclick="openModal(this)">
+
+            <img
+                src="photos/INDUSTRIAL%20WORK/1000277406.jpg"
+                alt="PowerNest Electric industrial electrical work photo 3">
+
+            <div class="gallery-caption">
+                Industrial Electrical Work
+            </div>
+
+        </div>
+
+
+        <div
+            class="gallery-item"
+            data-category="industrial"
+            onclick="openModal(this)">
+
+            <img
+                src="photos/INDUSTRIAL%20WORK/1000277435.jpg"
+                alt="PowerNest Electric industrial electrical work photo 4">
+
+            <div class="gallery-caption">
+                Industrial Electrical Work
+            </div>
+
+        </div>
+
+
+        <div
+            class="gallery-item"
+            data-category="industrial"
+            onclick="openModal(this)">
+
+            <img
+                src="photos/INDUSTRIAL%20WORK/1000277436.jpg"
+                alt="PowerNest Electric industrial electrical work photo 5">
+
+            <div class="gallery-caption">
+                Industrial Electrical Work
+            </div>
+
+        </div>
+
+
+        <div
+            class="gallery-item"
+            data-category="industrial"
+            onclick="openModal(this)">
+
+            <img
+                src="photos/INDUSTRIAL%20WORK/1000277437.jpg"
+                alt="PowerNest Electric industrial electrical work photo 6">
+
+            <div class="gallery-caption">
+                Industrial Electrical Work
+            </div>
+
         </div>
 
     </div>
+
 
     <p class="gallery-hint">
         Click any project photo to view it larger.
     </p>
 
-    <p id="noProjectsMessage" class="gallery-hint" style="display:none;">
+
+    <p
+        id="noProjectsMessage"
+        class="gallery-hint"
+        style="display:none;">
+
         There are no project photos in this category yet.
-        More real projects will be added as PowerNest Electric completes them.
+        More real projects will be added as PowerNest Electric
+        completes them.
+
     </p>
 
 </section>
 
 
+<!-- ==============================
+     IMAGE MODAL
+============================== -->
 
-<!-- IMAGE MODAL -->
+<div
+    class="modal"
+    id="imageModal"
+    onclick="backgroundClose(event)">
 
-<div class="modal" id="imageModal" onclick="backgroundClose(event)">
+    <button
+        type="button"
+        class="close-modal"
+        onclick="closeModal()"
+        aria-label="Close image">
 
-    <span class="close-modal" onclick="closeModal()">
         &times;
-    </span>
 
-    <img id="modalImage" src="" alt="PowerNest Electric project">
+    </button>
+
+    <img
+        id="modalImage"
+        src=""
+        alt="PowerNest Electric project">
 
 </div>
 
 
-<!-- ABOUT -->
+<!-- ==============================
+     ABOUT
+============================== -->
 
-<section class="section section-white" id="about">
+<section
+    class="section section-white"
+    id="about">
 
     <div class="about-container">
 
@@ -1806,7 +2298,9 @@
 
             <div class="about-card">
 
-                <h3>🛡️ Reliable & Safe</h3>
+                <h3>
+                    🛡️ Reliable & Safe
+                </h3>
 
                 <p>
                     We focus on dependable electrical
@@ -1819,7 +2313,9 @@
 
             <div class="about-card">
 
-                <h3>👷 Professional Service</h3>
+                <h3>
+                    👷 Professional Service
+                </h3>
 
                 <p>
                     We are committed to providing
@@ -1832,7 +2328,9 @@
 
             <div class="about-card">
 
-                <h3>⚡ Modern Solutions</h3>
+                <h3>
+                    ⚡ Modern Solutions
+                </h3>
 
                 <p>
                     We provide modern electrical
@@ -1849,7 +2347,9 @@
 </section>
 
 
-<!-- TESTIMONIALS -->
+<!-- ==============================
+     TESTIMONIALS
+============================== -->
 
 <section class="section section-light">
 
@@ -1871,7 +2371,9 @@
 
         <div class="testimonial">
 
-            <div class="stars">★★★★★</div>
+            <div class="stars">
+                ★★★★★
+            </div>
 
             <p>
                 "PowerNest Electric provided
@@ -1888,7 +2390,9 @@
 
                 <div class="customer-details">
 
-                    <strong>John Doe</strong>
+                    <strong>
+                        John Doe
+                    </strong>
 
                     <span>
                         Residential Client
@@ -1903,7 +2407,9 @@
 
         <div class="testimonial">
 
-            <div class="stars">★★★★★</div>
+            <div class="stars">
+                ★★★★★
+            </div>
 
             <p>
                 "The team was responsive,
@@ -1920,7 +2426,9 @@
 
                 <div class="customer-details">
 
-                    <strong>Mary Johnson</strong>
+                    <strong>
+                        Mary Johnson
+                    </strong>
 
                     <span>
                         Business Client
@@ -1935,7 +2443,9 @@
 
         <div class="testimonial">
 
-            <div class="stars">★★★★★</div>
+            <div class="stars">
+                ★★★★★
+            </div>
 
             <p>
                 "A dependable choice for
@@ -1952,7 +2462,9 @@
 
                 <div class="customer-details">
 
-                    <strong>Peter Smith</strong>
+                    <strong>
+                        Peter Smith
+                    </strong>
 
                     <span>
                         Client
@@ -1969,7 +2481,9 @@
 </section>
 
 
-<!-- CTA -->
+<!-- ==============================
+     CTA
+============================== -->
 
 <section class="cta">
 
@@ -1991,9 +2505,13 @@
 </section>
 
 
-<!-- CONTACT -->
+<!-- ==============================
+     CONTACT
+============================== -->
 
-<section class="section section-white" id="contact">
+<section
+    class="section section-white"
+    id="contact">
 
     <div class="section-header">
 
@@ -2030,7 +2548,9 @@
 
             <div class="contact-detail">
 
-                <strong>📧 Email</strong>
+                <strong>
+                    📧 Email
+                </strong>
 
                 <br>
 
@@ -2043,7 +2563,9 @@
 
             <div class="contact-detail">
 
-                <strong>📞 Phone</strong>
+                <strong>
+                    📞 Phone
+                </strong>
 
                 <br>
 
@@ -2056,7 +2578,9 @@
 
             <div class="contact-detail">
 
-                <strong>💬 WhatsApp</strong>
+                <strong>
+                    💬 WhatsApp
+                </strong>
 
                 <br>
 
@@ -2100,7 +2624,7 @@
         </div>
 
 
-        <!-- REQUEST A QUOTE FORM -->
+        <!-- REQUEST QUOTE FORM -->
 
         <div class="contact-form">
 
@@ -2109,16 +2633,15 @@
             </h3>
 
             <p style="margin-bottom:20px;color:#555;">
+
                 Fill out the form below and send your
                 request directly to PowerNest Electric
                 through WhatsApp.
+
             </p>
 
 
             <form id="quoteForm">
-
-
-                <!-- NAME -->
 
                 <div class="form-group">
 
@@ -2136,8 +2659,6 @@
                 </div>
 
 
-                <!-- PHONE -->
-
                 <div class="form-group">
 
                     <label for="phone">
@@ -2154,8 +2675,6 @@
                 </div>
 
 
-                <!-- EMAIL -->
-
                 <div class="form-group">
 
                     <label for="email">
@@ -2170,8 +2689,6 @@
 
                 </div>
 
-
-                <!-- SERVICE -->
 
                 <div class="form-group">
 
@@ -2218,8 +2735,6 @@
                 </div>
 
 
-                <!-- LOCATION -->
-
                 <div class="form-group">
 
                     <label for="location">
@@ -2235,8 +2750,6 @@
                 </div>
 
 
-                <!-- DESCRIPTION -->
-
                 <div class="form-group">
 
                     <label for="message">
@@ -2250,8 +2763,6 @@
 
                 </div>
 
-
-                <!-- WHATSAPP BUTTON -->
 
                 <button
                     type="submit"
@@ -2270,7 +2781,9 @@
 </section>
 
 
-<!-- FOOTER -->
+<!-- ==============================
+     FOOTER
+============================== -->
 
 <footer>
 
@@ -2304,13 +2817,10 @@
             </h3>
 
             <a href="#home">Home</a>
-
+            <a href="#company">Company</a>
             <a href="#services">Services</a>
-
             <a href="#projects">Projects</a>
-
             <a href="#about">About</a>
-
             <a href="#contact">Contact</a>
 
         </div>
@@ -2332,7 +2842,8 @@
 
             <a
                 href="https://wa.me/231880947513"
-                target="_blank">
+                target="_blank"
+                rel="noopener noreferrer">
 
                 💬 WhatsApp
 
@@ -2340,7 +2851,8 @@
 
             <a
                 href="https://www.facebook.com/profile.php?id=61576923520194"
-                target="_blank">
+                target="_blank"
+                rel="noopener noreferrer">
 
                 📘 Facebook
 
@@ -2367,7 +2879,9 @@
 </footer>
 
 
-<!-- FLOATING WHATSAPP -->
+<!-- ==============================
+     FLOATING WHATSAPP
+============================== -->
 
 <a
     href="https://wa.me/231880947513"
@@ -2381,224 +2895,323 @@
 </a>
 
 
-<!-- BACK TO TOP -->
+<!-- ==============================
+     BACK TO TOP
+============================== -->
 
 <a
     href="#home"
     class="back-to-top"
-    id="backToTop">
+    id="backToTop"
+    aria-label="Back to top">
 
     ↑
 
 </a>
 
 
+<!-- ==============================
+     JAVASCRIPT
+============================== -->
+
 <script>
 
-/* MOBILE MENU */
+    /* ==============================
+       MOBILE MENU
+    ============================== */
 
-const menuToggle =
-    document.getElementById("menuToggle");
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
 
-const navLinks =
-    document.getElementById("navLinks");
+    if (menuToggle && navLinks) {
 
-menuToggle.addEventListener("click", function() {
+        menuToggle.addEventListener("click", function () {
 
-    navLinks.classList.toggle("active");
+            navLinks.classList.toggle("active");
 
-    const isOpen =
-        navLinks.classList.contains("active");
+            const isOpen =
+                navLinks.classList.contains("active");
 
-    menuToggle.innerHTML =
-        isOpen ? "✕" : "☰";
+            menuToggle.innerHTML =
+                isOpen ? "✕" : "☰";
 
-});
+            menuToggle.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
 
-
-/* CLOSE MOBILE MENU */
-
-document.querySelectorAll(".nav-links a")
-.forEach(function(link) {
-
-    link.addEventListener("click", function() {
-
-        navLinks.classList.remove("active");
-
-        menuToggle.innerHTML = "☰";
-
-    });
-
-});
+        });
 
 
-/* IMAGE MODAL */
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(function (link) {
 
-function openModal(element) {
+                link.addEventListener("click", function () {
 
-    const image =
-        element.querySelector("img");
+                    navLinks.classList.remove("active");
 
-    const modal =
-        document.getElementById("imageModal");
+                    menuToggle.innerHTML = "☰";
 
-    const modalImage =
-        document.getElementById("modalImage");
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
 
-    modalImage.src = image.src;
+                });
 
-    modalImage.alt = image.alt;
-
-    modal.classList.add("show");
-
-    document.body.style.overflow = "hidden";
-
-}
-
-
-function closeModal() {
-
-    const modal =
-        document.getElementById("imageModal");
-
-    modal.classList.remove("show");
-
-    document.body.style.overflow = "";
-
-}
-
-
-function backgroundClose(event) {
-
-    if (event.target.id === "imageModal") {
-
-        closeModal();
+            });
 
     }
 
-}
 
+    /* ==============================
+       IMAGE MODAL
+    ============================== */
 
-document.addEventListener("keydown", function(event) {
+    function openModal(element) {
 
-    if (event.key === "Escape") {
-
-        closeModal();
-
-    }
-
-});
-
-
-
-
-/* =====================================================
-   PROJECT CATEGORY FILTER
-===================================================== */
-
-const filterButtons =
-    document.querySelectorAll(".filter-button");
-
-const projectItems =
-    document.querySelectorAll("#projectGallery .gallery-item");
-
-const noProjectsMessage =
-    document.getElementById("noProjectsMessage");
-
-filterButtons.forEach(function(button) {
-
-    button.addEventListener("click", function() {
-
-        const filter =
-            button.getAttribute("data-filter");
-
-        filterButtons.forEach(function(btn) {
-            btn.classList.remove("active");
-        });
-
-        button.classList.add("active");
-
-        let visibleCount = 0;
-
-        projectItems.forEach(function(item) {
-
-            const category =
-                item.getAttribute("data-category");
-
-            if (filter === "all" || category === filter) {
-                item.classList.remove("hidden");
-                visibleCount++;
-            } else {
-                item.classList.add("hidden");
-            }
-        });
-
-        if (noProjectsMessage) {
-            noProjectsMessage.style.display =
-                visibleCount === 0 ? "block" : "none";
+        if (!element) {
+            return;
         }
-    });
-});
+
+        const image =
+            element.querySelector("img");
+
+        const modal =
+            document.getElementById("imageModal");
+
+        const modalImage =
+            document.getElementById("modalImage");
 
 
+        if (!image || !modal || !modalImage) {
+            return;
+        }
 
-/* BACK TO TOP */
 
-const backToTop =
-    document.getElementById("backToTop");
+        modalImage.src = image.src;
+        modalImage.alt = image.alt || "PowerNest Electric project";
 
-window.addEventListener("scroll", function() {
+        modal.classList.add("show");
 
-    if (window.scrollY > 500) {
-
-        backToTop.classList.add("show");
-
-    } else {
-
-        backToTop.classList.remove("show");
+        document.body.style.overflow = "hidden";
 
     }
 
-});
+
+    function closeModal() {
+
+        const modal =
+            document.getElementById("imageModal");
+
+        const modalImage =
+            document.getElementById("modalImage");
+
+        if (!modal) {
+            return;
+        }
+
+        modal.classList.remove("show");
+
+        document.body.style.overflow = "";
+
+        if (modalImage) {
+            modalImage.src = "";
+        }
+
+    }
 
 
-/* =====================================================
-   WHATSAPP QUOTE REQUEST
-===================================================== */
+    function backgroundClose(event) {
 
-const quoteForm =
-    document.getElementById("quoteForm");
+        if (event.target.id === "imageModal") {
+            closeModal();
+        }
 
-
-quoteForm.addEventListener("submit", function(event) {
-
-    event.preventDefault();
+    }
 
 
-    /* Get customer information */
+    /* ==============================
+       ESCAPE KEY CLOSES MODAL
+    ============================== */
 
-    const name =
-        document.getElementById("name").value.trim();
+    document.addEventListener(
+        "keydown",
+        function (event) {
 
-    const phone =
-        document.getElementById("phone").value.trim();
+            if (event.key === "Escape") {
+                closeModal();
+            }
 
-    const email =
-        document.getElementById("email").value.trim();
-
-    const service =
-        document.getElementById("service").value;
-
-    const location =
-        document.getElementById("location").value.trim();
-
-    const message =
-        document.getElementById("message").value.trim();
+        }
+    );
 
 
-    /* Create WhatsApp message */
+    /* ==============================
+       PROJECT CATEGORY FILTER
+    ============================== */
 
-    const whatsappMessage =
+    const filterButtons =
+        document.querySelectorAll(".filter-button");
+
+    const projectItems =
+        document.querySelectorAll(
+            "#projectGallery .gallery-item"
+        );
+
+    const noProjectsMessage =
+        document.getElementById("noProjectsMessage");
+
+
+    filterButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const filter =
+                button.getAttribute("data-filter");
+
+
+            filterButtons.forEach(function (btn) {
+
+                btn.classList.remove("active");
+
+            });
+
+
+            button.classList.add("active");
+
+
+            let visibleCount = 0;
+
+
+            projectItems.forEach(function (item) {
+
+                const category =
+                    item.getAttribute("data-category");
+
+
+                if (
+                    filter === "all" ||
+                    category === filter
+                ) {
+
+                    item.classList.remove("hidden");
+
+                    visibleCount++;
+
+                } else {
+
+                    item.classList.add("hidden");
+
+                }
+
+            });
+
+
+            if (noProjectsMessage) {
+
+                noProjectsMessage.style.display =
+                    visibleCount === 0
+                        ? "block"
+                        : "none";
+
+            }
+
+        });
+
+    });
+
+
+    /* ==============================
+       BACK TO TOP
+    ============================== */
+
+    const backToTop =
+        document.getElementById("backToTop");
+
+
+    if (backToTop) {
+
+        window.addEventListener(
+            "scroll",
+            function () {
+
+                if (window.scrollY > 500) {
+
+                    backToTop.classList.add("show");
+
+                } else {
+
+                    backToTop.classList.remove("show");
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* ==============================
+       WHATSAPP QUOTE REQUEST
+    ============================== */
+
+    const quoteForm =
+        document.getElementById("quoteForm");
+
+
+    if (quoteForm) {
+
+        quoteForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document
+                        .getElementById("name")
+                        .value
+                        .trim();
+
+
+                const phone =
+                    document
+                        .getElementById("phone")
+                        .value
+                        .trim();
+
+
+                const email =
+                    document
+                        .getElementById("email")
+                        .value
+                        .trim();
+
+
+                const service =
+                    document
+                        .getElementById("service")
+                        .value;
+
+
+                const location =
+                    document
+                        .getElementById("location")
+                        .value
+                        .trim();
+
+
+                const message =
+                    document
+                        .getElementById("message")
+                        .value
+                        .trim();
+
+
+                const whatsappMessage =
 `Hello PowerNest Electric,
 
 I would like to request a quote.
@@ -2621,29 +3234,29 @@ ${message}
 Thank you.`;
 
 
-    /* WhatsApp number */
-
-    const whatsappNumber =
-        "231880947513";
+                const whatsappNumber =
+                    "231880947513";
 
 
-    /* Create WhatsApp URL */
+                const whatsappURL =
+                    "https://wa.me/" +
+                    whatsappNumber +
+                    "?text=" +
+                    encodeURIComponent(
+                        whatsappMessage
+                    );
 
-    const whatsappURL =
-        "https://wa.me/" +
-        whatsappNumber +
-        "?text=" +
-        encodeURIComponent(whatsappMessage);
 
+                window.open(
+                    whatsappURL,
+                    "_blank",
+                    "noopener,noreferrer"
+                );
 
-    /* Open WhatsApp */
+            }
+        );
 
-    window.open(
-        whatsappURL,
-        "_blank"
-    );
-
-});
+    }
 
 </script>
 
