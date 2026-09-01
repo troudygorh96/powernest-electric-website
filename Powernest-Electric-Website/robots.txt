@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://troudygorh96.github.io/powernest-electric-website/sitemap.xml
