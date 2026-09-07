@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="PowerNest Electric administration dashboard.">
+
+    <meta name="robots"
+          content="noindex, nofollow">
+
+    <title>Admin Dashboard | PowerNest Electric</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+
+<body class="admin-page">
+
+
+<!-- =========================================================
+     ADMIN HEADER
+========================================================== -->
+
+<header class="admin-header">
+
+    <div class="admin-header-container">
+
+        <a href="index.html"
+           class="admin-brand">
+
+            <img
+                src="logo.png"
+                alt="PowerNest Electric Logo">
+
+            <span>
+                PowerNest Electric
+            </span>
+
+        </a>
+
+
+        <div class="admin-header-right">
+
+            <span
+                id="adminUserLabel"
+                class="admin-user-label">
+
+                Admin
+
+            </span>
+
+
+            <button
+                type="button"
+                id="logoutButton"
+                class="admin-logout-button">
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     LOGIN SCREEN
+========================================================== -->
+
+<section
+    id="loginSection"
+    class="admin-login-section">
+
+    <div class="admin-login-card">
+
+
+        <div class="admin-login-logo">
+
+            <img
+                src="logo.png"
+                alt="PowerNest Electric Logo">
+
+        </div>
+
+
+        <h1>
+            Admin Login
+        </h1>
+
+
+        <p class="admin-login-intro">
+
+            Sign in to manage PowerNest Electric
+            blog articles.
+
+        </p>
+
+
+        <form id="adminLoginForm">
+
+
+            <div class="admin-form-group">
+
+                <label for="adminUsername">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="adminUsername"
+                    name="username"
+                    placeholder="Enter username"
+                    autocomplete="username"
+                    required>
+
+            </div>
+
+
+
+            <div class="admin-form-group">
+
+                <label for="adminPassword">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="adminPassword"
+                    name="password"
+                    placeholder="Enter password"
+                    autocomplete="current-password"
+                    required>
+
+            </div>
+
+
+
+            <button
+                type="submit"
+                class="admin-login-button">
+
+                🔐 Login
+
+            </button>
+
+
+            <p
+                id="loginMessage"
+                class="admin-login-message"
+                role="alert">
+
+            </p>
+
+        </form>
+
+
+        <div class="admin-login-note">
+
+            <strong>
+                Administration area
+            </strong>
+
+            <p>
+                This dashboard is intended for
+                PowerNest Electric website management.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     DASHBOARD
+========================================================== -->
+
+<main
+    id="dashboardSection"
+    class="admin-dashboard"
+    style="display:none;">
+
+
+
+    <!-- =====================================================
+         DASHBOARD INTRO
+    ====================================================== -->
+
+    <section class="admin-dashboard-intro">
+
+        <div>
+
+            <p class="admin-eyebrow">
+                POWERNEST ELECTRIC
+            </p>
+
+
+            <h1>
+                Blog Administration
+            </h1>
+
+
+            <p>
+                Create, edit, publish and remove
+                PowerNest Electric blog articles.
+            </p>
+
+        </div>
+
+
+        <div class="admin-dashboard-actions">
+
+            <a
+                href="blog.html"
+                target="_blank"
+                class="admin-secondary-button">
+
+                View Blog
+
+            </a>
+
+
+            <button
+                type="button"
+                id="newArticleButton"
+                class="admin-primary-button">
+
+                + New Article
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         DASHBOARD STATS
+    ====================================================== -->
+
+    <section class="admin-stats">
+
+
+        <div class="admin-stat-card">
+
+            <span class="admin-stat-icon">
+                📰
+            </span>
+
+            <span
+                id="totalArticles"
+                class="admin-stat-number">
+
+                0
+
+            </span>
+
+            <span class="admin-stat-label">
+                Total Articles
+            </span>
+
+        </div>
+
+
+
+        <div class="admin-stat-card">
+
+            <span class="admin-stat-icon">
+                ✅
+            </span>
+
+            <span
+                id="publishedArticles"
+                class="admin-stat-number">
+
+                0
+
+            </span>
+
+            <span class="admin-stat-label">
+                Published
+            </span>
+
+        </div>
+
+
+
+        <div class="admin-stat-card">
+
+            <span class="admin-stat-icon">
+                📝
+            </span>
+
+            <span
+                id="draftArticles"
+                class="admin-stat-number">
+
+                0
+
+            </span>
+
+            <span class="admin-stat-label">
+                Drafts
+            </span>
+
+        </div>
+
+
+
+        <div class="admin-stat-card">
+
+            <span class="admin-stat-icon">
+                📅
+            </span>
+
+            <span
+                id="latestArticleDate"
+                class="admin-stat-number admin-date-stat">
+
+                —
+
+            </span>
+
+            <span class="admin-stat-label">
+                Latest Article
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ARTICLE EDITOR
+    ====================================================== -->
+
+    <section
+        id="articleEditorSection"
+        class="admin-editor-section"
+        style="display:none;">
+
+
+        <div class="admin-section-heading">
+
+            <div>
+
+                <p class="admin-eyebrow">
+                    ARTICLE EDITOR
+                </p>
+
+                <h2 id="editorHeading">
+                    Create New Article
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="cancelEditorButton"
+                class="admin-close-button"
+                aria-label="Close article editor">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+
+        <form id="articleForm"
+              class="admin-article-form">
+
+
+            <!-- ARTICLE ID -->
+
+            <input
+                type="hidden"
+                id="articleId">
+
+
+
+            <!-- TITLE -->
+
+            <div class="admin-form-group">
+
+                <label for="articleTitleInput">
+                    Article Title *
+                </label>
+
+                <input
+                    type="text"
+                    id="articleTitleInput"
+                    placeholder="Enter article title"
+                    required>
+
+            </div>
+
+
+
+            <!-- CATEGORY -->
+
+            <div class="admin-form-row">
+
+
+                <div class="admin-form-group">
+
+                    <label for="articleCategoryInput">
+                        Category *
+                    </label>
+
+                    <select
+                        id="articleCategoryInput"
+                        required>
+
+                        <option value="">
+                            Select category
+                        </option>
+
+                        <option value="Electrical Safety">
+                            Electrical Safety
+                        </option>
+
+                        <option value="Maintenance">
+                            Maintenance
+                        </option>
+
+                        <option value="Installation">
+                            Installation
+                        </option>
+
+                        <option value="Wiring">
+                            Wiring
+                        </option>
+
+                        <option value="Solar & Energy">
+                            Solar & Energy
+                        </option>
+
+                        <option value="Projects">
+                            Projects
+                        </option>
+
+                        <option value="Company News">
+                            Company News
+                        </option>
+
+                        <option value="General">
+                            General
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- DATE -->
+
+                <div class="admin-form-group">
+
+                    <label for="articleDateInput">
+                        Publication Date *
+                    </label>
+
+                    <input
+                        type="date"
+                        id="articleDateInput"
+                        required>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- AUTHOR -->
+
+            <div class="admin-form-group">
+
+                <label for="articleAuthorInput">
+                    Author
+                </label>
+
+                <input
+                    type="text"
+                    id="articleAuthorInput"
+                    value="PowerNest Electric"
+                    placeholder="Author name">
+
+            </div>
+
+
+
+            <!-- IMAGE -->
+
+            <div class="admin-form-group">
+
+                <label for="articleImageInput">
+                    Featured Image
+                </label>
+
+                <input
+                    type="text"
+                    id="articleImageInput"
+                    placeholder="Example: photos/RESIDENTIAL%20WORK/01.jpg">
+
+                <small>
+                    Enter the path of an existing image
+                    in your website project.
+                </small>
+
+            </div>
+
+
+
+            <!-- EXCERPT -->
+
+            <div class="admin-form-group">
+
+                <label for="articleExcerptInput">
+                    Short Description *
+                </label>
+
+                <textarea
+                    id="articleExcerptInput"
+                    rows="4"
+                    placeholder="Write a short description for the blog listing..."
+                    required></textarea>
+
+            </div>
+
+
+
+            <!-- CONTENT -->
+
+            <div class="admin-form-group">
+
+                <label for="articleContentInput">
+                    Full Article *
+                </label>
+
+                <textarea
+                    id="articleContentInput"
+                    rows="16"
+                    placeholder="Write the full article here..."
+                    required></textarea>
+
+                <small>
+                    You can use simple HTML such as
+                    &lt;p&gt;, &lt;h2&gt;, &lt;strong&gt;,
+                    &lt;ul&gt; and &lt;li&gt;.
+                </small>
+
+            </div>
+
+
+
+            <!-- STATUS -->
+
+            <div class="admin-form-group">
+
+                <label for="articleStatusInput">
+                    Article Status
+                </label>
+
+                <select id="articleStatusInput">
+
+                    <option value="published">
+                        Published
+                    </option>
+
+                    <option value="draft">
+                        Draft
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- FORM BUTTONS -->
+
+            <div class="admin-editor-buttons">
+
+
+                <button
+                    type="submit"
+                    class="admin-primary-button">
+
+                    💾 Save Article
+
+                </button>
+
+
+                <button
+                    type="button"
+                    id="cancelArticleButton"
+                    class="admin-secondary-button">
+
+                    Cancel
+
+                </button>
+
+            </div>
+
+
+            <p
+                id="editorMessage"
+                class="admin-editor-message"
+                role="status">
+
+            </p>
+
+        </form>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ARTICLE MANAGEMENT
+    ====================================================== -->
+
+    <section class="admin-articles-section">
+
+
+        <div class="admin-section-heading">
+
+
+            <div>
+
+                <p class="admin-eyebrow">
+                    CONTENT MANAGEMENT
+                </p>
+
+                <h2>
+                    Blog Articles
+                </h2>
+
+                <p>
+                    Manage your existing articles below.
+                </p>
+
+            </div>
+
+
+            <div class="admin-filter-area">
+
+                <label
+                    for="articleFilter"
+                    class="sr-only">
+
+                    Filter articles
+
+                </label>
+
+                <select id="articleFilter">
+
+                    <option value="all">
+                        All Articles
+                    </option>
+
+                    <option value="published">
+                        Published
+                    </option>
+
+                    <option value="draft">
+                        Drafts
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ARTICLE TABLE -->
+
+        <div class="admin-table-wrapper">
+
+            <table class="admin-article-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Article
+                        </th>
+
+                        <th>
+                            Category
+                        </th>
+
+                        <th>
+                            Date
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Actions
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="adminArticlesTable">
+
+                    <tr>
+
+                        <td
+                            colspan="5"
+                            class="admin-empty-state">
+
+                            No articles found.
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ADMIN INFORMATION
+    ====================================================== -->
+
+    <section class="admin-info-section">
+
+
+        <div class="admin-info-card">
+
+            <div class="admin-info-icon">
+                🔐
+            </div>
+
+            <div>
+
+                <h3>
+                    Website Administration
+                </h3>
+
+                <p>
+                    This dashboard allows you to manage
+                    blog content without editing the
+                    blog page manually.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="admin-info-card">
+
+            <div class="admin-info-icon">
+                💡
+            </div>
+
+            <div>
+
+                <h3>
+                    About Security
+                </h3>
+
+                <p>
+                    The current dashboard is a browser-based
+                    development system. Before publishing
+                    the website publicly, replace the demo
+                    authentication with secure server-side
+                    authentication and a database.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="admin-info-card">
+
+            <div class="admin-info-icon">
+                📱
+            </div>
+
+            <div>
+
+                <h3>
+                    Blog Workflow
+                </h3>
+
+                <p>
+                    Create an article here, save it,
+                    then open the Blog page to see the
+                    published article.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================================================
+     DELETE CONFIRMATION MODAL
+========================================================== -->
+
+<div
+    id="deleteModal"
+    class="admin-modal"
+    style="display:none;">
+
+    <div class="admin-modal-box">
+
+
+        <button
+            type="button"
+            id="closeDeleteModal"
+            class="admin-modal-close"
+            aria-label="Close">
+
+            ×
+
+        </button>
+
+
+        <div class="admin-modal-icon">
+            ⚠️
+        </div>
+
+
+        <h2>
+            Delete Article?
+        </h2>
+
+
+        <p>
+            Are you sure you want to delete this
+            article? This action cannot be undone.
+        </p>
+
+
+        <div class="admin-modal-buttons">
+
+
+            <button
+                type="button"
+                id="confirmDeleteButton"
+                class="admin-danger-button">
+
+                Delete Article
+
+            </button>
+
+
+            <button
+                type="button"
+                id="cancelDeleteButton"
+                class="admin-secondary-button">
+
+                Cancel
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================== -->
+
+<footer class="admin-footer">
+
+    <p>
+        © 2025 PowerNest Electric.
+        All Rights Reserved.
+    </p>
+
+    <p>
+        Future is Bright. So We Are.
+    </p>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================== -->
+
+<script src="js/admin.js"></script>
+
+
+</body>
+
+</html>
