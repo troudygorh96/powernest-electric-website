@@ -1,961 +1,1926 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="PowerNest Electric provides residential, commercial and industrial electrical services, installation, wiring, maintenance, repairs, solar and energy solutions in Liberia.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Services | PowerNest Electric</title>
 
-    <link rel="stylesheet"
-          href="css/style.css">
+    <style>
 
+        /* =====================================================
+           POWERNEST ELECTRIC - SERVICES PAGE
+           ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fa;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        /* =====================================================
+           HEADER
+           ===================================================== */
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #0b1f3a;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .header-container {
+            width: min(1180px, 92%);
+            min-height: 82px;
+            margin: 0 auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+
+        /* LOGO */
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+        }
+
+        .site-logo {
+            width: 72px;
+            height: 72px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            background: #ffffff;
+
+            border: 3px solid #ffffff;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.18);
+        }
+
+
+        /* NAVIGATION */
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links a {
+            padding: 11px 17px;
+
+            border-radius: 9px;
+
+            color: #ffffff;
+
+            font-size: 15px;
+            font-weight: 700;
+
+            transition:
+                background 0.25s ease,
+                color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: #f5a623;
+        }
+
+        .nav-links a.active {
+            background: #f5a623;
+            color: #0b1f3a;
+        }
+
+        .nav-links a.active:hover {
+            background: #f5a623;
+            color: #0b1f3a;
+            transform: translateY(-1px);
+        }
+
+
+        /* MOBILE MENU BUTTON */
+
+        .menu-toggle {
+            display: none;
+
+            border: 0;
+            background: transparent;
+
+            color: #ffffff;
+
+            font-size: 30px;
+
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           PAGE HERO
+           ===================================================== */
+
+        .services-hero {
+            position: relative;
+
+            padding: 90px 20px 95px;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    rgba(11, 31, 58, 0.94),
+                    rgba(11, 31, 58, 0.94)
+                );
+        }
+
+        .services-hero::before {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(245, 166, 35, 0.10),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 80% 70%,
+                    rgba(245, 166, 35, 0.08),
+                    transparent 35%
+                );
+
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+
+            width: min(850px, 92%);
+
+            margin: 0 auto;
+
+            text-align: center;
+
+            color: #ffffff;
+        }
+
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+
+            margin-bottom: 15px;
+
+            color: #f5a623;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+        .hero-label::before,
+        .hero-label::after {
+            content: "";
+
+            width: 45px;
+            height: 2px;
+
+            background: #f5a623;
+        }
+
+        .hero-content h1 {
+            margin-bottom: 16px;
+
+            font-size: clamp(38px, 5vw, 58px);
+
+            line-height: 1.1;
+
+            font-weight: 800;
+        }
+
+        .hero-content p {
+            max-width: 760px;
+
+            margin: 0 auto;
+
+            color: #dce4ef;
+
+            font-size: 18px;
+        }
+
+
+        /* =====================================================
+           SERVICES SECTION
+           ===================================================== */
+
+        .services-section {
+            padding: 80px 20px 95px;
+
+            background: #f5f7fa;
+        }
+
+        .content-container {
+            width: min(1180px, 92%);
+
+            margin: 0 auto;
+        }
+
+
+        /* SECTION HEADING */
+
+        .section-heading {
+            max-width: 760px;
+
+            margin: 0 auto 50px;
+
+            text-align: center;
+        }
+
+        .section-heading-label {
+            display: inline-block;
+
+            margin-bottom: 10px;
+
+            color: #f5a623;
+
+            font-size: 13px;
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            margin-bottom: 12px;
+
+            color: #0b1f3a;
+
+            font-size: 38px;
+
+            line-height: 1.2;
+        }
+
+        .section-heading p {
+            color: #667085;
+
+            font-size: 17px;
+        }
+
+
+        /* =====================================================
+           SERVICE GRID
+           ===================================================== */
+
+        .service-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 24px;
+        }
+
+
+        /* SERVICE CARD */
+
+        .service-card {
+            position: relative;
+
+            display: flex;
+            flex-direction: column;
+
+            min-height: 100%;
+
+            padding: 30px;
+
+            border: 1px solid #e3e8ef;
+
+            border-radius: 14px;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 8px 25px rgba(11, 31, 58, 0.055);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+
+            border-color: rgba(245, 166, 35, 0.35);
+
+            box-shadow:
+                0 18px 40px rgba(11, 31, 58, 0.12);
+        }
+
+
+        /* ICON */
+
+        .service-icon {
+            width: 64px;
+            height: 64px;
+
+            margin-bottom: 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #fff2d8;
+
+            font-size: 32px;
+
+            box-shadow:
+                inset 0 0 0 1px rgba(245, 166, 35, 0.12);
+        }
+
+
+        /* CARD TITLE */
+
+        .service-card h3 {
+            margin-bottom: 11px;
+
+            color: #0b1f3a;
+
+            font-size: 21px;
+
+            line-height: 1.3;
+        }
+
+
+        /* CARD DESCRIPTION */
+
+        .service-card > p {
+            margin-bottom: 17px;
+
+            color: #596579;
+
+            font-size: 15px;
+
+            line-height: 1.65;
+        }
+
+
+        /* SERVICE LIST */
+
+        .service-list {
+            margin: 0 0 24px;
+
+            padding: 0;
+
+            list-style: none;
+        }
+
+        .service-list li {
+            position: relative;
+
+            margin-bottom: 8px;
+
+            padding-left: 18px;
+
+            color: #536176;
+
+            font-size: 14px;
+        }
+
+        .service-list li::before {
+            content: "";
+
+            position: absolute;
+
+            top: 9px;
+            left: 0;
+
+            width: 6px;
+            height: 6px;
+
+            border-radius: 50%;
+
+            background: #f5a623;
+        }
+
+
+        /* CARD BUTTON */
+
+        .service-button {
+            margin-top: auto;
+
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 10px;
+
+            width: fit-content;
+
+            min-height: 46px;
+
+            padding: 11px 19px;
+
+            border-radius: 9px;
+
+            background: #f5a623;
+
+            color: #0b1f3a;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            transition:
+                background 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .service-button span {
+            font-size: 18px;
+
+            transition: transform 0.25s ease;
+        }
+
+        .service-button:hover {
+            background: #0b1f3a;
+
+            color: #ffffff;
+
+            transform: translateY(-2px);
+        }
+
+        .service-button:hover span {
+            transform: translateX(4px);
+        }
+
+
+        /* =====================================================
+           OUR APPROACH
+           ===================================================== */
+
+        .approach-section {
+            padding: 90px 20px;
+
+            background: #ffffff;
+        }
+
+        .approach-heading {
+            max-width: 780px;
+
+            margin: 0 auto 60px;
+
+            text-align: center;
+        }
+
+        .approach-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+
+            margin-bottom: 13px;
+
+            color: #f5a623;
+
+            font-size: 13px;
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+        .approach-label::before,
+        .approach-label::after {
+            content: "";
+
+            width: 45px;
+            height: 2px;
+
+            background: #f5a623;
+        }
+
+        .approach-heading h2 {
+            margin-bottom: 14px;
+
+            color: #0b1f3a;
+
+            font-size: 38px;
+
+            line-height: 1.2;
+        }
+
+        .approach-heading p {
+            color: #667085;
+
+            font-size: 17px;
+        }
+
+
+        /* APPROACH GRID */
+
+        .approach-grid {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 30px;
+        }
+
+
+        /* APPROACH ITEM */
+
+        .approach-item {
+            position: relative;
+
+            text-align: center;
+        }
+
+        .approach-icon {
+            position: relative;
+
+            width: 76px;
+            height: 76px;
+
+            margin: 0 auto 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #ffffff;
+
+            border: 1px solid #e5eaf0;
+
+            box-shadow:
+                0 10px 25px rgba(11, 31, 58, 0.09);
+
+            font-size: 31px;
+        }
+
+        .approach-number {
+            position: absolute;
+
+            right: -5px;
+            bottom: -6px;
+
+            width: 27px;
+            height: 27px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #f5a623;
+
+            color: #0b1f3a;
+
+            font-size: 11px;
+            font-weight: 900;
+        }
+
+        .approach-item h3 {
+            margin-bottom: 9px;
+
+            color: #0b1f3a;
+
+            font-size: 18px;
+        }
+
+        .approach-item p {
+            color: #667085;
+
+            font-size: 14px;
+
+            line-height: 1.65;
+        }
+
+
+        /* ARROWS */
+
+        .approach-item:not(:last-child)::after {
+            content: "→";
+
+            position: absolute;
+
+            top: 27px;
+            right: -27px;
+
+            color: #f5a623;
+
+            font-size: 25px;
+            font-weight: 400;
+        }
+
+
+        /* =====================================================
+           CTA
+           ===================================================== */
+
+        .cta-section {
+            padding: 75px 20px;
+
+            background: #f5a623;
+
+            color: #0b1f3a;
+
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 12px;
+
+            font-size: 38px;
+
+            line-height: 1.2;
+        }
+
+        .cta-section p {
+            max-width: 700px;
+
+            margin: 0 auto 25px;
+
+            font-size: 17px;
+        }
+
+        .cta-button {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            min-height: 48px;
+
+            padding: 12px 23px;
+
+            border-radius: 9px;
+
+            background: #0b1f3a;
+
+            color: #ffffff;
+
+            font-weight: 800;
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+
+            background: #071629;
+        }
+
+
+        /* =====================================================
+           FOOTER
+           ===================================================== */
+
+        .site-footer {
+            background: #071629;
+
+            color: #ffffff;
+        }
+
+        .footer-container {
+            width: min(1180px, 92%);
+
+            margin: 0 auto;
+
+            padding: 55px 0 35px;
+
+            display: grid;
+
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+
+            gap: 40px;
+        }
+
+        .footer-logo {
+            width: 75px;
+            height: 75px;
+
+            margin-bottom: 15px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            background: #ffffff;
+
+            border: 3px solid #ffffff;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 15px;
+
+            color: #f5a623;
+
+            font-size: 17px;
+        }
+
+        .footer-column p {
+            margin-bottom: 9px;
+
+            color: #b9c4d3;
+
+            font-size: 14px;
+        }
+
+        .footer-column a {
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: #b9c4d3;
+
+            font-size: 14px;
+
+            transition: color 0.2s ease;
+        }
+
+        .footer-column a:hover {
+            color: #f5a623;
+        }
+
+        .footer-bottom {
+            padding: 18px 20px;
+
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            margin: 3px 0;
+
+            color: #9ca8b8;
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           FLOATING WHATSAPP
+           ===================================================== */
+
+        .floating-whatsapp {
+            position: fixed;
+
+            right: 22px;
+            bottom: 22px;
+
+            z-index: 900;
+
+            width: 56px;
+            height: 56px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #25D366;
+
+            color: #ffffff;
+
+            font-size: 27px;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.20);
+
+            transition:
+                transform 0.25s ease;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.08);
+        }
+
+
+        /* =====================================================
+           BACK TO TOP
+           ===================================================== */
+
+        .back-to-top {
+            position: fixed;
+
+            right: 22px;
+            bottom: 90px;
+
+            z-index: 899;
+
+            width: 44px;
+            height: 44px;
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #0b1f3a;
+
+            color: #ffffff;
+
+            font-size: 21px;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.20);
+
+            cursor: pointer;
+        }
+
+        .back-to-top.show {
+            display: flex;
+        }
+
+
+        /* =====================================================
+           TABLET
+           ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .header-container {
+                width: 94%;
+            }
+
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .approach-grid {
+                grid-template-columns: repeat(2, 1fr);
+
+                row-gap: 55px;
+            }
+
+            .approach-item::after {
+                display: none;
+            }
+
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        /* =====================================================
+           MOBILE
+           ===================================================== */
+
+        @media (max-width: 700px) {
+
+            .header-container {
+                min-height: 72px;
+            }
+
+            .site-logo {
+                width: 58px;
+                height: 58px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+
+                top: 72px;
+                left: 0;
+                right: 0;
+
+                display: none;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 4px;
+
+                padding: 10px 5% 15px;
+
+                background: #0b1f3a;
+
+                box-shadow:
+                    0 12px 25px rgba(0, 0, 0, 0.15);
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 13px;
+
+                text-align: center;
+            }
+
+
+            /* HERO */
+
+            .services-hero {
+                padding: 70px 20px 75px;
+            }
+
+            .hero-content h1 {
+                font-size: 39px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+
+            /* SERVICES */
+
+            .services-section {
+                padding: 60px 20px 70px;
+            }
+
+            .section-heading {
+                margin-bottom: 35px;
+            }
+
+            .section-heading h2 {
+                font-size: 30px;
+            }
+
+            .section-heading p {
+                font-size: 16px;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+
+                gap: 18px;
+            }
+
+            .service-card {
+                padding: 25px;
+            }
+
+
+            /* APPROACH */
+
+            .approach-section {
+                padding: 65px 20px;
+            }
+
+            .approach-heading {
+                margin-bottom: 45px;
+            }
+
+            .approach-heading h2 {
+                font-size: 30px;
+            }
+
+            .approach-heading p {
+                font-size: 16px;
+            }
+
+            .approach-grid {
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
+
+
+            /* CTA */
+
+            .cta-section {
+                padding: 60px 20px;
+            }
+
+            .cta-section h2 {
+                font-size: 30px;
+            }
+
+
+            /* FOOTER */
+
+            .footer-container {
+                grid-template-columns: 1fr;
+
+                gap: 30px;
+
+                padding: 45px 0 30px;
+            }
+
+
+            /* FLOATING BUTTONS */
+
+            .floating-whatsapp {
+                right: 15px;
+                bottom: 15px;
+            }
+
+            .back-to-top {
+                right: 15px;
+                bottom: 80px;
+            }
+        }
+
+
+        /* =====================================================
+           SMALL MOBILE
+           ===================================================== */
+
+        @media (max-width: 450px) {
+
+            .hero-content h1 {
+                font-size: 34px;
+            }
+
+            .hero-label {
+                font-size: 11px;
+            }
+
+            .hero-label::before,
+            .hero-label::after,
+            .approach-label::before,
+            .approach-label::after {
+                width: 25px;
+            }
+
+            .service-card {
+                padding: 23px;
+            }
+
+            .service-icon {
+                width: 58px;
+                height: 58px;
+
+                font-size: 28px;
+            }
+
+            .service-card h3 {
+                font-size: 20px;
+            }
+
+            .service-button {
+                width: 100%;
+            }
+        }
+
+    </style>
 </head>
 
 
 <body>
 
 
-<!-- =========================================================
-     HEADER
-========================================================== -->
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
 
-<header class="site-header">
+    <header class="site-header">
 
-    <div class="nav-container">
+        <div class="header-container">
 
-        <a href="index.html"
-           class="logo-link">
+            <a href="index.html" class="logo-link">
 
-            <img src="logo.png"
-                 alt="PowerNest Electric Logo"
-                 class="site-logo">
+                <img
+                    src="logo.png"
+                    alt="PowerNest Electric Logo"
+                    class="site-logo"
+                >
 
-        </a>
-
-
-        <button
-            class="menu-toggle"
-            id="menuToggle"
-            type="button"
-            aria-label="Open navigation"
-            aria-expanded="false">
-
-            ☰
-
-        </button>
-
-
-        <nav class="nav-links"
-             id="navLinks">
-
-            <a href="index.html">
-                Home
             </a>
 
-            <a href="about.html">
-                About
-            </a>
 
-            <a href="services.html"
-               class="active">
-                Services
-            </a>
-
-            <a href="projects.html">
-                Projects
-            </a>
-
-            <a href="blog.html">
-                Blog
-            </a>
-
-            <a href="contact.html">
-                Contact
-            </a>
-
-        </nav>
-
-    </div>
-
-</header>
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation"
+            >
+                ☰
+            </button>
 
 
+            <nav class="nav-links" id="navLinks">
 
-<!-- =========================================================
-     PAGE HERO
-========================================================== -->
+                <a href="index.html">Home</a>
 
-<section class="page-hero">
+                <a href="about.html">About</a>
 
-    <div class="page-hero-content">
+                <a href="services.html" class="active">
+                    Services
+                </a>
 
-        <span class="page-label">
-            POWERNEST ELECTRIC
-        </span>
+                <a href="projects.html">Projects</a>
 
-        <h1>
-            Our Electrical Services
-        </h1>
+                <a href="blog.html">Blog</a>
 
-        <p>
-            Reliable electrical and energy solutions
-            for homes, businesses, and industries in Liberia.
-        </p>
+                <a href="contact.html">Contact</a>
 
-    </div>
+            </nav>
 
-</section>
+        </div>
+
+    </header>
 
 
 
-<!-- =========================================================
-     SERVICES INTRODUCTION
-========================================================== -->
+    <!-- =====================================================
+         SERVICES HERO
+         ===================================================== -->
 
-<section class="section section-white">
+    <section class="services-hero">
 
-    <div class="section-header">
+        <div class="hero-content">
 
-        <span class="section-label">
-            WHAT WE DO
-        </span>
-
-        <h2 class="section-title">
-            Electrical Solutions for Different Power Needs
-        </h2>
-
-        <p class="section-intro">
-
-            PowerNest Electric provides practical,
-            dependable, and safety-focused electrical
-            services for residential, commercial,
-            and industrial customers.
-
-        </p>
-
-    </div>
-
-
-    <div class="service-box">
-
-
-        <!-- =================================================
-             RESIDENTIAL
-        ================================================== -->
-
-        <div class="card">
-
-            <div class="service-icon">
-                🏠
+            <div class="hero-label">
+                Our Services
             </div>
 
-            <h3>
-                Residential Electrical
-            </h3>
+            <h1>
+                Professional Electrical Solutions
+            </h1>
 
             <p>
-
-                Electrical installation, house wiring,
-                lighting, troubleshooting, repairs,
-                inspections, and maintenance for homes
-                and residential properties.
-
+                From homes to large-scale industrial facilities,
+                we provide safe, reliable and efficient electrical
+                services tailored to your needs.
             </p>
-
-            <ul class="service-list">
-
-                <li>
-                    House wiring
-                </li>
-
-                <li>
-                    Lighting installation
-                </li>
-
-                <li>
-                    Electrical repairs
-                </li>
-
-                <li>
-                    Troubleshooting
-                </li>
-
-                <li>
-                    Electrical maintenance
-                </li>
-
-            </ul>
-
-            <a href="contact.html"
-               class="service-button">
-
-                Request Service
-
-            </a>
 
         </div>
 
+    </section>
 
 
-        <!-- =================================================
-             COMMERCIAL
-        ================================================== -->
 
-        <div class="card">
+    <!-- =====================================================
+         SERVICES
+         ===================================================== -->
 
-            <div class="service-icon">
-                🏢
+    <section class="services-section">
+
+        <div class="content-container">
+
+
+            <div class="section-heading">
+
+                <div class="section-heading-label">
+                    What We Do
+                </div>
+
+                <h2>
+                    Electrical Services You Can Rely On
+                </h2>
+
+                <p>
+                    We provide practical electrical solutions for
+                    residential, commercial, industrial and energy
+                    requirements.
+                </p>
+
             </div>
 
-            <h3>
-                Commercial Electrical
-            </h3>
-
-            <p>
-
-                Professional electrical solutions for
-                offices, shops, businesses, commercial
-                buildings, and other business facilities.
-
-            </p>
-
-            <ul class="service-list">
-
-                <li>
-                    Commercial wiring
-                </li>
-
-                <li>
-                    Lighting systems
-                </li>
-
-                <li>
-                    Electrical installation
-                </li>
-
-                <li>
-                    Repairs and maintenance
-                </li>
-
-                <li>
-                    Electrical troubleshooting
-                </li>
-
-            </ul>
-
-            <a href="contact.html"
-               class="service-button">
-
-                Request Service
-
-            </a>
-
-        </div>
 
 
+            <div class="service-grid">
 
-        <!-- =================================================
-             INDUSTRIAL
-        ================================================== -->
 
-        <div class="card">
+                <!-- RESIDENTIAL -->
 
-            <div class="service-icon">
-                🏭
+                <article class="service-card">
+
+                    <div class="service-icon">
+                        🏠
+                    </div>
+
+                    <h3>
+                        Residential Electrical
+                    </h3>
+
+                    <p>
+                        Electrical installation, house wiring,
+                        lighting, troubleshooting, repairs,
+                        inspections, and maintenance for homes
+                        and residential properties.
+                    </p>
+
+                    <ul class="service-list">
+
+                        <li>House wiring</li>
+
+                        <li>Lighting installation</li>
+
+                        <li>Electrical repairs</li>
+
+                        <li>Troubleshooting</li>
+
+                        <li>Electrical maintenance</li>
+
+                    </ul>
+
+                    <a
+                        href="contact.html"
+                        class="service-button"
+                    >
+                        Request Service
+                        <span>→</span>
+                    </a>
+
+                </article>
+
+
+
+                <!-- COMMERCIAL -->
+
+                <article class="service-card">
+
+                    <div class="service-icon">
+                        🏢
+                    </div>
+
+                    <h3>
+                        Commercial Electrical
+                    </h3>
+
+                    <p>
+                        Professional electrical solutions for
+                        offices, shops, businesses, commercial
+                        buildings, and other business facilities.
+                    </p>
+
+                    <ul class="service-list">
+
+                        <li>Commercial wiring</li>
+
+                        <li>Lighting systems</li>
+
+                        <li>Electrical installation</li>
+
+                        <li>Repairs and maintenance</li>
+
+                        <li>Electrical troubleshooting</li>
+
+                    </ul>
+
+                    <a
+                        href="contact.html"
+                        class="service-button"
+                    >
+                        Request Service
+                        <span>→</span>
+                    </a>
+
+                </article>
+
+
+
+                <!-- INDUSTRIAL -->
+
+                <article class="service-card">
+
+                    <div class="service-icon">
+                        🏭
+                    </div>
+
+                    <h3>
+                        Industrial Electrical
+                    </h3>
+
+                    <p>
+                        Electrical solutions for industrial
+                        facilities, equipment, installations,
+                        maintenance requirements, and power systems.
+                    </p>
+
+                    <ul class="service-list">
+
+                        <li>Industrial electrical installation</li>
+
+                        <li>Equipment support</li>
+
+                        <li>Electrical maintenance</li>
+
+                        <li>Troubleshooting</li>
+
+                        <li>Power system support</li>
+
+                    </ul>
+
+                    <a
+                        href="contact.html"
+                        class="service-button"
+                    >
+                        Request Service
+                        <span>→</span>
+                    </a>
+
+                </article>
+
+
+
+                <!-- INSTALLATION -->
+
+                <article class="service-card">
+
+                    <div class="service-icon">
+                        💡
+                    </div>
+
+                    <h3>
+                        Electrical Installation & Wiring
+                    </h3>
+
+                    <p>
+                        Safe electrical installation, wiring,
+                        lighting, power distribution, and related
+                        electrical work.
+                    </p>
+
+                    <ul class="service-list">
+
+                        <li>Electrical wiring</li>
+
+                        <li>New installations</li>
+
+                        <li>Lighting installation</li>
+
+                        <li>Power distribution</li>
+
+                        <li>Electrical upgrades</li>
+
+                    </ul>
+
+                    <a
+                        href="contact.html"
+                        class="service-button"
+                    >
+                        Request Service
+                        <span>→</span>
+                    </a>
+
+                </article>
+
+
+
+                <!-- MAINTENANCE -->
+
+                <article class="service-card">
+
+                    <div class="service-icon">
+                        🔧
+                    </div>
+
+                    <h3>
+                        Maintenance & Repairs
+                    </h3>
+
+                    <p>
+                        Electrical troubleshooting, inspections,
+                        repairs, maintenance, and support for
+                        electrical systems and equipment.
+                    </p>
+
+                    <ul class="service-list">
+
+                        <li>Fault finding</li>
+
+                        <li>Electrical repairs</li>
+
+                        <li>System inspections</li>
+
+                        <li>Preventive maintenance</li>
+
+                        <li>Troubleshooting</li>
+
+                    </ul>
+
+                    <a
+                        href="contact.html"
+                        class="service-button"
+                    >
+                        Request Service
+                        <span>→</span>
+                    </a>
+
+                </article>
+
+
+
+                <!-- SOLAR -->
+
+                <article class="service-card">
+
+                    <div class="service-icon">
+                        ☀️
+                    </div>
+
+                    <h3>
+                        Solar & Energy Solutions
+                    </h3>
+
+                    <p>
+                        Modern solar and energy solutions designed
+                        to support reliable, practical, and efficient
+                        power needs.
+                    </p>
+
+                    <ul class="service-list">
+
+                        <li>Solar solutions</li>
+
+                        <li>Energy solutions</li>
+
+                        <li>Power support</li>
+
+                        <li>Energy efficiency</li>
+
+                        <li>Modern power solutions</li>
+
+                    </ul>
+
+                    <a
+                        href="contact.html"
+                        class="service-button"
+                    >
+                        Request Service
+                        <span>→</span>
+                    </a>
+
+                </article>
+
             </div>
 
-            <h3>
-                Industrial Electrical
-            </h3>
-
-            <p>
-
-                Electrical solutions for industrial
-                facilities, equipment, installations,
-                maintenance requirements, and power systems.
-
-            </p>
-
-            <ul class="service-list">
-
-                <li>
-                    Industrial electrical installation
-                </li>
-
-                <li>
-                    Equipment support
-                </li>
-
-                <li>
-                    Electrical maintenance
-                </li>
-
-                <li>
-                    Troubleshooting
-                </li>
-
-                <li>
-                    Power system support
-                </li>
-
-            </ul>
-
-            <a href="contact.html"
-               class="service-button">
-
-                Request Service
-
-            </a>
-
         </div>
 
+    </section>
 
 
-        <!-- =================================================
-             INSTALLATION & WIRING
-        ================================================== -->
 
-        <div class="card">
+    <!-- =====================================================
+         OUR APPROACH
+         ===================================================== -->
 
-            <div class="service-icon">
-                💡
+    <section class="approach-section">
+
+        <div class="content-container">
+
+
+            <div class="approach-heading">
+
+                <div class="approach-label">
+                    Our Approach
+                </div>
+
+                <h2>
+                    How We Approach Your Electrical Project
+                </h2>
+
+                <p>
+                    We focus on understanding your electrical
+                    requirements before discussing the appropriate
+                    solution.
+                </p>
+
             </div>
 
-            <h3>
-                Electrical Installation & Wiring
-            </h3>
 
-            <p>
 
-                Safe electrical installation, wiring,
-                lighting, power distribution, and
-                related electrical work.
+            <div class="approach-grid">
 
-            </p>
 
-            <ul class="service-list">
+                <!-- STEP 1 -->
 
-                <li>
-                    Electrical wiring
-                </li>
+                <div class="approach-item">
 
-                <li>
-                    New installations
-                </li>
+                    <div class="approach-icon">
 
-                <li>
-                    Lighting installation
-                </li>
+                        💬
 
-                <li>
-                    Power distribution
-                </li>
+                        <span class="approach-number">
+                            01
+                        </span>
 
-                <li>
-                    Electrical upgrades
-                </li>
+                    </div>
 
-            </ul>
+                    <h3>
+                        Understand
+                    </h3>
 
-            <a href="contact.html"
-               class="service-button">
+                    <p>
+                        We listen to your electrical needs,
+                        project requirements, location, and
+                        specific concerns.
+                    </p>
 
-                Request Service
-
-            </a>
-
-        </div>
+                </div>
 
 
 
-        <!-- =================================================
-             MAINTENANCE & REPAIRS
-        ================================================== -->
+                <!-- STEP 2 -->
 
-        <div class="card">
+                <div class="approach-item">
 
-            <div class="service-icon">
-                🔧
+                    <div class="approach-icon">
+
+                        📋
+
+                        <span class="approach-number">
+                            02
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Assess
+                    </h3>
+
+                    <p>
+                        We discuss the work required and consider
+                        the appropriate electrical solution for
+                        the project.
+                    </p>
+
+                </div>
+
+
+
+                <!-- STEP 3 -->
+
+                <div class="approach-item">
+
+                    <div class="approach-icon">
+
+                        📝
+
+                        <span class="approach-number">
+                            03
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Plan
+                    </h3>
+
+                    <p>
+                        We work toward a practical approach based
+                        on the project requirements and available
+                        information.
+                    </p>
+
+                </div>
+
+
+
+                <!-- STEP 4 -->
+
+                <div class="approach-item">
+
+                    <div class="approach-icon">
+
+                        ⚙️
+
+                        <span class="approach-number">
+                            04
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Deliver
+                    </h3>
+
+                    <p>
+                        Our goal is to provide dependable electrical
+                        work with safety and quality at the center.
+                    </p>
+
+                </div>
+
             </div>
 
-            <h3>
-                Maintenance & Repairs
-            </h3>
-
-            <p>
-
-                Electrical troubleshooting, inspections,
-                repairs, maintenance, and support for
-                electrical systems and equipment.
-
-            </p>
-
-            <ul class="service-list">
-
-                <li>
-                    Fault finding
-                </li>
-
-                <li>
-                    Electrical repairs
-                </li>
-
-                <li>
-                    System inspections
-                </li>
-
-                <li>
-                    Preventive maintenance
-                </li>
-
-                <li>
-                    Troubleshooting
-                </li>
-
-            </ul>
-
-            <a href="contact.html"
-               class="service-button">
-
-                Request Service
-
-            </a>
-
         </div>
 
+    </section>
 
 
-        <!-- =================================================
-             SOLAR & ENERGY
-        ================================================== -->
 
-        <div class="card">
+    <!-- =====================================================
+         CTA
+         ===================================================== -->
 
-            <div class="service-icon">
-                ☀️
-            </div>
-
-            <h3>
-                Solar & Energy Solutions
-            </h3>
-
-            <p>
-
-                Modern solar and energy solutions
-                designed to support reliable, practical,
-                and efficient power needs.
-
-            </p>
-
-            <ul class="service-list">
-
-                <li>
-                    Solar solutions
-                </li>
-
-                <li>
-                    Energy solutions
-                </li>
-
-                <li>
-                    Power support
-                </li>
-
-                <li>
-                    Energy efficiency
-                </li>
-
-                <li>
-                    Modern power solutions
-                </li>
-
-            </ul>
-
-            <a href="contact.html"
-               class="service-button">
-
-                Request Service
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     HOW WE WORK
-========================================================== -->
-
-<section class="section section-light">
-
-    <div class="section-header">
-
-        <span class="section-label">
-            OUR APPROACH
-        </span>
-
-        <h2 class="section-title">
-            How We Approach Your Electrical Project
-        </h2>
-
-        <p class="section-intro">
-
-            We focus on understanding your electrical
-            requirements before discussing the appropriate
-            solution.
-
-        </p>
-
-    </div>
-
-
-    <div class="process-container">
-
-
-        <div class="process-card">
-
-            <div class="process-number">
-                01
-            </div>
-
-            <h3>
-                Understand
-            </h3>
-
-            <p>
-
-                We listen to your electrical needs,
-                project requirements, location, and
-                specific concerns.
-
-            </p>
-
-        </div>
-
-
-
-        <div class="process-card">
-
-            <div class="process-number">
-                02
-            </div>
-
-            <h3>
-                Assess
-            </h3>
-
-            <p>
-
-                We discuss the work required and
-                consider the appropriate electrical
-                solution for the project.
-
-            </p>
-
-        </div>
-
-
-
-        <div class="process-card">
-
-            <div class="process-number">
-                03
-            </div>
-
-            <h3>
-                Plan
-            </h3>
-
-            <p>
-
-                We work toward a practical approach
-                based on the project requirements
-                and available information.
-
-            </p>
-
-        </div>
-
-
-
-        <div class="process-card">
-
-            <div class="process-number">
-                04
-            </div>
-
-            <h3>
-                Deliver
-            </h3>
-
-            <p>
-
-                Our goal is to provide dependable
-                electrical work with safety and
-                quality at the center.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     SERVICE AREAS
-========================================================== -->
-
-<section class="section section-blue">
-
-    <div class="section-header">
-
-        <span class="section-label">
-            SERVICE AREAS
-        </span>
-
-        <h2 class="section-title">
-            Who We Serve
-        </h2>
-
-        <p class="section-intro">
-
-            Our services are designed for different
-            types of customers and electrical projects.
-
-        </p>
-
-    </div>
-
-
-    <div class="audience-container">
-
-
-        <div class="audience-card">
-
-            <span class="audience-icon">
-                🏠
-            </span>
-
-            <h3>
-                Homeowners
-            </h3>
-
-            <p>
-
-                Electrical wiring, installation,
-                maintenance, repairs, and energy
-                solutions for homes.
-
-            </p>
-
-        </div>
-
-
-
-        <div class="audience-card">
-
-            <span class="audience-icon">
-                🏢
-            </span>
-
-            <h3>
-                Businesses
-            </h3>
-
-            <p>
-
-                Electrical services for offices,
-                shops, commercial buildings,
-                and business facilities.
-
-            </p>
-
-        </div>
-
-
-
-        <div class="audience-card">
-
-            <span class="audience-icon">
-                🏭
-            </span>
-
-            <h3>
-                Industries
-            </h3>
-
-            <p>
-
-                Electrical support for industrial
-                facilities, equipment, installations,
-                and maintenance.
-
-            </p>
-
-        </div>
-
-
-
-        <div class="audience-card">
-
-            <span class="audience-icon">
-                ☀️
-            </span>
-
-            <h3>
-                Energy Projects
-            </h3>
-
-            <p>
-
-                Solar and modern energy solutions
-                for customers looking for practical
-                power alternatives.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     SAFETY
-========================================================== -->
-
-<section class="section section-white">
-
-    <div class="service-information">
-
-        <span class="section-label">
-            SAFETY & QUALITY
-        </span>
+    <section class="cta-section">
 
         <h2>
-            Safety Comes First
+            Need Electrical Service?
         </h2>
 
         <p>
-
-            Electrical work requires careful planning,
-            proper installation, and attention to safety.
-            PowerNest Electric is committed to keeping
-            safety and quality at the center of our work.
-
+            Tell us about your electrical requirements and
+            let's discuss the right solution for your project.
         </p>
 
-        <p>
-
-            Every electrical project can have different
-            requirements. Contact us with information
-            about your project so we can better understand
-            the work you need.
-
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     CTA
-========================================================== -->
-
-<section class="cta">
-
-    <div class="cta-content">
-
-        <span class="section-label">
-            POWERING A BETTER FUTURE
-        </span>
-
-        <h2>
-            Need Electrical Services?
-        </h2>
-
-        <p>
-
-            Tell us about your electrical project,
-            installation, wiring, maintenance,
-            repair, or energy needs.
-
-        </p>
-
-        <a href="contact.html"
-           class="button">
-
-            Get a Free Quote
-
+        <a
+            href="contact.html"
+            class="cta-button"
+        >
+            Contact PowerNest Electric
         </a>
 
-    </div>
-
-</section>
+    </section>
 
 
 
-<!-- =========================================================
-     FOOTER
-========================================================== -->
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
 
-<footer>
+    <footer class="site-footer">
 
-    <div class="footer-container">
+        <div class="footer-container">
 
 
-        <div class="footer-column">
+            <div class="footer-column">
 
-            <h3>
-                PowerNest Electric
-            </h3>
+                <img
+                    src="logo.png"
+                    alt="PowerNest Electric"
+                    class="footer-logo"
+                >
 
-            <p>
+                <p>
+                    Powering homes, businesses, and industries
+                    with reliable electrical solutions.
+                </p>
 
-                Reliable electrical installation,
-                maintenance, repair, wiring, solar
-                and energy solutions.
+                <p>
+                    Reliable Power. Better Future.
+                </p>
 
-            </p>
+            </div>
 
-            <p>
 
-                Serving electrical and energy
-                needs in Liberia.
 
-            </p>
+            <div class="footer-column">
 
-            <p>
+                <h3>
+                    Quick Links
+                </h3>
 
-                <strong>
-                    Future is Bright. So We Are.
-                </strong>
+                <a href="index.html">
+                    Home
+                </a>
 
-            </p>
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="services.html">
+                    Services
+                </a>
+
+                <a href="projects.html">
+                    Projects
+                </a>
+
+                <a href="blog.html">
+                    Blog
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Services
+                </h3>
+
+                <a href="services.html">
+                    Residential Electrical
+                </a>
+
+                <a href="services.html">
+                    Commercial Electrical
+                </a>
+
+                <a href="services.html">
+                    Industrial Electrical
+                </a>
+
+                <a href="services.html">
+                    Installation & Wiring
+                </a>
+
+                <a href="services.html">
+                    Maintenance & Repairs
+                </a>
+
+                <a href="services.html">
+                    Solar & Energy
+                </a>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Get In Touch
+                </h3>
+
+                <p>
+                    Professional electrical solutions
+                    for your needs.
+                </p>
+
+                <a href="contact.html">
+                    Contact Us
+                </a>
+
+                <a href="contact.html">
+                    Request a Service
+                </a>
+
+            </div>
 
         </div>
 
 
 
-        <div class="footer-column">
-
-            <h3>
-                Quick Links
-            </h3>
-
-            <a href="index.html">
-                Home
-            </a>
-
-            <a href="about.html">
-                About
-            </a>
-
-            <a href="services.html">
-                Services
-            </a>
-
-            <a href="projects.html">
-                Projects
-            </a>
-
-            <a href="blog.html">
-                Blog
-            </a>
-
-            <a href="contact.html">
-                Contact
-            </a>
-
-        </div>
-
-
-
-        <div class="footer-column">
-
-            <h3>
-                Contact
-            </h3>
+        <div class="footer-bottom">
 
             <p>
-                📧
-                powernestelectric2025@gmail.com
+                © 2025 PowerNest Electric. All rights reserved.
             </p>
 
             <p>
-                📞
-                +231 880 947 513
+                Reliable Power. Better Future.
             </p>
-
-            <a
-                href="https://wa.me/231880947513"
-                target="_blank"
-                rel="noopener noreferrer">
-
-                💬 WhatsApp
-
-            </a>
-
-            <a
-                href="https://www.facebook.com/profile.php?id=61576923520194"
-                target="_blank"
-                rel="noopener noreferrer">
-
-                📘 Facebook
-
-            </a>
 
         </div>
 
-    </div>
+    </footer>
 
 
 
-    <div class="footer-bottom">
+    <!-- =====================================================
+         FLOATING WHATSAPP
+         ===================================================== -->
 
-        <p>
+    <!--
+        Replace the # below with your existing WhatsApp link.
+    -->
 
-            © 2025 PowerNest Electric.
-            All Rights Reserved.
-
-        </p>
-
-        <p>
-
-            Reliable Power. Better Future.
-
-        </p>
-
-    </div>
-
-</footer>
+    <a
+        href="#"
+        class="floating-whatsapp"
+        aria-label="Chat with PowerNest Electric on WhatsApp"
+    >
+        💬
+    </a>
 
 
 
-<!-- =========================================================
-     JAVASCRIPT
-========================================================== -->
+    <!-- =====================================================
+         BACK TO TOP
+         ===================================================== -->
 
-<script src="js/main.js"></script>
+    <button
+        class="back-to-top"
+        id="backToTop"
+        aria-label="Back to top"
+    >
+        ↑
+    </button>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script>
+
+        /* MOBILE MENU */
+
+        const menuToggle =
+            document.getElementById("menuToggle");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        menuToggle.addEventListener("click", function () {
+
+            navLinks.classList.toggle("show");
+
+        });
+
+
+        /* CLOSE MOBILE MENU AFTER CLICKING A LINK */
+
+        const navigationLinks =
+            document.querySelectorAll(".nav-links a");
+
+
+        navigationLinks.forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                navLinks.classList.remove("show");
+
+            });
+
+        });
+
+
+        /* BACK TO TOP */
+
+        const backToTop =
+            document.getElementById("backToTop");
+
+
+        window.addEventListener("scroll", function () {
+
+            if (window.scrollY > 400) {
+
+                backToTop.classList.add("show");
+
+            } else {
+
+                backToTop.classList.remove("show");
+
+            }
+
+        });
+
+
+        backToTop.addEventListener("click", function () {
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        });
+
+    </script>
+
 
 </body>
-
 </html>
