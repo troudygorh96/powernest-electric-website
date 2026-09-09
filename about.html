@@ -1,26 +1,1174 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <meta name="description"
-          content="Learn about PowerNest Electric, a professional electrical and energy solutions company serving homes, businesses, industries, and communities in Liberia.">
+    <title>
+        About | PowerNest Electric
+    </title>
 
-    <meta name="keywords"
-          content="PowerNest Electric, electrical company Liberia, electrical services Liberia, electrical installation Liberia, solar energy Liberia, electrical maintenance Liberia">
 
-    <meta name="author"
-          content="PowerNest Electric">
+    <style>
 
-    <title>About Us | PowerNest Electric</title>
+        /* =========================================================
+           GLOBAL
+        ========================================================== */
 
-    <link rel="stylesheet"
-          href="css/style.css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+
+            background: #f5f7fa;
+
+            color: #222;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================================
+           HEADER
+        ========================================================== */
+
+        .site-header {
+
+            background: #0b1f3a;
+
+            color: white;
+
+            padding: 15px 30px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            box-shadow:
+                0 3px 12px rgba(0, 0, 0, 0.12);
+        }
+
+
+        .header-container {
+
+            width: 100%;
+
+            max-width: 1150px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+
+        /* LOGO */
+
+        .logo-link {
+
+            display: flex;
+
+            align-items: center;
+
+            text-decoration: none;
+
+            flex-shrink: 0;
+        }
+
+
+        .site-logo {
+
+            width: 75px;
+
+            height: 75px;
+
+            object-fit: contain;
+        }
+
+
+        /* NAVIGATION */
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: flex-end;
+
+            gap: 25px;
+        }
+
+
+        .nav-links a {
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            font-size: 15px;
+
+            transition: 0.2s;
+        }
+
+
+        .nav-links a:hover {
+
+            color: #f5a623;
+        }
+
+
+        .nav-links a.active {
+
+            color: #f5a623;
+        }
+
+
+        /* MENU */
+
+        .menu-toggle {
+
+            display: none;
+
+            background: transparent;
+
+            border: none;
+
+            color: white;
+
+            font-size: 28px;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================================================
+           PAGE HERO
+        ========================================================== */
+
+        .page-hero {
+
+            background:
+                linear-gradient(
+                    rgba(11, 31, 58, 0.94),
+                    rgba(11, 31, 58, 0.94)
+                );
+
+            color: white;
+
+            padding: 90px 20px;
+
+            text-align: center;
+        }
+
+
+        .page-hero-content {
+
+            max-width: 850px;
+
+            margin: auto;
+        }
+
+
+        .section-label {
+
+            display: inline-block;
+
+            color: #0b1f3a;
+
+            background: #f5a623;
+
+            padding: 7px 16px;
+
+            border-radius: 30px;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .page-hero h1 {
+
+            font-size: 48px;
+
+            line-height: 1.15;
+
+            margin-bottom: 20px;
+        }
+
+
+        .page-hero p {
+
+            max-width: 720px;
+
+            margin: auto;
+
+            color: #dce3ed;
+
+            font-size: 18px;
+        }
+
+
+        /* =========================================================
+           SECTIONS
+        ========================================================== */
+
+        .section {
+
+            padding: 70px 20px;
+        }
+
+
+        .section-light {
+
+            background: #ffffff;
+        }
+
+
+        .section-white {
+
+            background: #f5f7fa;
+        }
+
+
+        .content-container {
+
+            max-width: 1150px;
+
+            margin: auto;
+        }
+
+
+        /* =========================================================
+           SECTION HEADER
+        ========================================================== */
+
+        .section-header {
+
+            text-align: center;
+
+            max-width: 750px;
+
+            margin: 0 auto 45px;
+        }
+
+
+        .section-title {
+
+            color: #0b1f3a;
+
+            font-size: 34px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .section-intro {
+
+            color: #666;
+
+            font-size: 16px;
+
+            max-width: 750px;
+
+            margin: auto;
+        }
+
+
+        /* =========================================================
+           ABOUT INTRO
+        ========================================================== */
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1.1fr
+                0.9fr;
+
+            gap: 45px;
+
+            align-items: center;
+        }
+
+
+        .about-content h2 {
+
+            color: #0b1f3a;
+
+            font-size: 34px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .about-content p {
+
+            color: #555;
+
+            font-size: 16px;
+
+            margin-bottom: 18px;
+        }
+
+
+        /* ABOUT PANEL */
+
+        .about-panel {
+
+            background: white;
+
+            border-radius: 14px;
+
+            padding: 35px;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.08);
+
+            border-top:
+                4px solid #f5a623;
+        }
+
+
+        .about-panel h3 {
+
+            color: #0b1f3a;
+
+            font-size: 22px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .about-panel p {
+
+            color: #666;
+
+            margin-bottom: 20px;
+        }
+
+
+        .about-panel ul {
+
+            padding-left: 20px;
+        }
+
+
+        .about-panel li {
+
+            color: #555;
+
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================================================
+           VALUES
+        ========================================================== */
+
+        .values-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+
+        .value-card {
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+            box-shadow:
+                0 4px 16px rgba(0, 0, 0, 0.07);
+
+            border-bottom:
+                3px solid transparent;
+
+            transition: 0.2s;
+        }
+
+
+        .value-card:hover {
+
+            transform: translateY(-5px);
+
+            border-bottom-color:
+                #f5a623;
+        }
+
+
+        .value-icon {
+
+            width: 55px;
+
+            height: 55px;
+
+            margin:
+                0 auto 15px;
+
+            background: #fff4dc;
+
+            color: #0b1f3a;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 24px;
+        }
+
+
+        .value-card h3 {
+
+            color: #0b1f3a;
+
+            font-size: 20px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .value-card p {
+
+            color: #777;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================================
+           BLUE SECTION
+        ========================================================== */
+
+        .section-blue {
+
+            background: #0b1f3a;
+
+            color: white;
+        }
+
+
+        .section-blue .section-title {
+
+            color: white;
+        }
+
+
+        .section-blue .section-intro {
+
+            color: #cdd6e2;
+        }
+
+
+        /* =========================================================
+           WHY US
+        ========================================================== */
+
+        .why-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .why-card {
+
+            background: white;
+
+            text-align: center;
+
+            padding: 30px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 4px 16px rgba(0, 0, 0, 0.07);
+
+            border-bottom:
+                3px solid transparent;
+
+            transition: 0.2s;
+        }
+
+
+        .why-card:hover {
+
+            transform: translateY(-5px);
+
+            border-bottom-color:
+                #f5a623;
+        }
+
+
+        .why-icon {
+
+            width: 55px;
+
+            height: 55px;
+
+            margin:
+                0 auto 15px;
+
+            background: #fff4dc;
+
+            color: #0b1f3a;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 22px;
+        }
+
+
+        .why-card h3 {
+
+            color: #0b1f3a;
+
+            font-size: 17px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .why-card p {
+
+            color: #777;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================================================
+           CTA
+        ========================================================== */
+
+        .cta-section {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0b1f3a,
+                    #102f55
+                );
+
+            color: white;
+
+            padding: 65px 25px;
+
+            text-align: center;
+        }
+
+
+        .cta-content {
+
+            max-width: 750px;
+
+            margin: auto;
+        }
+
+
+        .cta-section h2 {
+
+            font-size: 34px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .cta-section p {
+
+            color: #dce3ed;
+
+            max-width: 650px;
+
+            margin:
+                0 auto 25px;
+        }
+
+
+        .cta-buttons {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+
+        /* BUTTONS */
+
+        .button {
+
+            display: inline-block;
+
+            background: #f5a623;
+
+            color: #0b1f3a;
+
+            padding: 13px 24px;
+
+            border-radius: 6px;
+
+            font-weight: bold;
+
+            transition: 0.2s;
+        }
+
+
+        .button:hover {
+
+            transform: translateY(-2px);
+
+            opacity: 0.92;
+        }
+
+
+        .button-outline {
+
+            display: inline-block;
+
+            background: transparent;
+
+            color: white;
+
+            border:
+                2px solid #f5a623;
+
+            padding: 11px 22px;
+
+            border-radius: 6px;
+
+            font-weight: bold;
+
+            transition: 0.2s;
+        }
+
+
+        .button-outline:hover {
+
+            background: #f5a623;
+
+            color: #0b1f3a;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================== */
+
+        .site-footer {
+
+            background: #07152a;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 30px 20px;
+        }
+
+
+        .footer-container {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 35px;
+
+            text-align: left;
+
+            padding-bottom: 30px;
+        }
+
+
+        .footer-logo {
+
+            width: 75px;
+
+            height: 75px;
+
+            object-fit: contain;
+
+            margin-bottom: 10px;
+        }
+
+
+        .footer-column h3 {
+
+            color: white;
+
+            font-size: 18px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .footer-column p {
+
+            color: #cdd6e2;
+
+            font-size: 13px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .footer-column a {
+
+            display: block;
+
+            color: #cdd6e2;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .footer-column a:hover {
+
+            color: #f5a623;
+        }
+
+
+        .footer-column strong {
+
+            color: #f5a623;
+
+            font-size: 13px;
+        }
+
+
+        .footer-bottom {
+
+            border-top:
+                1px solid rgba(255,255,255,0.12);
+
+            padding-top: 20px;
+        }
+
+
+        .footer-bottom p {
+
+            color: #cdd6e2;
+
+            font-size: 13px;
+
+            margin-bottom: 5px;
+        }
+
+
+        /* =========================================================
+           WHATSAPP
+        ========================================================== */
+
+        .floating-whatsapp {
+
+            position: fixed;
+
+            right: 25px;
+
+            bottom: 25px;
+
+            width: 55px;
+
+            height: 55px;
+
+            background: #25D366;
+
+            color: white;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-decoration: none;
+
+            font-size: 25px;
+
+            z-index: 999;
+
+            box-shadow:
+                0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* =========================================================
+           BACK TO TOP
+        ========================================================== */
+
+        .back-to-top {
+
+            position: fixed;
+
+            right: 25px;
+
+            bottom: 90px;
+
+            width: 45px;
+
+            height: 45px;
+
+            background: #0b1f3a;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-decoration: none;
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+            z-index: 998;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition: 0.2s;
+        }
+
+
+        .back-to-top.show {
+
+            opacity: 1;
+
+            visibility: visible;
+        }
+
+
+        /* =========================================================
+           TABLET
+        ========================================================== */
+
+        @media (max-width: 900px) {
+
+            .about-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .why-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .footer-container {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================== */
+
+        @media (max-width: 700px) {
+
+            .site-header {
+
+                padding: 15px;
+            }
+
+
+            .header-container {
+
+                flex-direction: row;
+
+                justify-content: space-between;
+            }
+
+
+            .site-logo {
+
+                width: 75px;
+
+                height: 75px;
+            }
+
+
+            .menu-toggle {
+
+                display: block;
+            }
+
+
+            .nav-links {
+
+                position: absolute;
+
+                top: 105px;
+
+                left: 0;
+
+                right: 0;
+
+                background: #0b1f3a;
+
+                display: none;
+
+                flex-direction: column;
+
+                gap: 0;
+
+                padding:
+                    12px 20px 20px;
+            }
+
+
+            .nav-links.active {
+
+                display: flex;
+            }
+
+
+            .nav-links a {
+
+                width: 100%;
+
+                padding: 12px;
+
+                text-align: center;
+            }
+
+
+            .page-hero {
+
+                padding:
+                    65px 20px;
+            }
+
+
+            .page-hero h1 {
+
+                font-size: 36px;
+            }
+
+
+            .page-hero p {
+
+                font-size: 16px;
+            }
+
+
+            .section {
+
+                padding:
+                    50px 20px;
+            }
+
+
+            .section-title {
+
+                font-size: 29px;
+            }
+
+
+            .about-content h2 {
+
+                font-size: 29px;
+            }
+
+
+            .values-grid,
+            .why-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .cta-section {
+
+                padding:
+                    50px 20px;
+            }
+
+
+            .cta-section h2 {
+
+                font-size: 29px;
+            }
+
+
+            .cta-buttons {
+
+                flex-direction: column;
+
+                align-items: center;
+            }
+
+
+            .button,
+            .button-outline {
+
+                width: 90%;
+
+                max-width: 310px;
+
+                text-align: center;
+            }
+
+
+            .footer-container {
+
+                grid-template-columns: 1fr;
+
+                text-align: center;
+            }
+
+
+            .footer-column {
+
+                text-align: center;
+            }
+
+
+            .footer-logo {
+
+                margin-left: auto;
+
+                margin-right: auto;
+            }
+        }
+
+
+        /* =========================================================
+           VERY SMALL PHONES
+        ========================================================== */
+
+        @media (max-width: 450px) {
+
+            .page-hero h1 {
+
+                font-size: 32px;
+            }
+
+
+            .page-hero p {
+
+                font-size: 15px;
+            }
+
+
+            .section {
+
+                padding:
+                    45px 15px;
+            }
+
+
+            .section-title {
+
+                font-size: 27px;
+            }
+
+
+            .about-panel {
+
+                padding:
+                    27px 22px;
+            }
+
+
+            .value-card,
+            .why-card {
+
+                padding:
+                    25px 22px;
+            }
+        }
+
+    </style>
 
 </head>
 
@@ -36,41 +1184,42 @@
 
     <div class="header-container">
 
-        <a href="index.html"
-           class="logo-link">
+        <a
+            href="index.html"
+            class="logo-link"
+        >
 
             <img
                 src="logo.png"
                 alt="PowerNest Electric Logo"
-                class="site-logo">
+                class="site-logo"
+            >
 
         </a>
 
 
         <button
-            type="button"
             class="menu-toggle"
-            id="menuToggle"
+            onclick="toggleMenu()"
             aria-label="Open navigation menu"
-            aria-expanded="false">
-
+        >
             ☰
-
         </button>
 
 
         <nav
             class="nav-links"
             id="navLinks"
-            aria-label="Main navigation">
+        >
 
             <a href="index.html">
                 Home
             </a>
 
-            <a href="about.html"
-               class="active"
-               aria-current="page">
+            <a
+                href="about.html"
+                class="active"
+            >
                 About
             </a>
 
@@ -86,7 +1235,7 @@
                 Blog
             </a>
 
-            <a href="index.html#contact">
+            <a href="contact.html">
                 Contact
             </a>
 
@@ -99,57 +1248,27 @@
 
 
 <!-- =========================================================
-     ABOUT HERO
+     HERO
 ========================================================== -->
 
-<section class="hero">
+<section class="page-hero">
 
-    <div class="hero-overlay"></div>
+    <div class="page-hero-content">
 
-    <div class="hero-content">
-
-        <div class="hero-badge">
-            ABOUT POWERNEST ELECTRIC
-        </div>
+        <span class="section-label">
+            About PowerNest Electric
+        </span>
 
         <h1>
-            Powering Homes.<br>
-            Businesses. Industries.
+            Reliable Power. Better Future.
         </h1>
 
-        <h2>
-            Reliable Power. Better Future.
-        </h2>
-
         <p>
-            PowerNest Electric provides professional
-            electrical installation, maintenance,
-            repair, wiring, and energy solutions
-            designed to support the changing power
-            needs of homes, businesses, industries,
-            and communities in Liberia.
+            PowerNest Electric is focused on providing reliable,
+            safe, and modern electrical solutions for homes,
+            businesses, and industries.
         </p>
 
-        <div class="hero-buttons">
-
-            <a
-                href="index.html#contact"
-                class="button">
-
-                Talk to Our Team
-
-            </a>
-
-            <a
-                href="services.html"
-                class="button-outline">
-
-                Explore Our Services
-
-            </a>
-
-        </div>
-
     </div>
 
 </section>
@@ -157,232 +1276,80 @@
 
 
 <!-- =========================================================
-     TRUST STRIP
+     ABOUT INTRO
 ========================================================== -->
 
-<section class="trust-strip">
+<section class="section section-light">
 
-    <div class="trust-box">
+    <div class="content-container">
+
+        <div class="about-grid">
 
 
-        <div class="trust-item">
+            <div class="about-content">
 
-            <div class="trust-icon">
-                ⚡
-            </div>
-
-            <div>
-
-                <strong>
-                    Reliable Solutions
-                </strong>
-
-                <span>
-                    Electrical systems built around
-                    dependable performance.
+                <span class="section-label">
+                    Who We Are
                 </span>
 
-            </div>
+                <h2>
+                    Powering a Brighter Future
+                </h2>
 
-        </div>
+                <p>
+                    PowerNest Electric provides practical electrical
+                    services designed to meet the needs of residential,
+                    commercial, and industrial customers.
+                </p>
 
+                <p>
+                    From electrical installation and wiring to
+                    maintenance, repairs, and modern energy solutions,
+                    our goal is to provide dependable service while
+                    keeping safety and quality at the center of our work.
+                </p>
 
-        <div class="trust-item">
-
-            <div class="trust-icon">
-                🛡️
-            </div>
-
-            <div>
-
-                <strong>
-                    Safety First
-                </strong>
-
-                <span>
-                    Safe practices are central to
-                    our electrical work.
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="trust-item">
-
-            <div class="trust-icon">
-                👷
-            </div>
-
-            <div>
-
-                <strong>
-                    Professional Service
-                </strong>
-
-                <span>
-                    Clear communication and
-                    responsible workmanship.
-                </span>
+                <p>
+                    We believe reliable electricity is an important
+                    part of building stronger homes, businesses,
+                    and communities.
+                </p>
 
             </div>
 
-        </div>
 
-
-        <div class="trust-item">
-
-            <div class="trust-icon">
-                💡
-            </div>
-
-            <div>
-
-                <strong>
-                    Modern Energy
-                </strong>
-
-                <span>
-                    Practical electrical and
-                    energy solutions for the future.
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     COMPANY STORY
-========================================================== -->
-
-<section class="section section-white">
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <span class="section-label">
-                WHO WE ARE
-            </span>
-
-            <h2 class="section-title">
-                Built Around Reliable Power
-            </h2>
-
-            <p class="section-intro">
-                PowerNest Electric is focused on delivering
-                dependable electrical and energy solutions
-                with professionalism, safety, and customer
-                satisfaction at the center of our work.
-            </p>
-
-        </div>
-
-
-        <div class="two-column">
-
-
-            <div class="text-column">
+            <div class="about-panel">
 
                 <h3>
-                    Our Story
+                    Our Commitment
                 </h3>
 
                 <p>
-                    PowerNest Electric was established
-                    with a simple purpose: to provide
-                    dependable electrical services while
-                    helping customers build safer,
-                    more functional, and more reliable
-                    power systems.
-                </p>
-
-                <p>
-                    We understand that electricity is
-                    more than wires, switches, and
-                    equipment. Reliable power supports
-                    comfortable homes, productive
-                    businesses, efficient operations,
-                    and the growth of communities.
-                </p>
-
-                <p>
-                    Our approach combines practical
-                    electrical knowledge with responsible
-                    workmanship and clear communication.
-                    Whether the requirement involves
-                    installation, wiring, maintenance,
-                    troubleshooting, repairs, or energy
-                    solutions, we aim to understand the
-                    need before recommending the work.
-                </p>
-
-                <p>
-                    As PowerNest Electric grows, our goal
-                    remains consistent: earn customer trust
-                    through dependable service and build
-                    a company recognized for quality,
-                    professionalism, and integrity.
-                </p>
-
-                <a
-                    href="services.html"
-                    class="text-button">
-
-                    Discover Our Services →
-
-                </a>
-
-            </div>
-
-
-            <div class="feature-panel">
-
-                <div class="feature-panel-icon">
-                    ⚡
-                </div>
-
-                <h3>
-                    PowerNest Electric
-                </h3>
-
-                <p>
-                    Powering homes, businesses,
-                    and industries.
+                    We are committed to delivering electrical solutions
+                    that are practical, reliable, and built around the
+                    needs of our customers.
                 </p>
 
                 <ul>
 
                     <li>
-                        Electrical Installation
+                        Reliable electrical services
                     </li>
 
                     <li>
-                        Wiring & Power Distribution
+                        Safety-focused work
                     </li>
 
                     <li>
-                        Maintenance & Repairs
+                        Professional service
                     </li>
 
                     <li>
-                        Electrical Troubleshooting
+                        Practical modern solutions
                     </li>
 
                     <li>
-                        Solar & Energy Solutions
-                    </li>
-
-                    <li>
-                        Residential, Commercial & Industrial Support
+                        Customer-focused approach
                     </li>
 
                 </ul>
@@ -398,282 +1365,118 @@
 
 
 <!-- =========================================================
-     MISSION & VISION
-========================================================== -->
-
-<section class="section section-light">
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <span class="section-label">
-                OUR DIRECTION
-            </span>
-
-            <h2 class="section-title">
-                Mission & Vision
-            </h2>
-
-            <p class="section-intro">
-                The direction that guides how PowerNest
-                Electric serves customers today and prepares
-                for the opportunities of tomorrow.
-            </p>
-
-        </div>
-
-
-        <div class="values-preview">
-
-
-            <div class="value-preview-card">
-
-                <span>
-                    🎯
-                </span>
-
-                <h3>
-                    Our Mission
-                </h3>
-
-                <p>
-                    To provide safe, reliable, and practical
-                    electrical and energy solutions that meet
-                    the needs of our customers while maintaining
-                    high standards of workmanship,
-                    professionalism, communication, and service.
-                </p>
-
-            </div>
-
-
-            <div class="value-preview-card">
-
-                <span>
-                    👁️
-                </span>
-
-                <h3>
-                    Our Vision
-                </h3>
-
-                <p>
-                    To become a trusted electrical and energy
-                    solutions company in Liberia, recognized
-                    for dependable service, professional
-                    workmanship, innovation, safety, and a
-                    commitment to a brighter future.
-                </p>
-
-            </div>
-
-
-            <div class="value-preview-card">
-
-                <span>
-                    ⚡
-                </span>
-
-                <h3>
-                    Our Purpose
-                </h3>
-
-                <p>
-                    To help people and organizations access
-                    dependable electrical solutions that
-                    support safer homes, stronger businesses,
-                    efficient operations, and sustainable
-                    growth.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     CORE VALUES
-========================================================== -->
-
-<section class="section section-blue">
-
-    <div class="container">
-
-
-        <div class="section-header light-header">
-
-            <span class="section-label">
-                WHAT GUIDES US
-            </span>
-
-            <h2 class="section-title">
-                Our Core Values
-            </h2>
-
-            <p class="section-intro">
-                The principles behind the way we work,
-                communicate, solve problems, and serve
-                our customers.
-            </p>
-
-        </div>
-
-
-        <div class="values-preview">
-
-
-            <div class="value-preview-card">
-
-                <span>
-                    🛡️
-                </span>
-
-                <h3>
-                    Safety
-                </h3>
-
-                <p>
-                    We treat electrical safety as a
-                    fundamental responsibility in every
-                    project and service we undertake.
-                </p>
-
-            </div>
-
-
-            <div class="value-preview-card">
-
-                <span>
-                    ⚡
-                </span>
-
-                <h3>
-                    Reliability
-                </h3>
-
-                <p>
-                    We work toward dependable solutions
-                    that customers can confidently rely on.
-                </p>
-
-            </div>
-
-
-            <div class="value-preview-card">
-
-                <span>
-                    ⭐
-                </span>
-
-                <h3>
-                    Quality
-                </h3>
-
-                <p>
-                    We pay attention to workmanship,
-                    materials, details, and the practical
-                    requirements of each project.
-                </p>
-
-            </div>
-
-
-            <div class="value-preview-card">
-
-                <span>
-                    🤝
-                </span>
-
-                <h3>
-                    Integrity
-                </h3>
-
-                <p>
-                    We value honesty, accountability,
-                    transparency, and trust in our
-                    relationships.
-                </p>
-
-            </div>
-
-
-            <div class="value-preview-card">
-
-                <span>
-                    👷
-                </span>
-
-                <h3>
-                    Professionalism
-                </h3>
-
-                <p>
-                    We believe good service requires
-                    responsible conduct, communication,
-                    respect, and attention to customers.
-                </p>
-
-            </div>
-
-
-            <div class="value-preview-card">
-
-                <span>
-                    💡
-                </span>
-
-                <h3>
-                    Innovation
-                </h3>
-
-                <p>
-                    We remain open to modern electrical,
-                    solar, and energy technologies that
-                    can provide practical value.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     WHY POWERNEST ELECTRIC
+     VALUES
 ========================================================== -->
 
 <section class="section section-white">
 
-    <div class="container">
-
+    <div class="content-container">
 
         <div class="section-header">
 
             <span class="section-label">
-                WHY POWERNEST
+                Our Values
             </span>
 
             <h2 class="section-title">
-                Why Choose PowerNest Electric?
+                What Guides Our Work
             </h2>
 
             <p class="section-intro">
-                Choosing an electrical service provider is
-                about more than completing a job. It is about
-                finding a team that understands the importance
-                of safety, reliability, communication, and
-                dependable results.
+                Every project is approached with a focus on
+                reliability, professionalism, safety, and
+                long-term value.
+            </p>
+
+        </div>
+
+
+        <div class="values-grid">
+
+
+            <div class="value-card">
+
+                <div class="value-icon">
+                    🛡
+                </div>
+
+                <h3>
+                    Reliable &amp; Safe
+                </h3>
+
+                <p>
+                    We put dependable service and electrical
+                    safety at the center of our work.
+                </p>
+
+            </div>
+
+
+            <div class="value-card">
+
+                <div class="value-icon">
+                    ★
+                </div>
+
+                <h3>
+                    Professional Service
+                </h3>
+
+                <p>
+                    We aim to provide quality-focused
+                    electrical services for every customer.
+                </p>
+
+            </div>
+
+
+            <div class="value-card">
+
+                <div class="value-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Modern Solutions
+                </h3>
+
+                <p>
+                    We embrace practical electrical and
+                    energy solutions for a better future.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     OUR APPROACH
+========================================================== -->
+
+<section class="section section-blue">
+
+    <div class="content-container">
+
+        <div class="section-header">
+
+            <span class="section-label">
+                Our Approach
+            </span>
+
+            <h2 class="section-title">
+                Simple. Professional. Dependable.
+            </h2>
+
+            <p class="section-intro">
+                We believe good electrical work starts with
+                understanding the customer's needs and ends
+                with a solution that is safe and reliable.
             </p>
 
         </div>
@@ -685,18 +1488,16 @@
             <div class="why-card">
 
                 <div class="why-icon">
-                    🛡️
+                    1
                 </div>
 
                 <h3>
-                    Safety-Minded Work
+                    Understand
                 </h3>
 
                 <p>
-                    Electrical work demands responsibility.
-                    We keep safety in mind when approaching
-                    installations, maintenance, repairs,
-                    wiring, and troubleshooting.
+                    We listen to the customer's needs
+                    and understand the project.
                 </p>
 
             </div>
@@ -705,17 +1506,16 @@
             <div class="why-card">
 
                 <div class="why-icon">
-                    ⚡
+                    2
                 </div>
 
                 <h3>
-                    Dependable Solutions
+                    Plan
                 </h3>
 
                 <p>
-                    Our objective is to provide practical
-                    electrical solutions designed around
-                    the customer's actual requirements.
+                    We consider the practical requirements
+                    of the electrical work.
                 </p>
 
             </div>
@@ -724,17 +1524,16 @@
             <div class="why-card">
 
                 <div class="why-icon">
-                    👷
+                    3
                 </div>
 
                 <h3>
-                    Professional Approach
+                    Deliver
                 </h3>
 
                 <p>
-                    We value punctual communication,
-                    responsible conduct, clear explanations,
-                    and professional customer relationships.
+                    We focus on providing quality,
+                    dependable electrical solutions.
                 </p>
 
             </div>
@@ -743,94 +1542,16 @@
             <div class="why-card">
 
                 <div class="why-icon">
-                    💡
+                    4
                 </div>
 
                 <h3>
-                    Modern Energy Thinking
+                    Support
                 </h3>
 
                 <p>
-                    We recognize the growing importance
-                    of solar, energy efficiency, and modern
-                    electrical technologies in meeting
-                    changing power needs.
-                </p>
-
-            </div>
-
-
-            <div class="why-card">
-
-                <div class="why-icon">
-                    🔧
-                </div>
-
-                <h3>
-                    Practical Problem Solving
-                </h3>
-
-                <p>
-                    We focus on understanding electrical
-                    problems and identifying practical
-                    approaches to address them.
-                </p>
-
-            </div>
-
-
-            <div class="why-card">
-
-                <div class="why-icon">
-                    ❤️
-                </div>
-
-                <h3>
-                    Customer Focus
-                </h3>
-
-                <p>
-                    We listen to customers, understand
-                    their priorities, and work toward
-                    solutions that fit their needs.
-                </p>
-
-            </div>
-
-
-            <div class="why-card">
-
-                <div class="why-icon">
-                    🏠
-                </div>
-
-                <h3>
-                    Multiple Sectors
-                </h3>
-
-                <p>
-                    Our services are designed to support
-                    residential, commercial, industrial,
-                    and other electrical requirements.
-                </p>
-
-            </div>
-
-
-            <div class="why-card">
-
-                <div class="why-icon">
-                    🇱🇷
-                </div>
-
-                <h3>
-                    Local Focus
-                </h3>
-
-                <p>
-                    We are focused on serving electrical
-                    and energy needs in Liberia while
-                    building lasting customer relationships.
+                    We remain focused on maintenance,
+                    repairs, and long-term reliability.
                 </p>
 
             </div>
@@ -844,543 +1565,7 @@
 
 
 <!-- =========================================================
-     HOW WE WORK
-========================================================== -->
-
-<section class="section section-light">
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <span class="section-label">
-                OUR APPROACH
-            </span>
-
-            <h2 class="section-title">
-                How We Work
-            </h2>
-
-            <p class="section-intro">
-                A professional electrical service starts
-                with understanding the problem and ends
-                with a solution that meets the customer's
-                requirements.
-            </p>
-
-        </div>
-
-
-        <div class="service-grid">
-
-
-            <div class="service-card">
-
-                <div class="service-icon">
-                    💬
-                </div>
-
-                <h3>
-                    01. Understand
-                </h3>
-
-                <p>
-                    We begin by listening to the customer's
-                    requirements, concerns, and project
-                    objectives.
-                </p>
-
-            </div>
-
-
-            <div class="service-card">
-
-                <div class="service-icon">
-                    🔍
-                </div>
-
-                <h3>
-                    02. Assess
-                </h3>
-
-                <p>
-                    We consider the electrical requirements,
-                    existing conditions, and the nature of
-                    the work involved.
-                </p>
-
-            </div>
-
-
-            <div class="service-card">
-
-                <div class="service-icon">
-                    📋
-                </div>
-
-                <h3>
-                    03. Plan
-                </h3>
-
-                <p>
-                    We discuss the appropriate approach,
-                    required work, and practical solution
-                    for the project.
-                </p>
-
-            </div>
-
-
-            <div class="service-card">
-
-                <div class="service-icon">
-                    🔧
-                </div>
-
-                <h3>
-                    04. Execute
-                </h3>
-
-                <p>
-                    We carry out the agreed electrical work
-                    with attention to safety, workmanship,
-                    and project requirements.
-                </p>
-
-            </div>
-
-
-            <div class="service-card">
-
-                <div class="service-icon">
-                    🧪
-                </div>
-
-                <h3>
-                    05. Check
-                </h3>
-
-                <p>
-                    We review the completed work and consider
-                    the functionality and requirements of the
-                    electrical system.
-                </p>
-
-            </div>
-
-
-            <div class="service-card">
-
-                <div class="service-icon">
-                    🤝
-                </div>
-
-                <h3>
-                    06. Support
-                </h3>
-
-                <p>
-                    We aim to maintain clear communication
-                    with customers and support their ongoing
-                    electrical needs.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     LEADERSHIP
-========================================================== -->
-
-<section class="section section-white">
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <span class="section-label">
-                LEADERSHIP
-            </span>
-
-            <h2 class="section-title">
-                Building PowerNest for the Future
-            </h2>
-
-            <p class="section-intro">
-                Strong electrical companies are built through
-                technical responsibility, customer trust,
-                teamwork, and a clear commitment to service.
-            </p>
-
-        </div>
-
-
-        <div class="two-column">
-
-
-            <div class="leadership-photo">
-
-                <img
-                    src="photos/CEO/01.jpg"
-                    alt="PowerNest Electric leadership"
-                    loading="lazy">
-
-            </div>
-
-
-            <div class="text-column">
-
-                <h3>
-                    A Vision for Reliable Electrical Service
-                </h3>
-
-                <p>
-                    PowerNest Electric is being developed
-                    around a long-term vision of becoming
-                    a trusted provider of electrical and
-                    energy solutions in Liberia.
-                </p>
-
-                <p>
-                    Our leadership recognizes that technical
-                    ability is only one part of a successful
-                    electrical company. Trust, communication,
-                    accountability, safety, and professional
-                    customer relationships are equally important.
-                </p>
-
-                <p>
-                    The objective is to build a company that
-                    customers can approach when they need
-                    dependable electrical support — from
-                    installations and wiring to maintenance,
-                    repairs, troubleshooting, and energy solutions.
-                </p>
-
-                <a
-                    href="index.html#contact"
-                    class="button">
-
-                    Contact Our Team
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     OUR TEAM
-========================================================== -->
-
-<section class="section section-light">
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <span class="section-label">
-                OUR PEOPLE
-            </span>
-
-            <h2 class="section-title">
-                Our Team
-            </h2>
-
-            <p class="section-intro">
-                Behind every electrical project is a team
-                committed to getting the work done responsibly,
-                safely, and professionally.
-            </p>
-
-        </div>
-
-
-        <div class="project-preview">
-
-
-            <div class="project-preview-card">
-
-                <img
-                    src="photos/OUR%20TEAM/1000277396.jpg"
-                    alt="PowerNest Electric team"
-                    loading="lazy">
-
-                <div class="project-preview-caption">
-
-                    <strong>
-                        PowerNest Electric Team
-                    </strong>
-
-                    <span>
-                        Working together in the field
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div class="project-preview-card">
-
-                <img
-                    src="photos/OUR%20TEAM/1000277398.jpg"
-                    alt="PowerNest Electric electrical team"
-                    loading="lazy">
-
-                <div class="project-preview-caption">
-
-                    <strong>
-                        Electrical Team
-                    </strong>
-
-                    <span>
-                        Professional field activities
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div class="project-preview-card">
-
-                <img
-                    src="photos/OUR%20TEAM/1000277400.jpg"
-                    alt="PowerNest Electric team at work"
-                    loading="lazy">
-
-                <div class="project-preview-caption">
-
-                    <strong>
-                        Field Work
-                    </strong>
-
-                    <span>
-                        Practical electrical solutions
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div class="project-preview-card">
-
-                <img
-                    src="photos/OUR%20TEAM/1000277402.jpg"
-                    alt="PowerNest Electric field team"
-                    loading="lazy">
-
-                <div class="project-preview-caption">
-
-                    <strong>
-                        On-Site Team
-                    </strong>
-
-                    <span>
-                        Working with responsibility
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div class="project-preview-card">
-
-                <img
-                    src="photos/OUR%20TEAM/1000277404.jpg"
-                    alt="PowerNest Electric electrical workers"
-                    loading="lazy">
-
-                <div class="project-preview-caption">
-
-                    <strong>
-                        Our People
-                    </strong>
-
-                    <span>
-                        Teamwork and professionalism
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div class="project-preview-card">
-
-                <img
-                    src="photos/OUR%20TEAM/1000277406.jpg"
-                    alt="PowerNest Electric professional field work"
-                    loading="lazy">
-
-                <div class="project-preview-caption">
-
-                    <strong>
-                        Electrical Work
-                    </strong>
-
-                    <span>
-                        Focused on dependable results
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="center-button">
-
-            <a
-                href="projects.html"
-                class="button">
-
-                See Our Projects
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     SERVING LIBERIA
-========================================================== -->
-
-<section class="section section-blue">
-
-    <div class="container">
-
-
-        <div class="section-header light-header">
-
-            <span class="section-label">
-                OUR LOCAL FOCUS
-            </span>
-
-            <h2 class="section-title">
-                Serving Liberia
-            </h2>
-
-            <p class="section-intro">
-                Local understanding. Professional service.
-                A commitment to dependable electrical solutions.
-            </p>
-
-        </div>
-
-
-        <div class="two-column">
-
-
-            <div class="text-column">
-
-                <h3 style="color: #ffffff;">
-                    Supporting Liberia's Power Needs
-                </h3>
-
-                <p style="color: #cbd7e4;">
-                    PowerNest Electric is focused on providing
-                    electrical and energy services for customers
-                    in Liberia.
-                </p>
-
-                <p style="color: #cbd7e4;">
-                    Our work can support residential properties,
-                    commercial facilities, businesses, industrial
-                    environments, and other customers requiring
-                    dependable electrical assistance.
-                </p>
-
-                <p style="color: #cbd7e4;">
-                    As the company grows, we remain focused on
-                    building trust, strengthening our capabilities,
-                    and providing professional services that
-                    contribute to safer and more reliable power
-                    systems.
-                </p>
-
-            </div>
-
-
-            <div class="feature-panel">
-
-                <div class="feature-panel-icon">
-                    🇱🇷
-                </div>
-
-                <h3>
-                    Liberia
-                </h3>
-
-                <p>
-                    Local focus. Future-minded service.
-                </p>
-
-                <ul>
-
-                    <li>
-                        Residential Electrical Services
-                    </li>
-
-                    <li>
-                        Commercial Electrical Solutions
-                    </li>
-
-                    <li>
-                        Industrial Electrical Support
-                    </li>
-
-                    <li>
-                        Wiring & Installation
-                    </li>
-
-                    <li>
-                        Maintenance & Repairs
-                    </li>
-
-                    <li>
-                        Solar & Energy Solutions
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     FINAL CTA
+     CTA
 ========================================================== -->
 
 <section class="cta-section">
@@ -1388,38 +1573,35 @@
     <div class="cta-content">
 
         <span class="section-label">
-            LET'S POWER THE FUTURE
+            Work With Us
         </span>
 
         <h2>
-            Have an Electrical Project?
+            Let's Build a Better Electrical Future
         </h2>
 
         <p>
             Whether you need electrical installation,
-            wiring, maintenance, repairs, troubleshooting,
-            solar, or another energy solution, PowerNest
-            Electric is ready to discuss your requirements.
+            maintenance, repairs, wiring, or energy solutions,
+            PowerNest Electric is ready to help.
         </p>
 
 
         <div class="cta-buttons">
 
             <a
-                href="index.html#contact"
-                class="button">
-
-                Request a Free Quote
-
+                href="services.html"
+                class="button"
+            >
+                View Our Services
             </a>
 
 
             <a
-                href="services.html"
-                class="button-outline">
-
-                View Our Services
-
+                href="contact.html"
+                class="button-outline"
+            >
+                Contact Us
             </a>
 
         </div>
@@ -1439,43 +1621,32 @@
     <div class="footer-container">
 
 
-        <!-- COMPANY -->
-
         <div class="footer-column">
 
             <img
                 src="logo.png"
                 alt="PowerNest Electric Logo"
-                class="footer-logo">
-
-            <h3>
-                PowerNest Electric
-            </h3>
+                class="footer-logo"
+            >
 
             <p>
-                Professional electrical installation,
-                maintenance, repair, wiring, solar,
-                and energy solutions.
+                Powering homes, businesses,
+                and industries.
             </p>
 
             <p>
-                Serving electrical and energy needs
-                in Liberia.
+                <strong>
+                    Reliable Power. Better Future.
+                </strong>
             </p>
-
-            <strong>
-                Future is Bright. So We Are.
-            </strong>
 
         </div>
 
 
-        <!-- QUICK LINKS -->
-
         <div class="footer-column">
 
             <h3>
-                Quick Links
+                Navigation
             </h3>
 
             <a href="index.html">
@@ -1494,85 +1665,44 @@
                 Projects
             </a>
 
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Explore
+            </h3>
+
             <a href="blog.html">
                 Blog
             </a>
 
-            <a href="index.html#contact">
+            <a href="contact.html">
                 Contact
+            </a>
+
+            <a href="services.html">
+                Electrical Services
             </a>
 
         </div>
 
 
-        <!-- SERVICES -->
-
         <div class="footer-column">
 
             <h3>
-                Services
-            </h3>
-
-            <a href="services.html">
-                Electrical Installation
-            </a>
-
-            <a href="services.html">
-                Wiring
-            </a>
-
-            <a href="services.html">
-                Maintenance
-            </a>
-
-            <a href="services.html">
-                Repairs
-            </a>
-
-            <a href="services.html">
-                Solar & Energy
-            </a>
-
-        </div>
-
-
-        <!-- CONTACT -->
-
-        <div class="footer-column">
-
-            <h3>
-                Contact
+                PowerNest Electric
             </h3>
 
             <p>
-                📧
-                powernestelectric2025@gmail.com
+                Professional electrical
+                and energy solutions.
             </p>
 
             <p>
-                📞
-                +231 880 947 513
+                Liberia
             </p>
-
-
-            <a
-                href="https://wa.me/231880947513"
-                target="_blank"
-                rel="noopener noreferrer">
-
-                💬 WhatsApp
-
-            </a>
-
-
-            <a
-                href="https://www.facebook.com/profile.php?id=61576923520194"
-                target="_blank"
-                rel="noopener noreferrer">
-
-                📘 Facebook
-
-            </a>
 
         </div>
 
@@ -1597,18 +1727,15 @@
 
 
 <!-- =========================================================
-     FLOATING WHATSAPP
+     WHATSAPP
 ========================================================== -->
 
 <a
-    href="https://wa.me/231880947513"
-    target="_blank"
-    rel="noopener noreferrer"
+    href="#"
     class="floating-whatsapp"
-    aria-label="Chat with PowerNest Electric on WhatsApp">
-
+    aria-label="Contact PowerNest Electric on WhatsApp"
+>
     💬
-
 </a>
 
 
@@ -1618,24 +1745,63 @@
 ========================================================== -->
 
 <a
-    href="#top"
+    href="#"
     class="back-to-top"
     id="backToTop"
-    aria-label="Back to top">
-
+>
     ↑
-
 </a>
 
 
 
-<!-- =========================================================
-     JAVASCRIPT
-========================================================== -->
+<script>
 
-<script src="js/main.js"></script>
+    function toggleMenu() {
+
+        const nav =
+            document.getElementById("navLinks");
+
+        nav.classList.toggle("active");
+
+    }
+
+
+    window.addEventListener("scroll", function () {
+
+        const button =
+            document.getElementById("backToTop");
+
+        if (window.scrollY > 400) {
+
+            button.classList.add("show");
+
+        } else {
+
+            button.classList.remove("show");
+
+        }
+
+    });
+
+
+    document
+        .getElementById("backToTop")
+        .addEventListener("click", function (event) {
+
+            event.preventDefault();
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        });
+
+</script>
 
 
 </body>
-
 </html>
