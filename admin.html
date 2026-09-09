@@ -19,10 +19,1560 @@
     <link rel="stylesheet"
           href="css/style.css">
 
+
+    <!-- =========================================================
+         PROFESSIONAL ADMIN DASHBOARD STYLES
+    ========================================================== -->
+
+    <style>
+
+        /* =====================================================
+           ADMIN VARIABLES
+        ====================================================== */
+
+        .admin-page {
+
+            --admin-navy: #0b1f3a;
+            --admin-navy-light: #12345d;
+            --admin-orange: #f5a623;
+            --admin-green: #198754;
+            --admin-red: #dc3545;
+            --admin-blue: #0d6efd;
+
+            --admin-bg: #f4f6f9;
+            --admin-white: #ffffff;
+            --admin-text: #172033;
+            --admin-muted: #6b7280;
+            --admin-border: #e5e7eb;
+
+            background: var(--admin-bg);
+
+            color: var(--admin-text);
+
+        }
+
+
+        /* =====================================================
+           ADMIN HEADER
+        ====================================================== */
+
+        .admin-header {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #081a31,
+                    #0b1f3a 55%,
+                    #12345d
+                );
+
+            color: #ffffff;
+
+            box-shadow:
+                0 4px 18px rgba(0,0,0,0.12);
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+        }
+
+
+        .admin-header-container {
+
+            max-width: 1400px;
+
+            margin: 0 auto;
+
+            padding: 14px 28px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+        }
+
+
+        .admin-brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            font-weight: 700;
+
+            font-size: 18px;
+
+            letter-spacing: 0.2px;
+
+        }
+
+
+        .admin-brand img {
+
+            width: 52px !important;
+
+            height: 52px !important;
+
+            min-width: 52px !important;
+
+            min-height: 52px !important;
+
+            max-width: 52px !important;
+
+            max-height: 52px !important;
+
+            object-fit: contain;
+
+            display: block;
+
+            flex-shrink: 0;
+
+        }
+
+
+        .admin-brand span {
+
+            white-space: nowrap;
+
+        }
+
+
+        .admin-header-right {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+        }
+
+
+        .admin-user-label {
+
+            background: rgba(255,255,255,0.10);
+
+            border: 1px solid rgba(255,255,255,0.15);
+
+            padding: 8px 14px;
+
+            border-radius: 999px;
+
+            font-size: 14px;
+
+            color: rgba(255,255,255,0.92);
+
+        }
+
+
+        .admin-logout-button {
+
+            border: 1px solid rgba(255,255,255,0.25);
+
+            background: rgba(255,255,255,0.08);
+
+            color: #ffffff;
+
+            padding: 9px 16px;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            font-weight: 600;
+
+            transition: 0.2s ease;
+
+        }
+
+
+        .admin-logout-button:hover {
+
+            background: rgba(255,255,255,0.16);
+
+            transform: translateY(-1px);
+
+        }
+
+
+
+        /* =====================================================
+           LOGIN
+        ====================================================== */
+
+        .admin-login-section {
+
+            min-height: calc(100vh - 82px);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 60px 20px;
+
+            background:
+
+                radial-gradient(
+                    circle at top left,
+                    rgba(245,166,35,0.12),
+                    transparent 32%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #eef2f7,
+                    #f8fafc
+                );
+
+        }
+
+
+        .admin-login-card {
+
+            width: 100%;
+
+            max-width: 470px;
+
+            background: #ffffff;
+
+            border: 1px solid var(--admin-border);
+
+            border-radius: 18px;
+
+            padding: 42px;
+
+            box-shadow:
+                0 20px 55px rgba(11,31,58,0.12);
+
+            text-align: center;
+
+        }
+
+
+        .admin-login-logo {
+
+            width: 88px;
+
+            height: 88px;
+
+            margin: 0 auto 22px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #f7f9fc;
+
+            border: 1px solid var(--admin-border);
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 8px 20px rgba(11,31,58,0.07);
+
+        }
+
+
+        .admin-login-logo img {
+
+            width: 72px !important;
+
+            height: 72px !important;
+
+            max-width: 72px !important;
+
+            max-height: 72px !important;
+
+            object-fit: contain;
+
+            display: block;
+
+        }
+
+
+        .admin-login-card h1 {
+
+            margin: 0 0 10px;
+
+            color: var(--admin-navy);
+
+            font-size: 30px;
+
+        }
+
+
+        .admin-login-intro {
+
+            color: var(--admin-muted);
+
+            line-height: 1.7;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .admin-form-group {
+
+            text-align: left;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .admin-form-group label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            color: var(--admin-text);
+
+        }
+
+
+        .admin-form-group input,
+
+        .admin-form-group select,
+
+        .admin-form-group textarea {
+
+            width: 100%;
+
+            box-sizing: border-box;
+
+            border: 1px solid #d7dce3;
+
+            background: #ffffff;
+
+            color: var(--admin-text);
+
+            border-radius: 9px;
+
+            padding: 12px 14px;
+
+            font-family: inherit;
+
+            font-size: 15px;
+
+            outline: none;
+
+            transition: 0.2s ease;
+
+        }
+
+
+        .admin-form-group input:focus,
+
+        .admin-form-group select:focus,
+
+        .admin-form-group textarea:focus {
+
+            border-color: var(--admin-orange);
+
+            box-shadow:
+                0 0 0 3px rgba(245,166,35,0.12);
+
+        }
+
+
+        .admin-form-group textarea {
+
+            resize: vertical;
+
+            line-height: 1.6;
+
+        }
+
+
+        .admin-login-button {
+
+            width: 100%;
+
+            border: none;
+
+            background: var(--admin-navy);
+
+            color: #ffffff;
+
+            padding: 14px 20px;
+
+            border-radius: 9px;
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+
+        }
+
+
+        .admin-login-button:hover {
+
+            background: var(--admin-navy-light);
+
+            transform: translateY(-1px);
+
+        }
+
+
+        .admin-login-message {
+
+            min-height: 22px;
+
+            margin: 15px 0 0;
+
+            color: var(--admin-red);
+
+            font-size: 14px;
+
+        }
+
+
+        .admin-login-note {
+
+            margin-top: 28px;
+
+            padding: 16px;
+
+            background: #f7f9fc;
+
+            border: 1px solid var(--admin-border);
+
+            border-radius: 10px;
+
+            text-align: left;
+
+        }
+
+
+        .admin-login-note strong {
+
+            display: block;
+
+            color: var(--admin-navy);
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .admin-login-note p {
+
+            margin: 0;
+
+            color: var(--admin-muted);
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+        }
+
+
+
+        /* =====================================================
+           DASHBOARD
+        ====================================================== */
+
+        .admin-dashboard {
+
+            max-width: 1400px;
+
+            margin: 0 auto;
+
+            padding: 35px 28px 60px;
+
+        }
+
+
+        .admin-dashboard-intro {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0b1f3a,
+                    #12345d
+                );
+
+            color: #ffffff;
+
+            border-radius: 18px;
+
+            padding: 34px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 30px;
+
+            box-shadow:
+                0 14px 35px rgba(11,31,58,0.14);
+
+            margin-bottom: 26px;
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+        .admin-dashboard-intro::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 260px;
+
+            height: 260px;
+
+            border-radius: 50%;
+
+            background: rgba(245,166,35,0.10);
+
+            right: -90px;
+
+            top: -100px;
+
+        }
+
+
+        .admin-dashboard-intro > * {
+
+            position: relative;
+
+            z-index: 1;
+
+        }
+
+
+        .admin-eyebrow {
+
+            margin: 0 0 8px;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
+
+            color: var(--admin-orange);
+
+        }
+
+
+        .admin-dashboard-intro h1 {
+
+            margin: 0 0 8px;
+
+            font-size: 32px;
+
+            color: #ffffff;
+
+        }
+
+
+        .admin-dashboard-intro p:last-child {
+
+            margin: 0;
+
+            color: rgba(255,255,255,0.76);
+
+            line-height: 1.6;
+
+        }
+
+
+        .admin-dashboard-actions {
+
+            display: flex;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .admin-primary-button,
+
+        .admin-secondary-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-height: 44px;
+
+            padding: 10px 18px;
+
+            border-radius: 9px;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            text-decoration: none;
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+
+            border: none;
+
+            box-sizing: border-box;
+
+        }
+
+
+        .admin-primary-button {
+
+            background: var(--admin-orange);
+
+            color: #172033;
+
+        }
+
+
+        .admin-primary-button:hover {
+
+            transform: translateY(-1px);
+
+            box-shadow:
+                0 7px 18px rgba(245,166,35,0.25);
+
+        }
+
+
+        .admin-secondary-button {
+
+            background: #ffffff;
+
+            color: var(--admin-navy);
+
+            border: 1px solid var(--admin-border);
+
+        }
+
+
+        .admin-secondary-button:hover {
+
+            background: #f7f9fc;
+
+            transform: translateY(-1px);
+
+        }
+
+
+        .admin-dashboard-intro .admin-secondary-button {
+
+            background: rgba(255,255,255,0.10);
+
+            border-color: rgba(255,255,255,0.20);
+
+            color: #ffffff;
+
+        }
+
+
+        .admin-dashboard-intro .admin-secondary-button:hover {
+
+            background: rgba(255,255,255,0.17);
+
+        }
+
+
+
+        /* =====================================================
+           STATISTICS
+        ====================================================== */
+
+        .admin-stats {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, minmax(0, 1fr));
+
+            gap: 18px;
+
+            margin-bottom: 28px;
+
+        }
+
+
+        .admin-stat-card {
+
+            background: #ffffff;
+
+            border: 1px solid var(--admin-border);
+
+            border-radius: 15px;
+
+            padding: 22px;
+
+            display: grid;
+
+            grid-template-columns: auto 1fr;
+
+            column-gap: 15px;
+
+            align-items: center;
+
+            box-shadow:
+                0 6px 20px rgba(11,31,58,0.05);
+
+            transition: 0.2s ease;
+
+        }
+
+
+        .admin-stat-card:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 10px 25px rgba(11,31,58,0.08);
+
+        }
+
+
+        .admin-stat-icon {
+
+            grid-row: span 2;
+
+            width: 50px;
+
+            height: 50px;
+
+            border-radius: 12px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #f1f5f9;
+
+            font-size: 23px;
+
+        }
+
+
+        .admin-stat-number {
+
+            font-size: 25px;
+
+            line-height: 1.1;
+
+            font-weight: 800;
+
+            color: var(--admin-navy);
+
+        }
+
+
+        .admin-stat-label {
+
+            margin-top: 4px;
+
+            color: var(--admin-muted);
+
+            font-size: 13px;
+
+        }
+
+
+        .admin-date-stat {
+
+            font-size: 19px;
+
+        }
+
+
+
+        /* =====================================================
+           SECTIONS
+        ====================================================== */
+
+        .admin-editor-section,
+
+        .admin-articles-section,
+
+        .admin-info-section {
+
+            background: #ffffff;
+
+            border: 1px solid var(--admin-border);
+
+            border-radius: 16px;
+
+            box-shadow:
+                0 6px 20px rgba(11,31,58,0.05);
+
+            margin-bottom: 26px;
+
+        }
+
+
+        .admin-editor-section {
+
+            padding: 30px;
+
+        }
+
+
+        .admin-articles-section {
+
+            overflow: hidden;
+
+        }
+
+
+        .admin-section-heading {
+
+            padding: 25px 28px;
+
+            border-bottom: 1px solid var(--admin-border);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+        }
+
+
+        .admin-section-heading h2 {
+
+            margin: 0 0 5px;
+
+            color: var(--admin-navy);
+
+            font-size: 23px;
+
+        }
+
+
+        .admin-section-heading p:last-child {
+
+            margin: 0;
+
+            color: var(--admin-muted);
+
+            font-size: 14px;
+
+        }
+
+
+        .admin-close-button {
+
+            width: 40px;
+
+            height: 40px;
+
+            border: 1px solid var(--admin-border);
+
+            background: #ffffff;
+
+            border-radius: 8px;
+
+            font-size: 25px;
+
+            color: var(--admin-muted);
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+
+        }
+
+
+        .admin-close-button:hover {
+
+            background: #f8fafc;
+
+            color: var(--admin-red);
+
+        }
+
+
+
+        /* =====================================================
+           ARTICLE FORM
+        ====================================================== */
+
+        .admin-article-form {
+
+            padding-top: 25px;
+
+        }
+
+
+        .admin-form-row {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+
+        }
+
+
+        .admin-form-group small {
+
+            display: block;
+
+            margin-top: 7px;
+
+            color: var(--admin-muted);
+
+            font-size: 12px;
+
+            line-height: 1.5;
+
+        }
+
+
+        .admin-editor-buttons {
+
+            display: flex;
+
+            gap: 10px;
+
+            align-items: center;
+
+            padding-top: 8px;
+
+        }
+
+
+        .admin-editor-message {
+
+            min-height: 22px;
+
+            color: var(--admin-green);
+
+            font-weight: 600;
+
+            font-size: 14px;
+
+        }
+
+
+
+        /* =====================================================
+           FILTER
+        ====================================================== */
+
+        .admin-filter-area select {
+
+            min-width: 160px;
+
+            padding: 10px 12px;
+
+            border: 1px solid var(--admin-border);
+
+            border-radius: 8px;
+
+            background: #ffffff;
+
+            color: var(--admin-text);
+
+            outline: none;
+
+        }
+
+
+
+        /* =====================================================
+           TABLE
+        ====================================================== */
+
+        .admin-table-wrapper {
+
+            width: 100%;
+
+            overflow-x: auto;
+
+        }
+
+
+        .admin-article-table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+            min-width: 760px;
+
+        }
+
+
+        .admin-article-table th {
+
+            background: #f8fafc;
+
+            color: #4b5563;
+
+            text-align: left;
+
+            font-size: 12px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.6px;
+
+            font-weight: 800;
+
+            padding: 14px 20px;
+
+            border-bottom: 1px solid var(--admin-border);
+
+        }
+
+
+        .admin-article-table td {
+
+            padding: 17px 20px;
+
+            border-bottom: 1px solid #edf0f3;
+
+            color: var(--admin-text);
+
+            font-size: 14px;
+
+            vertical-align: middle;
+
+        }
+
+
+        .admin-article-table tbody tr:hover {
+
+            background: #fafbfc;
+
+        }
+
+
+        .admin-empty-state {
+
+            text-align: center;
+
+            padding: 45px !important;
+
+            color: var(--admin-muted) !important;
+
+        }
+
+
+
+        /* =====================================================
+           INFO CARDS
+        ====================================================== */
+
+        .admin-info-section {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 1px;
+
+            background: var(--admin-border);
+
+            overflow: hidden;
+
+        }
+
+
+        .admin-info-card {
+
+            background: #ffffff;
+
+            padding: 25px;
+
+            display: flex;
+
+            gap: 16px;
+
+        }
+
+
+        .admin-info-icon {
+
+            width: 45px;
+
+            height: 45px;
+
+            min-width: 45px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #f4f7fb;
+
+            border-radius: 10px;
+
+            font-size: 21px;
+
+        }
+
+
+        .admin-info-card h3 {
+
+            margin: 0 0 7px;
+
+            color: var(--admin-navy);
+
+            font-size: 16px;
+
+        }
+
+
+        .admin-info-card p {
+
+            margin: 0;
+
+            color: var(--admin-muted);
+
+            font-size: 13px;
+
+            line-height: 1.65;
+
+        }
+
+
+
+        /* =====================================================
+           DELETE MODAL
+        ====================================================== */
+
+        .admin-modal {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 2000;
+
+            background: rgba(8,20,36,0.65);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 20px;
+
+        }
+
+
+        .admin-modal-box {
+
+            width: 100%;
+
+            max-width: 430px;
+
+            background: #ffffff;
+
+            border-radius: 16px;
+
+            padding: 32px;
+
+            text-align: center;
+
+            box-shadow:
+                0 25px 70px rgba(0,0,0,0.25);
+
+            position: relative;
+
+        }
+
+
+        .admin-modal-close {
+
+            position: absolute;
+
+            right: 15px;
+
+            top: 15px;
+
+            width: 35px;
+
+            height: 35px;
+
+            border: none;
+
+            background: #f3f4f6;
+
+            border-radius: 8px;
+
+            font-size: 21px;
+
+            cursor: pointer;
+
+            color: var(--admin-muted);
+
+        }
+
+
+        .admin-modal-icon {
+
+            width: 62px;
+
+            height: 62px;
+
+            margin: 5px auto 18px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #fff4e5;
+
+            font-size: 27px;
+
+        }
+
+
+        .admin-modal-box h2 {
+
+            margin: 0 0 10px;
+
+            color: var(--admin-navy);
+
+        }
+
+
+        .admin-modal-box p {
+
+            color: var(--admin-muted);
+
+            line-height: 1.6;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .admin-modal-buttons {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 10px;
+
+        }
+
+
+        .admin-danger-button {
+
+            border: none;
+
+            background: var(--admin-red);
+
+            color: #ffffff;
+
+            padding: 11px 18px;
+
+            border-radius: 8px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+        }
+
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        .admin-footer {
+
+            text-align: center;
+
+            padding: 25px 20px;
+
+            background: #081a31;
+
+            color: rgba(255,255,255,0.65);
+
+            font-size: 13px;
+
+        }
+
+
+        .admin-footer p {
+
+            margin: 4px 0;
+
+        }
+
+
+        .admin-footer p:last-child {
+
+            color: var(--admin-orange);
+
+            font-weight: 700;
+
+        }
+
+
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media (max-width: 900px) {
+
+            .admin-stats {
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
+            }
+
+
+            .admin-info-section {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .admin-dashboard-intro {
+
+                align-items: flex-start;
+
+                flex-direction: column;
+
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .admin-header-container {
+
+                padding: 12px 16px;
+
+            }
+
+
+            .admin-brand {
+
+                font-size: 15px;
+
+            }
+
+
+            .admin-brand img {
+
+                width: 44px !important;
+
+                height: 44px !important;
+
+                min-width: 44px !important;
+
+                min-height: 44px !important;
+
+                max-width: 44px !important;
+
+                max-height: 44px !important;
+
+            }
+
+
+            .admin-user-label {
+
+                display: none;
+
+            }
+
+
+            .admin-logout-button {
+
+                padding: 8px 12px;
+
+            }
+
+
+            .admin-dashboard {
+
+                padding: 20px 14px 40px;
+
+            }
+
+
+            .admin-dashboard-intro {
+
+                padding: 25px 20px;
+
+                border-radius: 14px;
+
+            }
+
+
+            .admin-dashboard-intro h1 {
+
+                font-size: 26px;
+
+            }
+
+
+            .admin-dashboard-actions {
+
+                width: 100%;
+
+            }
+
+
+            .admin-dashboard-actions a,
+
+            .admin-dashboard-actions button {
+
+                flex: 1;
+
+            }
+
+
+            .admin-stats {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .admin-editor-section {
+
+                padding: 20px;
+
+            }
+
+
+            .admin-form-row {
+
+                grid-template-columns: 1fr;
+
+                gap: 0;
+
+            }
+
+
+            .admin-section-heading {
+
+                padding: 20px;
+
+                align-items: flex-start;
+
+                flex-direction: column;
+
+            }
+
+
+            .admin-filter-area {
+
+                width: 100%;
+
+            }
+
+
+            .admin-filter-area select {
+
+                width: 100%;
+
+            }
+
+
+            .admin-login-card {
+
+                padding: 30px 22px;
+
+            }
+
+
+            .admin-editor-buttons {
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+            }
+
+
+            .admin-editor-buttons button {
+
+                width: 100%;
+
+            }
+
+
+            .admin-modal-buttons {
+
+                flex-direction: column;
+
+            }
+
+        }
+
+    </style>
+
 </head>
 
 
+
 <body class="admin-page">
+
 
 
 <!-- =========================================================
@@ -34,7 +1584,8 @@
     <div class="admin-header-container">
 
         <a href="index.html"
-           class="admin-brand">
+           class="admin-brand"
+           aria-label="Return to PowerNest Electric website">
 
             <img
                 src="logo.png"
@@ -102,8 +1653,8 @@
 
         <p class="admin-login-intro">
 
-            Sign in to manage PowerNest Electric
-            blog articles.
+            Sign in to securely manage
+            PowerNest Electric blog content.
 
         </p>
 
@@ -128,7 +1679,6 @@
             </div>
 
 
-
             <div class="admin-form-group">
 
                 <label for="adminPassword">
@@ -146,12 +1696,11 @@
             </div>
 
 
-
             <button
                 type="submit"
                 class="admin-login-button">
 
-                🔐 Login
+                🔐 Login to Dashboard
 
             </button>
 
@@ -169,12 +1718,13 @@
         <div class="admin-login-note">
 
             <strong>
-                Administration area
+                PowerNest Electric Administration
             </strong>
 
             <p>
-                This dashboard is intended for
-                PowerNest Electric website management.
+                Manage your electrical, energy,
+                safety and maintenance articles
+                from one central dashboard.
             </p>
 
         </div>
@@ -197,7 +1747,7 @@
 
 
     <!-- =====================================================
-         DASHBOARD INTRO
+         WELCOME / HERO
     ====================================================== -->
 
     <section class="admin-dashboard-intro">
@@ -205,7 +1755,7 @@
         <div>
 
             <p class="admin-eyebrow">
-                POWERNEST ELECTRIC
+                POWERNEST ELECTRIC • ADMINISTRATION
             </p>
 
 
@@ -215,8 +1765,9 @@
 
 
             <p>
-                Create, edit, publish and remove
-                PowerNest Electric blog articles.
+                Manage your articles, publish new content,
+                update existing posts and keep your
+                PowerNest Electric blog up to date.
             </p>
 
         </div>
@@ -229,7 +1780,7 @@
                 target="_blank"
                 class="admin-secondary-button">
 
-                View Blog
+                View Live Blog
 
             </a>
 
@@ -250,7 +1801,7 @@
 
 
     <!-- =====================================================
-         DASHBOARD STATS
+         DASHBOARD STATISTICS
     ====================================================== -->
 
     <section class="admin-stats">
@@ -315,7 +1866,7 @@
             </span>
 
             <span class="admin-stat-label">
-                Drafts
+                Draft Articles
             </span>
 
         </div>
@@ -361,12 +1912,17 @@
             <div>
 
                 <p class="admin-eyebrow">
-                    ARTICLE EDITOR
+                    CONTENT CREATION
                 </p>
 
                 <h2 id="editorHeading">
                     Create New Article
                 </h2>
+
+                <p>
+                    Add a professional article to your
+                    PowerNest Electric blog.
+                </p>
 
             </div>
 
@@ -385,11 +1941,10 @@
 
 
 
-        <form id="articleForm"
-              class="admin-article-form">
+        <form
+            id="articleForm"
+            class="admin-article-form">
 
-
-            <!-- ARTICLE ID -->
 
             <input
                 type="hidden"
@@ -408,14 +1963,14 @@
                 <input
                     type="text"
                     id="articleTitleInput"
-                    placeholder="Enter article title"
+                    placeholder="Enter a clear and professional article title"
                     required>
 
             </div>
 
 
 
-            <!-- CATEGORY -->
+            <!-- CATEGORY + DATE -->
 
             <div class="admin-form-row">
 
@@ -472,8 +2027,6 @@
 
 
 
-                <!-- DATE -->
-
                 <div class="admin-form-group">
 
                     <label for="articleDateInput">
@@ -509,7 +2062,7 @@
 
 
 
-            <!-- IMAGE -->
+            <!-- FEATURED IMAGE -->
 
             <div class="admin-form-group">
 
@@ -524,7 +2077,7 @@
 
                 <small>
                     Enter the path of an existing image
-                    in your website project.
+                    inside your website project.
                 </small>
 
             </div>
@@ -542,7 +2095,7 @@
                 <textarea
                     id="articleExcerptInput"
                     rows="4"
-                    placeholder="Write a short description for the blog listing..."
+                    placeholder="Write a short description that will appear on the blog listing..."
                     required></textarea>
 
             </div>
@@ -560,7 +2113,7 @@
                 <textarea
                     id="articleContentInput"
                     rows="16"
-                    placeholder="Write the full article here..."
+                    placeholder="Write your complete article here..."
                     required></textarea>
 
                 <small>
@@ -597,7 +2150,7 @@
 
 
 
-            <!-- FORM BUTTONS -->
+            <!-- BUTTONS -->
 
             <div class="admin-editor-buttons">
 
@@ -657,7 +2210,8 @@
                 </h2>
 
                 <p>
-                    Manage your existing articles below.
+                    Review and manage all your existing
+                    blog content.
                 </p>
 
             </div>
@@ -695,7 +2249,7 @@
 
 
 
-        <!-- ARTICLE TABLE -->
+        <!-- TABLE -->
 
         <div class="admin-table-wrapper">
 
@@ -750,7 +2304,6 @@
 
         </div>
 
-
     </section>
 
 
@@ -775,9 +2328,9 @@
                 </h3>
 
                 <p>
-                    This dashboard allows you to manage
-                    blog content without editing the
-                    blog page manually.
+                    Manage your PowerNest Electric
+                    blog content from one central
+                    administration dashboard.
                 </p>
 
             </div>
@@ -795,14 +2348,13 @@
             <div>
 
                 <h3>
-                    About Security
+                    Security Notice
                 </h3>
 
                 <p>
-                    The current dashboard is a browser-based
-                    development system. Before publishing
-                    the website publicly, replace the demo
-                    authentication with secure server-side
+                    This is currently a browser-based
+                    development system. Before public
+                    deployment, use secure server-side
                     authentication and a database.
                 </p>
 
@@ -821,13 +2373,13 @@
             <div>
 
                 <h3>
-                    Blog Workflow
+                    Publishing Workflow
                 </h3>
 
                 <p>
-                    Create an article here, save it,
-                    then open the Blog page to see the
-                    published article.
+                    Create your article, choose its status,
+                    save it and then view the published
+                    content on your live Blog page.
                 </p>
 
             </div>
@@ -875,8 +2427,8 @@
 
 
         <p>
-            Are you sure you want to delete this
-            article? This action cannot be undone.
+            Are you sure you want to delete this article?
+            This action cannot be undone.
         </p>
 
 
@@ -911,7 +2463,7 @@
 
 
 <!-- =========================================================
-     FOOTER
+     ADMIN FOOTER
 ========================================================== -->
 
 <footer class="admin-footer">

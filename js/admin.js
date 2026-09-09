@@ -1,44 +1,31 @@
 /* =========================================================
    POWERNEST ELECTRIC
    ADMIN DASHBOARD JAVASCRIPT
-========================================================= */
+   ========================================================= */
 
 "use strict";
 
-
 /* =========================================================
    DEMO ADMIN LOGIN
-=========================================================
-
-   IMPORTANT:
-   This is suitable for local development/testing only.
-
-   Before publishing the website publicly, replace this
-   browser-based authentication with secure server-side
-   authentication and a database.
 ========================================================= */
 
 const ADMIN_USERNAME = "admin";
 const ADMIN_PASSWORD = "PowerNest2025";
 
-
 /* =========================================================
-   STORAGE KEYS
+   STORAGE
 ========================================================= */
 
-const ARTICLES_STORAGE_KEY =
-    "powernest_articles";
-
-const LOGIN_STORAGE_KEY =
-    "powernest_admin_logged_in";
-
+const ARTICLES_STORAGE_KEY = "powernest_articles";
+const LOGIN_STORAGE_KEY = "powernest_admin_logged_in";
 
 /* =========================================================
    DEFAULT ARTICLES
+   These are only used when the website has no saved
+   articles yet.
 ========================================================= */
 
 const defaultArticles = [
-
     {
         id: "electrical-safety-tips",
         title: "Electrical Safety Tips Every Homeowner Should Know",
@@ -49,29 +36,50 @@ const defaultArticles = [
         excerpt:
             "Simple electrical safety practices can help protect homes, families and electrical equipment.",
         content: `
-<p>Electrical safety is important in every home. Small electrical problems can become serious when they are ignored.</p>
+            <p>
+                Electricity is an essential part of modern homes,
+                but electrical systems must always be treated with
+                care and respect.
+            </p>
 
-<h2>Inspect electrical equipment regularly</h2>
+            <h2>Keep Electrical Systems in Good Condition</h2>
 
-<p>Check electrical outlets, switches, extension cords and appliances for visible damage or unusual signs.</p>
+            <p>
+                Damaged cables, broken outlets, exposed wires and
+                faulty electrical equipment should not be ignored.
+                Electrical problems should be inspected and repaired
+                by a qualified professional.
+            </p>
 
-<h2>Avoid overloaded outlets</h2>
+            <h2>Avoid Overloading Outlets</h2>
 
-<p>Do not connect too many appliances to one electrical outlet or extension board.</p>
+            <p>
+                Connecting too many electrical devices to one outlet
+                or power strip can create unnecessary electrical
+                stress.
+            </p>
 
-<h2>Keep electrical equipment away from water</h2>
+            <h2>Watch for Warning Signs</h2>
 
-<p>Water and electricity can create dangerous situations. Keep electrical equipment and connections away from wet areas.</p>
+            <ul>
+                <li>Frequent circuit breaker trips.</li>
+                <li>Burning smells from electrical equipment.</li>
+                <li>Sparks from outlets or switches.</li>
+                <li>Damaged electrical cables.</li>
+                <li>Flickering lights.</li>
+                <li>Unusual heat around outlets or equipment.</li>
+            </ul>
 
-<h2>Contact a qualified professional</h2>
+            <h2>Get Problems Checked</h2>
 
-<p>If you notice electrical problems that you cannot safely handle, contact an electrical professional for inspection and repair.</p>
-
-<p>PowerNest Electric is committed to safety-focused electrical solutions for homes, businesses and industries in Liberia.</p>
-`,
+            <p>
+                Electrical problems should never be ignored.
+                If you notice something unusual, seek professional
+                electrical assistance.
+            </p>
+        `,
         status: "published"
     },
-
 
     {
         id: "solar-energy-for-homes",
@@ -83,27 +91,44 @@ const defaultArticles = [
         excerpt:
             "Learn some basic considerations when exploring solar and modern energy solutions.",
         content: `
-<p>Solar energy can provide an alternative source of electrical power for homes and businesses.</p>
+            <p>
+                Solar energy can provide an alternative way to
+                generate electricity for homes and other properties.
+            </p>
 
-<h2>What is solar energy?</h2>
+            <h2>What Is Solar Energy?</h2>
 
-<p>Solar energy systems use sunlight to generate electrical power through solar panels.</p>
+            <p>
+                Solar energy systems use sunlight to generate
+                electrical power. Depending on the system design,
+                solar panels can work together with batteries,
+                inverters and other equipment.
+            </p>
 
-<h2>Why consider solar?</h2>
+            <h2>Why Consider Solar Energy?</h2>
 
-<p>Solar systems can support electrical needs and may be useful where reliable power is an important consideration.</p>
+            <p>
+                Solar energy can be useful for customers looking
+                for modern energy solutions and greater flexibility
+                in how electricity is generated and used.
+            </p>
 
-<h2>Professional assessment matters</h2>
+            <ul>
+                <li>Solar panels can generate electricity from sunlight.</li>
+                <li>Battery systems can provide energy storage.</li>
+                <li>Solar systems can support different electrical needs.</li>
+                <li>Proper system design is important for reliable operation.</li>
+            </ul>
 
-<p>Before installing a solar system, the electrical requirements of the property should be properly assessed.</p>
+            <h2>Proper Planning Is Important</h2>
 
-<p>The size of the system, expected electrical load, available space and energy requirements should all be considered.</p>
-
-<p>PowerNest Electric can discuss your electrical and energy requirements and help you understand possible solutions.</p>
-`,
+            <p>
+                Before installing a solar system, the electrical
+                requirements of the property should be considered.
+            </p>
+        `,
         status: "published"
     },
-
 
     {
         id: "electrical-maintenance",
@@ -115,93 +140,88 @@ const defaultArticles = [
         excerpt:
             "Regular inspections and maintenance can help identify electrical problems before they become bigger issues.",
         content: `
-<p>Regular electrical maintenance can help identify problems before they develop into larger electrical issues.</p>
+            <p>
+                Regular electrical maintenance is an important
+                part of keeping homes, businesses and electrical
+                systems operating safely and reliably.
+            </p>
 
-<h2>Why maintenance is important</h2>
+            <h2>Why Electrical Maintenance Matters</h2>
 
-<p>Electrical systems contain many components that require proper inspection and maintenance.</p>
+            <p>
+                Electrical systems can develop problems over time.
+                Loose connections, damaged components, overloaded
+                circuits and other issues may not always be visible
+                immediately.
+            </p>
 
-<h2>Early identification of problems</h2>
+            <h2>Benefits of Regular Maintenance</h2>
 
-<p>Regular inspection can help identify damaged components, loose connections and other issues that may require attention.</p>
+            <ul>
+                <li>Helps identify electrical problems early.</li>
+                <li>Supports electrical safety.</li>
+                <li>Helps protect electrical equipment.</li>
+                <li>Can reduce unexpected electrical failures.</li>
+                <li>Helps maintain reliable electrical systems.</li>
+            </ul>
 
-<h2>Maintenance for businesses</h2>
+            <h2>Professional Electrical Support</h2>
 
-<p>Businesses depend on electrical systems for lighting, equipment and daily operations. Proper maintenance can help keep these systems operating reliably.</p>
-
-<h2>Professional electrical support</h2>
-
-<p>Electrical maintenance should be carried out safely and appropriately. When a problem requires professional attention, contact an electrical service provider.</p>
-
-<p>PowerNest Electric provides electrical maintenance, troubleshooting and repair services in Liberia.</p>
-`,
+            <p>
+                PowerNest Electric provides electrical maintenance,
+                troubleshooting and repair services for residential,
+                commercial and industrial customers.
+            </p>
+        `,
         status: "published"
     }
-
 ];
-
 
 /* =========================================================
    GET ARTICLES
 ========================================================= */
 
 function getArticles() {
-
     try {
-
-        const saved =
-            localStorage.getItem(
-                ARTICLES_STORAGE_KEY
-            );
-
+        const saved = localStorage.getItem(
+            ARTICLES_STORAGE_KEY
+        );
 
         if (!saved) {
+            const initialArticles = [...defaultArticles];
 
             localStorage.setItem(
                 ARTICLES_STORAGE_KEY,
-                JSON.stringify(defaultArticles)
+                JSON.stringify(initialArticles)
             );
 
-            return [...defaultArticles];
-
+            return initialArticles;
         }
 
-
-        const articles =
-            JSON.parse(saved);
-
+        const articles = JSON.parse(saved);
 
         if (!Array.isArray(articles)) {
-
-            return [...defaultArticles];
-
+            return [];
         }
-
 
         return articles;
 
     } catch (error) {
-
         console.error(
-            "Unable to read articles:",
+            "PowerNest Electric: Unable to read articles.",
             error
         );
 
-        return [...defaultArticles];
-
+        return [];
     }
-
 }
-
 
 /* =========================================================
    SAVE ARTICLES
 ========================================================= */
 
 function saveArticles(articles) {
-
     try {
-
         localStorage.setItem(
             ARTICLES_STORAGE_KEY,
             JSON.stringify(articles)
@@ -210,234 +230,132 @@ function saveArticles(articles) {
         return true;
 
     } catch (error) {
-
         console.error(
-            "Unable to save articles:",
+            "PowerNest Electric: Unable to save articles.",
             error
         );
 
         return false;
-
     }
-
 }
-
 
 /* =========================================================
    ELEMENT REFERENCES
 ========================================================= */
 
 const loginSection =
-    document.getElementById(
-        "loginSection"
-    );
+    document.getElementById("loginSection");
 
 const dashboardSection =
-    document.getElementById(
-        "dashboardSection"
-    );
+    document.getElementById("dashboardSection");
 
 const adminLoginForm =
-    document.getElementById(
-        "adminLoginForm"
-    );
+    document.getElementById("adminLoginForm");
 
 const adminUsername =
-    document.getElementById(
-        "adminUsername"
-    );
+    document.getElementById("adminUsername");
 
 const adminPassword =
-    document.getElementById(
-        "adminPassword"
-    );
+    document.getElementById("adminPassword");
 
 const loginMessage =
-    document.getElementById(
-        "loginMessage"
-    );
+    document.getElementById("loginMessage");
 
 const logoutButton =
-    document.getElementById(
-        "logoutButton"
-    );
+    document.getElementById("logoutButton");
 
 const adminUserLabel =
-    document.getElementById(
-        "adminUserLabel"
-    );
-
-
-/* =========================================================
-   DASHBOARD ELEMENTS
-========================================================= */
+    document.getElementById("adminUserLabel");
 
 const newArticleButton =
-    document.getElementById(
-        "newArticleButton"
-    );
+    document.getElementById("newArticleButton");
 
 const articleEditorSection =
-    document.getElementById(
-        "articleEditorSection"
-    );
+    document.getElementById("articleEditorSection");
 
 const articleForm =
-    document.getElementById(
-        "articleForm"
-    );
+    document.getElementById("articleForm");
 
 const editorHeading =
-    document.getElementById(
-        "editorHeading"
-    );
+    document.getElementById("editorHeading");
 
 const cancelEditorButton =
-    document.getElementById(
-        "cancelEditorButton"
-    );
+    document.getElementById("cancelEditorButton");
 
 const cancelArticleButton =
-    document.getElementById(
-        "cancelArticleButton"
-    );
+    document.getElementById("cancelArticleButton");
 
 const editorMessage =
-    document.getElementById(
-        "editorMessage"
-    );
-
-
-/* =========================================================
-   ARTICLE FORM ELEMENTS
-========================================================= */
+    document.getElementById("editorMessage");
 
 const articleId =
-    document.getElementById(
-        "articleId"
-    );
+    document.getElementById("articleId");
 
 const articleTitleInput =
-    document.getElementById(
-        "articleTitleInput"
-    );
+    document.getElementById("articleTitleInput");
 
 const articleCategoryInput =
-    document.getElementById(
-        "articleCategoryInput"
-    );
+    document.getElementById("articleCategoryInput");
 
 const articleDateInput =
-    document.getElementById(
-        "articleDateInput"
-    );
+    document.getElementById("articleDateInput");
 
 const articleAuthorInput =
-    document.getElementById(
-        "articleAuthorInput"
-    );
+    document.getElementById("articleAuthorInput");
 
 const articleImageInput =
-    document.getElementById(
-        "articleImageInput"
-    );
+    document.getElementById("articleImageInput");
 
 const articleExcerptInput =
-    document.getElementById(
-        "articleExcerptInput"
-    );
+    document.getElementById("articleExcerptInput");
 
 const articleContentInput =
-    document.getElementById(
-        "articleContentInput"
-    );
+    document.getElementById("articleContentInput");
 
 const articleStatusInput =
-    document.getElementById(
-        "articleStatusInput"
-    );
-
-
-/* =========================================================
-   ARTICLE MANAGEMENT ELEMENTS
-========================================================= */
+    document.getElementById("articleStatusInput");
 
 const articleFilter =
-    document.getElementById(
-        "articleFilter"
-    );
+    document.getElementById("articleFilter");
 
 const adminArticlesTable =
-    document.getElementById(
-        "adminArticlesTable"
-    );
-
-
-/* =========================================================
-   STAT ELEMENTS
-========================================================= */
+    document.getElementById("adminArticlesTable");
 
 const totalArticles =
-    document.getElementById(
-        "totalArticles"
-    );
+    document.getElementById("totalArticles");
 
 const publishedArticles =
-    document.getElementById(
-        "publishedArticles"
-    );
+    document.getElementById("publishedArticles");
 
 const draftArticles =
-    document.getElementById(
-        "draftArticles"
-    );
+    document.getElementById("draftArticles");
 
 const latestArticleDate =
-    document.getElementById(
-        "latestArticleDate"
-    );
-
-
-/* =========================================================
-   DELETE MODAL ELEMENTS
-========================================================= */
+    document.getElementById("latestArticleDate");
 
 const deleteModal =
-    document.getElementById(
-        "deleteModal"
-    );
+    document.getElementById("deleteModal");
 
 const closeDeleteModal =
-    document.getElementById(
-        "closeDeleteModal"
-    );
+    document.getElementById("closeDeleteModal");
 
 const confirmDeleteButton =
-    document.getElementById(
-        "confirmDeleteButton"
-    );
+    document.getElementById("confirmDeleteButton");
 
 const cancelDeleteButton =
-    document.getElementById(
-        "cancelDeleteButton"
-    );
-
+    document.getElementById("cancelDeleteButton");
 
 let articleToDelete = null;
-
 
 /* =========================================================
    LOGIN
 ========================================================= */
 
 if (adminLoginForm) {
-
     adminLoginForm.addEventListener(
         "submit",
         function (event) {
-
             event.preventDefault();
-
 
             const username =
                 adminUsername.value.trim();
@@ -445,50 +363,35 @@ if (adminLoginForm) {
             const password =
                 adminPassword.value;
 
-
             if (
                 username === ADMIN_USERNAME &&
                 password === ADMIN_PASSWORD
             ) {
-
                 localStorage.setItem(
                     LOGIN_STORAGE_KEY,
                     "true"
                 );
 
-
                 showDashboard();
-
 
                 adminLoginForm.reset();
 
-
                 if (loginMessage) {
-
                     loginMessage.textContent = "";
-
                 }
 
             } else {
 
                 if (loginMessage) {
-
                     loginMessage.textContent =
                         "Incorrect username or password.";
 
-                    loginMessage.classList.add(
-                        "error"
-                    );
-
+                    loginMessage.classList.add("error");
                 }
-
             }
-
         }
     );
-
 }
-
 
 /* =========================================================
    SHOW DASHBOARD
@@ -497,33 +400,19 @@ if (adminLoginForm) {
 function showDashboard() {
 
     if (loginSection) {
-
-        loginSection.style.display =
-            "none";
-
+        loginSection.style.display = "none";
     }
-
 
     if (dashboardSection) {
-
-        dashboardSection.style.display =
-            "block";
-
+        dashboardSection.style.display = "block";
     }
-
 
     if (adminUserLabel) {
-
-        adminUserLabel.textContent =
-            "Admin";
-
+        adminUserLabel.textContent = "Admin";
     }
 
-
     renderDashboard();
-
 }
-
 
 /* =========================================================
    SHOW LOGIN
@@ -532,32 +421,21 @@ function showDashboard() {
 function showLogin() {
 
     if (loginSection) {
-
-        loginSection.style.display =
-            "flex";
-
+        loginSection.style.display = "flex";
     }
-
 
     if (dashboardSection) {
-
-        dashboardSection.style.display =
-            "none";
-
+        dashboardSection.style.display = "none";
     }
 
-
     closeEditor();
-
 }
-
 
 /* =========================================================
    LOGOUT
 ========================================================= */
 
 if (logoutButton) {
-
     logoutButton.addEventListener(
         "click",
         function () {
@@ -566,17 +444,13 @@ if (logoutButton) {
                 LOGIN_STORAGE_KEY
             );
 
-
             showLogin();
-
         }
     );
-
 }
 
-
 /* =========================================================
-   CHECK LOGIN STATUS
+   CHECK LOGIN
 ========================================================= */
 
 function checkLoginStatus() {
@@ -586,32 +460,21 @@ function checkLoginStatus() {
             LOGIN_STORAGE_KEY
         );
 
-
     if (loggedIn === "true") {
-
         showDashboard();
-
     } else {
-
         showLogin();
-
     }
-
 }
-
 
 /* =========================================================
    RENDER DASHBOARD
 ========================================================= */
 
 function renderDashboard() {
-
     updateStatistics();
-
     renderArticlesTable();
-
 }
-
 
 /* =========================================================
    UPDATE STATISTICS
@@ -622,84 +485,50 @@ function updateStatistics() {
     const articles =
         getArticles();
 
-
     const published =
-        articles.filter(
-            function (article) {
-
-                return article.status ===
-                    "published";
-
-            }
-        );
-
+        articles.filter(function (article) {
+            return article.status === "published";
+        });
 
     const drafts =
-        articles.filter(
-            function (article) {
-
-                return article.status ===
-                    "draft";
-
-            }
-        );
-
+        articles.filter(function (article) {
+            return article.status === "draft";
+        });
 
     if (totalArticles) {
-
         totalArticles.textContent =
             articles.length;
-
     }
-
 
     if (publishedArticles) {
-
         publishedArticles.textContent =
             published.length;
-
     }
-
 
     if (draftArticles) {
-
         draftArticles.textContent =
             drafts.length;
-
     }
-
 
     if (latestArticleDate) {
 
         if (articles.length === 0) {
 
-            latestArticleDate.textContent =
-                "—";
+            latestArticleDate.textContent = "—";
 
         } else {
 
             const sorted =
-                [...articles].sort(
-                    function (a, b) {
-
-                        return new Date(b.date) -
-                            new Date(a.date);
-
-                    }
-                );
-
+                [...articles].sort(function (a, b) {
+                    return new Date(b.date) -
+                        new Date(a.date);
+                });
 
             latestArticleDate.textContent =
-                formatDate(
-                    sorted[0].date
-                );
-
+                formatDate(sorted[0].date);
         }
-
     }
-
 }
-
 
 /* =========================================================
    FORMAT DATE
@@ -708,24 +537,15 @@ function updateStatistics() {
 function formatDate(dateString) {
 
     if (!dateString) {
-
         return "—";
-
     }
-
 
     const date =
-        new Date(
-            dateString + "T00:00:00"
-        );
-
+        new Date(dateString + "T00:00:00");
 
     if (Number.isNaN(date.getTime())) {
-
         return dateString;
-
     }
-
 
     return date.toLocaleDateString(
         "en-US",
@@ -735,9 +555,7 @@ function formatDate(dateString) {
             day: "numeric"
         }
     );
-
 }
-
 
 /* =========================================================
    RENDER ARTICLE TABLE
@@ -746,174 +564,130 @@ function formatDate(dateString) {
 function renderArticlesTable() {
 
     if (!adminArticlesTable) {
-
         return;
-
     }
-
 
     const articles =
         getArticles();
-
 
     const filter =
         articleFilter
             ? articleFilter.value
             : "all";
 
-
     const filteredArticles =
-        articles.filter(
-            function (article) {
+        articles.filter(function (article) {
 
-                if (filter === "all") {
-
-                    return true;
-
-                }
-
-
-                return article.status ===
-                    filter;
-
+            if (filter === "all") {
+                return true;
             }
-        );
 
+            return article.status === filter;
+        });
 
     if (filteredArticles.length === 0) {
 
         adminArticlesTable.innerHTML = `
-
             <tr>
-
                 <td
                     colspan="5"
                     class="admin-empty-state">
-
                     No articles found.
-
                 </td>
-
             </tr>
-
         `;
 
         return;
-
     }
 
+    filteredArticles.sort(function (a, b) {
 
-    filteredArticles.sort(
-        function (a, b) {
-
-            return new Date(b.date) -
-                new Date(a.date);
-
-        }
-    );
-
+        return new Date(b.date) -
+            new Date(a.date);
+    });
 
     adminArticlesTable.innerHTML =
-        filteredArticles.map(
-            function (article) {
+        filteredArticles.map(function (article) {
 
-                return `
+            return `
+                <tr>
 
-                    <tr>
+                    <td>
+                        <strong>
+                            ${escapeHTML(article.title)}
+                        </strong>
+                    </td>
 
-                        <td>
+                    <td>
+                        ${escapeHTML(article.category)}
+                    </td>
 
-                            <strong>
-                                ${escapeHTML(article.title)}
-                            </strong>
+                    <td>
+                        ${formatDate(article.date)}
+                    </td>
 
-                        </td>
-
-
-                        <td>
-
-                            ${escapeHTML(article.category)}
-
-                        </td>
-
-
-                        <td>
-
-                            ${formatDate(article.date)}
-
-                        </td>
-
-
-                        <td>
-
-                            <span
-                                class="admin-status ${article.status === "published"
+                    <td>
+                        <span
+                            class="admin-status ${
+                                article.status === "published"
                                     ? "published"
-                                    : "draft"}">
+                                    : "draft"
+                            }">
 
-                                ${article.status === "published"
+                            ${
+                                article.status === "published"
                                     ? "Published"
-                                    : "Draft"}
+                                    : "Draft"
+                            }
 
-                            </span>
+                        </span>
+                    </td>
 
-                        </td>
+                    <td>
 
+                        <div class="admin-table-actions">
 
-                        <td>
+                            <button
+                                type="button"
+                                class="admin-action-button edit"
+                                data-action="edit"
+                                data-id="${escapeHTML(article.id)}">
 
-                            <div class="admin-table-actions">
+                                Edit
 
+                            </button>
 
-                                <button
-                                    type="button"
-                                    class="admin-action-button edit"
-                                    data-action="edit"
-                                    data-id="${escapeHTML(article.id)}">
+                            <button
+                                type="button"
+                                class="admin-action-button view"
+                                data-action="view"
+                                data-id="${escapeHTML(article.id)}">
 
-                                    Edit
+                                View
 
-                                </button>
+                            </button>
 
+                            <button
+                                type="button"
+                                class="admin-action-button delete"
+                                data-action="delete"
+                                data-id="${escapeHTML(article.id)}">
 
-                                <button
-                                    type="button"
-                                    class="admin-action-button view"
-                                    data-action="view"
-                                    data-id="${escapeHTML(article.id)}">
+                                Delete
 
-                                    View
+                            </button>
 
-                                </button>
+                        </div>
 
+                    </td>
 
-                                <button
-                                    type="button"
-                                    class="admin-action-button delete"
-                                    data-action="delete"
-                                    data-id="${escapeHTML(article.id)}">
+                </tr>
+            `;
 
-                                    Delete
-
-                                </button>
-
-
-                            </div>
-
-                        </td>
-
-                    </tr>
-
-                `;
-
-            }
-        ).join("");
-
+        }).join("");
 
     attachArticleActions();
-
 }
-
 
 /* =========================================================
    ESCAPE HTML
@@ -921,13 +695,12 @@ function renderArticlesTable() {
 
 function escapeHTML(value) {
 
-    if (value === null ||
-        value === undefined) {
-
+    if (
+        value === null ||
+        value === undefined
+    ) {
         return "";
-
     }
-
 
     return String(value)
         .replace(/&/g, "&amp;")
@@ -935,9 +708,7 @@ function escapeHTML(value) {
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#039;");
-
 }
-
 
 /* =========================================================
    ARTICLE ACTIONS
@@ -950,54 +721,37 @@ function attachArticleActions() {
             "[data-action]"
         );
 
+    buttons.forEach(function (button) {
 
-    buttons.forEach(
-        function (button) {
+        button.addEventListener(
+            "click",
+            function () {
 
-            button.addEventListener(
-                "click",
-                function () {
+                const action =
+                    button.getAttribute(
+                        "data-action"
+                    );
 
-                    const action =
-                        button.getAttribute(
-                            "data-action"
-                        );
+                const id =
+                    button.getAttribute(
+                        "data-id"
+                    );
 
-
-                    const id =
-                        button.getAttribute(
-                            "data-id"
-                        );
-
-
-                    if (action === "edit") {
-
-                        editArticle(id);
-
-                    }
-
-
-                    if (action === "view") {
-
-                        viewArticle(id);
-
-                    }
-
-
-                    if (action === "delete") {
-
-                        openDeleteModal(id);
-
-                    }
-
+                if (action === "edit") {
+                    editArticle(id);
                 }
-            );
 
-        }
-    );
+                if (action === "view") {
+                    viewArticle(id);
+                }
 
+                if (action === "delete") {
+                    openDeleteModal(id);
+                }
+            }
+        );
+    });
 }
-
 
 /* =========================================================
    NEW ARTICLE
@@ -1007,15 +761,9 @@ if (newArticleButton) {
 
     newArticleButton.addEventListener(
         "click",
-        function () {
-
-            openNewArticleEditor();
-
-        }
+        openNewArticleEditor
     );
-
 }
-
 
 /* =========================================================
    OPEN NEW ARTICLE EDITOR
@@ -1024,109 +772,73 @@ if (newArticleButton) {
 function openNewArticleEditor() {
 
     if (!articleEditorSection) {
-
         return;
-
     }
-
 
     if (editorHeading) {
-
         editorHeading.textContent =
             "Create New Article";
-
     }
-
 
     if (articleForm) {
-
         articleForm.reset();
-
     }
-
 
     if (articleId) {
-
         articleId.value = "";
-
     }
-
 
     if (articleAuthorInput) {
-
         articleAuthorInput.value =
             "PowerNest Electric";
-
     }
-
 
     if (articleDateInput) {
-
         articleDateInput.value =
             getTodayDate();
-
     }
-
 
     if (articleStatusInput) {
-
         articleStatusInput.value =
             "published";
-
     }
-
 
     if (editorMessage) {
-
         editorMessage.textContent = "";
-
     }
-
 
     articleEditorSection.style.display =
         "block";
 
-
-    articleEditorSection.scrollIntoView(
-        {
-            behavior: "smooth",
-            block: "start"
-        }
-    );
-
+    articleEditorSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 }
 
-
 /* =========================================================
-   GET TODAY DATE
+   TODAY DATE
 ========================================================= */
 
 function getTodayDate() {
 
-    const today =
-        new Date();
-
+    const today = new Date();
 
     const year =
         today.getFullYear();
-
 
     const month =
         String(
             today.getMonth() + 1
         ).padStart(2, "0");
 
-
     const day =
         String(
             today.getDate()
         ).padStart(2, "0");
 
-
     return `${year}-${month}-${day}`;
-
 }
-
 
 /* =========================================================
    CLOSE EDITOR
@@ -1135,45 +847,28 @@ function getTodayDate() {
 function closeEditor() {
 
     if (articleEditorSection) {
-
         articleEditorSection.style.display =
             "none";
-
     }
-
 
     if (editorMessage) {
-
         editorMessage.textContent = "";
-
     }
-
 }
 
-
-/* =========================================================
-   CANCEL EDITOR
-========================================================= */
-
 if (cancelEditorButton) {
-
     cancelEditorButton.addEventListener(
         "click",
         closeEditor
     );
-
 }
 
-
 if (cancelArticleButton) {
-
     cancelArticleButton.addEventListener(
         "click",
         closeEditor
     );
-
 }
-
 
 /* =========================================================
    EDIT ARTICLE
@@ -1184,90 +879,63 @@ function editArticle(id) {
     const articles =
         getArticles();
 
-
     const article =
-        articles.find(
-            function (item) {
+        articles.find(function (item) {
 
-                return item.id === id;
-
-            }
-        );
-
+            return String(item.id) ===
+                String(id);
+        });
 
     if (!article) {
-
         return;
-
     }
-
 
     if (editorHeading) {
-
         editorHeading.textContent =
             "Edit Article";
-
     }
-
 
     articleId.value =
         article.id;
 
-
     articleTitleInput.value =
         article.title || "";
-
 
     articleCategoryInput.value =
         article.category || "";
 
-
     articleDateInput.value =
         article.date || "";
-
 
     articleAuthorInput.value =
         article.author ||
         "PowerNest Electric";
 
-
     articleImageInput.value =
         article.image || "";
-
 
     articleExcerptInput.value =
         article.excerpt || "";
 
-
     articleContentInput.value =
         article.content || "";
-
 
     articleStatusInput.value =
         article.status ||
         "draft";
 
-
     if (editorMessage) {
-
         editorMessage.textContent = "";
-
     }
-
 
     articleEditorSection.style.display =
         "block";
 
-
-    articleEditorSection.scrollIntoView(
-        {
-            behavior: "smooth",
-            block: "start"
-        }
-    );
-
+    articleEditorSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 }
-
 
 /* =========================================================
    SAVE ARTICLE
@@ -1281,39 +949,30 @@ if (articleForm) {
 
             event.preventDefault();
 
-
             const title =
                 articleTitleInput.value.trim();
-
 
             const category =
                 articleCategoryInput.value;
 
-
             const date =
                 articleDateInput.value;
-
 
             const author =
                 articleAuthorInput.value.trim() ||
                 "PowerNest Electric";
 
-
             const image =
                 articleImageInput.value.trim();
-
 
             const excerpt =
                 articleExcerptInput.value.trim();
 
-
             const content =
                 articleContentInput.value.trim();
 
-
             const status =
                 articleStatusInput.value;
-
 
             if (
                 !title ||
@@ -1329,37 +988,30 @@ if (articleForm) {
                 );
 
                 return;
-
             }
-
 
             const articles =
                 getArticles();
 
-
             const existingId =
                 articleId.value.trim();
 
+            /* EDIT */
 
             if (existingId) {
 
                 const index =
                     articles.findIndex(
                         function (article) {
-
-                            return article.id ===
-                                existingId;
-
+                            return String(article.id) ===
+                                String(existingId);
                         }
                     );
-
 
                 if (index !== -1) {
 
                     articles[index] = {
-
                         ...articles[index],
-
                         title,
                         category,
                         date,
@@ -1368,37 +1020,27 @@ if (articleForm) {
                         excerpt,
                         content,
                         status
-
                     };
 
-
-                    if (
-                        saveArticles(
-                            articles
-                        )
-                    ) {
+                    if (saveArticles(articles)) {
 
                         showEditorMessage(
                             "Article updated successfully."
                         );
 
-
                         renderDashboard();
-
 
                         setTimeout(
                             closeEditor,
                             1000
                         );
-
                     }
 
                     return;
-
                 }
-
             }
 
+            /* CREATE */
 
             const newArticle = {
 
@@ -1419,51 +1061,33 @@ if (articleForm) {
                 content,
 
                 status
-
             };
 
+            articles.push(newArticle);
 
-            articles.push(
-                newArticle
-            );
-
-
-            if (
-                saveArticles(
-                    articles
-                )
-            ) {
+            if (saveArticles(articles)) {
 
                 showEditorMessage(
                     "Article created successfully."
                 );
 
-
                 renderDashboard();
 
-
                 articleForm.reset();
-
 
                 articleAuthorInput.value =
                     "PowerNest Electric";
 
-
                 articleId.value = "";
-
 
                 setTimeout(
                     closeEditor,
                     1000
                 );
-
             }
-
         }
     );
-
 }
-
 
 /* =========================================================
    CREATE ARTICLE ID
@@ -1484,25 +1108,19 @@ function createArticleId(title) {
                 ""
             );
 
-
     let id =
         base ||
         "article";
 
-
     const articles =
         getArticles();
 
-
     let counter = 2;
-
 
     while (
         articles.some(
             function (article) {
-
                 return article.id === id;
-
             }
         )
     ) {
@@ -1511,14 +1129,10 @@ function createArticleId(title) {
             `${base}-${counter}`;
 
         counter++;
-
     }
 
-
     return id;
-
 }
-
 
 /* =========================================================
    EDITOR MESSAGE
@@ -1530,47 +1144,34 @@ function showEditorMessage(
 ) {
 
     if (!editorMessage) {
-
         return;
-
     }
-
 
     editorMessage.textContent =
         message;
-
 
     editorMessage.classList.toggle(
         "error",
         isError
     );
 
-
     editorMessage.classList.toggle(
         "success",
         !isError
     );
-
 }
 
-
 /* =========================================================
-   ARTICLE FILTER
+   FILTER
 ========================================================= */
 
 if (articleFilter) {
 
     articleFilter.addEventListener(
         "change",
-        function () {
-
-            renderArticlesTable();
-
-        }
+        renderArticlesTable
     );
-
 }
-
 
 /* =========================================================
    VIEW ARTICLE
@@ -1583,9 +1184,7 @@ function viewArticle(id) {
         "_blank",
         "noopener,noreferrer"
     );
-
 }
-
 
 /* =========================================================
    DELETE MODAL
@@ -1596,36 +1195,22 @@ function openDeleteModal(id) {
     articleToDelete =
         id;
 
-
     if (deleteModal) {
-
         deleteModal.style.display =
             "flex";
-
     }
-
 }
-
 
 function closeDeleteConfirmation() {
 
     articleToDelete =
         null;
 
-
     if (deleteModal) {
-
         deleteModal.style.display =
             "none";
-
     }
-
 }
-
-
-/* =========================================================
-   CLOSE DELETE MODAL
-========================================================= */
 
 if (closeDeleteModal) {
 
@@ -1633,9 +1218,7 @@ if (closeDeleteModal) {
         "click",
         closeDeleteConfirmation
     );
-
 }
-
 
 if (cancelDeleteButton) {
 
@@ -1643,12 +1226,14 @@ if (cancelDeleteButton) {
         "click",
         closeDeleteConfirmation
     );
-
 }
-
 
 /* =========================================================
    CONFIRM DELETE
+
+   IMPORTANT:
+   We remove the article from the ONE shared
+   storage array. We do NOT recreate default articles.
 ========================================================= */
 
 if (confirmDeleteButton) {
@@ -1658,26 +1243,20 @@ if (confirmDeleteButton) {
         function () {
 
             if (!articleToDelete) {
-
                 return;
-
             }
-
 
             const articles =
                 getArticles();
-
 
             const updatedArticles =
                 articles.filter(
                     function (article) {
 
-                        return article.id !==
-                            articleToDelete;
-
+                        return String(article.id) !==
+                            String(articleToDelete);
                     }
                 );
-
 
             if (
                 saveArticles(
@@ -1688,17 +1267,13 @@ if (confirmDeleteButton) {
                 closeDeleteConfirmation();
 
                 renderDashboard();
-
             }
-
         }
     );
-
 }
 
-
 /* =========================================================
-   CLOSE MODAL WHEN CLICKING BACKGROUND
+   CLOSE MODAL BACKGROUND
 ========================================================= */
 
 if (deleteModal) {
@@ -1713,14 +1288,10 @@ if (deleteModal) {
             ) {
 
                 closeDeleteConfirmation();
-
             }
-
         }
     );
-
 }
-
 
 /* =========================================================
    ESCAPE KEY
@@ -1730,17 +1301,11 @@ document.addEventListener(
     "keydown",
     function (event) {
 
-        if (
-            event.key === "Escape"
-        ) {
-
+        if (event.key === "Escape") {
             closeDeleteConfirmation();
-
         }
-
     }
 );
-
 
 /* =========================================================
    INITIALIZE

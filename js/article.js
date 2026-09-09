@@ -1,81 +1,111 @@
 /* =========================================================
    POWERNEST ELECTRIC
    ARTICLE PAGE JAVASCRIPT
-   FINAL VERSION
-========================================================= */
+   ========================================================= */
 
 "use strict";
 
 
 /* =========================================================
-   STORAGE KEY
+   SHARED STORAGE KEY
+   MUST MATCH admin.js AND blog.js
 ========================================================= */
 
-const ARTICLE_STORAGE_KEY = "powerNestArticles";
+const ARTICLES_STORAGE_KEY = "powernest_articles";
 
 
 /* =========================================================
    DEFAULT ARTICLES
+   These make the original blog articles work even when
+   they have not yet been saved through the admin dashboard.
 ========================================================= */
 
-const defaultArticles = [
+const DEFAULT_ARTICLES = [
 
     {
-        id: "electrical-maintenance",
-        title: "Why Regular Electrical Maintenance Matters",
-        category: "Maintenance",
-        date: "2025-08-10",
-        author: "PowerNest Electric",
-        image: "",
+        id: "electrical-safety-tips",
+
+        title:
+            "Electrical Safety Tips Every Homeowner Should Know",
+
+        category:
+            "Electrical Safety",
+
+        date:
+            "2025-08-01",
+
+        author:
+            "PowerNest Electric",
+
+        image:
+            "",
+
         excerpt:
-            "Regular inspections and maintenance can help identify electrical problems before they become bigger issues.",
-        status: "published",
+            "Simple electrical safety practices can help protect homes, families and electrical equipment.",
 
         content: `
             <p>
-                Regular electrical maintenance is an important
-                part of keeping homes, businesses and electrical
-                systems operating safely and reliably.
+                Electrical safety is important in every home.
+                Electricity makes modern life easier, but it can
+                also become dangerous when electrical systems,
+                appliances and wiring are not used or maintained
+                properly.
             </p>
 
-            <h2>Why Electrical Maintenance Matters</h2>
+            <h2>Keep Electrical Outlets Safe</h2>
 
             <p>
-                Electrical systems can develop problems over time.
-                Loose connections, damaged components, overloaded
-                circuits and other issues may not always be visible
-                immediately.
+                Avoid overloading electrical outlets with too many
+                appliances. If an outlet becomes hot, damaged,
+                loose or produces sparks, stop using it and have it
+                inspected by a qualified electrician.
+            </p>
+
+            <h2>Check Your Electrical Cords</h2>
+
+            <p>
+                Damaged, exposed or frayed electrical cords can
+                create a serious safety hazard. Replace damaged
+                cords instead of continuing to use them.
+            </p>
+
+            <h2>Keep Electricity Away From Water</h2>
+
+            <p>
+                Water and electricity are extremely dangerous
+                together. Keep electrical appliances and cords
+                away from wet areas and never handle electrical
+                equipment with wet hands.
+            </p>
+
+            <h2>Do Not Ignore Electrical Problems</h2>
+
+            <p>
+                Flickering lights, burning smells, buzzing sounds,
+                frequent circuit breaker trips and sparking outlets
+                can indicate an electrical problem.
             </p>
 
             <p>
-                Regular inspection and maintenance can help identify
-                potential problems before they become larger and
-                more expensive issues.
+                Do not attempt complicated electrical repairs
+                yourself. Contact a qualified electrical
+                professional to inspect and repair the system.
             </p>
 
-            <h2>Benefits of Regular Maintenance</h2>
-
-            <ul>
-                <li>Helps identify electrical problems early.</li>
-                <li>Supports electrical safety.</li>
-                <li>Helps protect electrical equipment.</li>
-                <li>Can reduce unexpected electrical failures.</li>
-                <li>Helps maintain reliable electrical systems.</li>
-            </ul>
-
-            <h2>Professional Electrical Support</h2>
+            <h2>Professional Electrical Safety</h2>
 
             <p>
-                If you notice unusual electrical behavior,
-                damaged wiring, frequent breaker trips or other
-                electrical problems, it is important to have the
-                system properly inspected.
+                Regular inspection and maintenance can help keep
+                your electrical system safe and reliable.
+                PowerNest Electric provides electrical installation,
+                maintenance, repair and energy solutions for homes,
+                businesses and other facilities.
             </p>
 
             <p>
-                PowerNest Electric provides electrical maintenance,
-                troubleshooting and repair services for residential,
-                commercial and industrial customers.
+                If you notice an electrical problem in your home or
+                business, contact PowerNest Electric for
+                professional assistance.
             </p>
         `
     },
@@ -83,229 +113,168 @@ const defaultArticles = [
 
     {
         id: "solar-energy-for-homes",
-        title: "Understanding Solar Energy for Your Home",
-        category: "Solar & Energy",
-        date: "2025-08-05",
-        author: "PowerNest Electric",
-        image: "",
+
+        title:
+            "Understanding Solar Energy for Your Home",
+
+        category:
+            "Solar & Energy",
+
+        date:
+            "2025-08-05",
+
+        author:
+            "PowerNest Electric",
+
+        image:
+            "",
+
         excerpt:
             "Learn some basic considerations when exploring solar and modern energy solutions.",
-        status: "published",
 
         content: `
             <p>
-                Solar energy can provide an alternative way to
-                generate electricity for homes and other properties.
+                Solar energy is becoming an increasingly important
+                part of modern energy solutions. Solar systems can
+                help homes and businesses generate electricity from
+                sunlight.
             </p>
 
-            <h2>What Is Solar Energy?</h2>
+            <h2>How Solar Energy Works</h2>
 
             <p>
-                Solar energy systems use sunlight to generate
-                electrical power. Depending on the system design,
-                solar panels can work together with batteries,
-                inverters and other equipment.
+                Solar panels capture energy from sunlight and
+                convert it into electrical energy. A complete solar
+                system may also include an inverter, batteries,
+                protection equipment and other components.
             </p>
 
             <h2>Why Consider Solar Energy?</h2>
 
             <p>
-                Solar energy can be useful for customers looking
-                for modern energy solutions and greater flexibility
-                in how electricity is generated and used.
-            </p>
-
-            <ul>
-                <li>
-                    Solar panels can generate electricity from sunlight.
-                </li>
-
-                <li>
-                    Battery systems can provide energy storage.
-                </li>
-
-                <li>
-                    Solar systems can support different electrical needs.
-                </li>
-
-                <li>
-                    Proper system design is important for reliable operation.
-                </li>
-            </ul>
-
-            <h2>Proper Planning Is Important</h2>
-
-            <p>
-                Before installing a solar system, the electrical
-                requirements of the property should be considered.
-                The available space, expected energy usage,
-                equipment requirements and system design all matter.
+                Solar energy can provide an alternative source of
+                electricity and may help reduce dependence on
+                traditional power sources.
             </p>
 
             <p>
-                Professional assessment can help determine an
-                appropriate energy solution for a particular property.
-            </p>
-        `
-    },
-
-
-    {
-        id: "electrical-safety-tips",
-        title: "Electrical Safety Tips Every Homeowner Should Know",
-        category: "Electrical Safety",
-        date: "2025-08-01",
-        author: "PowerNest Electric",
-        image: "",
-        excerpt:
-            "Simple electrical safety practices can help protect homes, families and electrical equipment.",
-        status: "published",
-
-        content: `
-            <p>
-                Electricity is an essential part of modern homes,
-                but electrical systems must always be treated with
-                care and respect.
+                Solar systems can also be useful in locations where
+                reliable electricity supply is a challenge.
             </p>
 
-            <h2>Keep Electrical Systems in Good Condition</h2>
+            <h2>Choosing the Right Solar System</h2>
 
             <p>
-                Damaged cables, broken outlets, exposed wires and
-                faulty electrical equipment should not be ignored.
-                Electrical problems should be inspected and repaired
-                by a qualified professional.
-            </p>
-
-            <h2>Avoid Overloading Outlets</h2>
-
-            <p>
-                Connecting too many electrical devices to one outlet
-                or power strip can create unnecessary electrical
-                stress.
+                The right solar system depends on several factors,
+                including the amount of electricity required,
+                available space, equipment selection and whether
+                battery storage is needed.
             </p>
 
             <p>
-                Make sure electrical equipment is used according
-                to its intended requirements.
+                A professional assessment should be carried out
+                before installing a solar system so that the system
+                can be properly designed for the expected load.
             </p>
 
-            <h2>Watch for Warning Signs</h2>
-
-            <ul>
-                <li>Frequent circuit breaker trips.</li>
-                <li>Burning smells from electrical equipment.</li>
-                <li>Sparks from outlets or switches.</li>
-                <li>Damaged electrical cables.</li>
-                <li>Flickering lights.</li>
-                <li>Unusual heat around outlets or equipment.</li>
-            </ul>
-
-            <h2>Get Problems Checked</h2>
+            <h2>Professional Solar Installation</h2>
 
             <p>
-                Electrical problems should never be ignored.
-                If you notice something unusual, turn off the
-                affected equipment where appropriate and seek
-                professional electrical assistance.
+                Proper installation is important for the safety,
+                performance and reliability of a solar energy
+                system.
             </p>
 
             <p>
-                Electrical safety starts with proper installation,
-                regular inspection and responsible use of electrical
-                equipment.
+                PowerNest Electric provides modern solar and energy
+                solutions designed around the needs of homes,
+                businesses and other customers.
             </p>
         `
     },
 
 
     {
-        id: "why-electrical-inspection-is-important",
-        title: "Why Electrical Inspection Is Important",
-        category: "Electrical Safety",
-        date: "2026-09-07",
-        author: "PowerNest Electric",
-        image: "",
+        id: "electrical-maintenance",
+
+        title:
+            "Why Regular Electrical Maintenance Matters",
+
+        category:
+            "Maintenance",
+
+        date:
+            "2025-08-10",
+
+        author:
+            "PowerNest Electric",
+
+        image:
+            "",
+
         excerpt:
-            "Regular electrical inspections can help identify potential problems and support safer, more reliable electrical systems.",
-        status: "published",
+            "Regular inspections and maintenance can help identify electrical problems before they become bigger issues.",
 
         content: `
             <p>
-                Electrical systems are an important part of homes,
-                businesses and industrial facilities. Because
-                electrical problems are not always visible,
-                regular inspection can play an important role
-                in maintaining a safe and reliable system.
+                Electrical systems require regular attention to
+                remain safe, reliable and efficient. Electrical
+                problems can sometimes develop slowly before
+                becoming serious.
             </p>
 
-            <h2>What Is an Electrical Inspection?</h2>
+            <h2>What Is Electrical Maintenance?</h2>
 
             <p>
-                An electrical inspection involves checking an
-                electrical installation and its components to
-                identify possible problems, damage, unsafe
-                conditions or areas that may require attention.
+                Electrical maintenance includes inspection,
+                testing, troubleshooting, repairs and other work
+                carried out to keep an electrical system operating
+                properly.
             </p>
 
-            <h2>Why Are Electrical Inspections Important?</h2>
+            <h2>Why Maintenance Is Important</h2>
 
             <p>
-                Electrical inspections can help identify issues
-                before they become more serious problems.
+                Regular maintenance can help identify loose
+                connections, damaged components, overloaded
+                circuits and other electrical issues before they
+                become larger problems.
             </p>
+
+            <h2>Signs Your Electrical System May Need Attention</h2>
 
             <ul>
-                <li>
-                    Helps identify damaged or deteriorated components.
-                </li>
-
-                <li>
-                    Helps identify potential electrical hazards.
-                </li>
-
-                <li>
-                    Supports reliable operation of electrical systems.
-                </li>
-
-                <li>
-                    Can help identify maintenance requirements.
-                </li>
-
-                <li>
-                    Helps property owners understand the condition
-                    of their electrical installation.
-                </li>
+                <li>Frequent circuit breaker trips</li>
+                <li>Flickering or dimming lights</li>
+                <li>Burning smells</li>
+                <li>Buzzing or unusual electrical sounds</li>
+                <li>Hot electrical outlets or switches</li>
+                <li>Damaged electrical cables</li>
             </ul>
 
-            <h2>Warning Signs You Should Not Ignore</h2>
+            <h2>Maintenance for Homes and Businesses</h2>
 
             <p>
-                Frequent breaker trips, flickering lights,
-                unusual electrical smells, overheating outlets,
-                damaged cables and sparks can indicate that an
-                electrical system needs attention.
+                Electrical maintenance is useful for residential,
+                commercial and industrial environments. Regular
+                inspections can help reduce unexpected electrical
+                failures and improve system reliability.
+            </p>
+
+            <h2>Professional Electrical Maintenance</h2>
+
+            <p>
+                Electrical work should be handled by qualified
+                professionals, particularly when the work involves
+                electrical panels, wiring, protection systems or
+                other potentially dangerous equipment.
             </p>
 
             <p>
-                These warning signs should not be ignored.
-                A qualified electrical professional should
-                inspect the system and determine the appropriate
-                solution.
-            </p>
-
-            <h2>Professional Electrical Inspection</h2>
-
-            <p>
-                PowerNest Electric provides electrical support
-                for residential, commercial and industrial
-                customers.
-            </p>
-
-            <p>
-                Proper inspection and maintenance can help
-                support safer and more dependable electrical
-                systems.
+                PowerNest Electric provides electrical
+                troubleshooting, repairs, inspections and
+                maintenance services for homes, businesses and
+                industries.
             </p>
         `
     }
@@ -314,146 +283,113 @@ const defaultArticles = [
 
 
 /* =========================================================
-   ESCAPE HTML
+   GET SAVED ARTICLES
 ========================================================= */
 
-function escapeHTML(value) {
-
-    if (value === null || value === undefined) {
-        return "";
-    }
-
-    return String(value)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-}
-
-
-/* =========================================================
-   FORMAT DATE
-========================================================= */
-
-function formatArticleDate(dateString) {
-
-    if (!dateString) {
-        return "";
-    }
-
-    const date = new Date(dateString + "T00:00:00");
-
-    if (Number.isNaN(date.getTime())) {
-        return dateString;
-    }
-
-    return date.toLocaleDateString("en-US", {
-        month: "short",
-        day: "numeric",
-        year: "numeric"
-    });
-}
-
-
-/* =========================================================
-   GET ARTICLES
-   IMPORTANT:
-   Merge saved Admin articles with default articles.
-========================================================= */
-
-function getArticles() {
-
-    let savedArticles = [];
+function getSavedArticles() {
 
     try {
 
         const saved =
-            localStorage.getItem(ARTICLE_STORAGE_KEY);
+            localStorage.getItem(
+                ARTICLES_STORAGE_KEY
+            );
 
-        if (saved) {
+        if (!saved) {
 
-            const parsed = JSON.parse(saved);
-
-            if (Array.isArray(parsed)) {
-                savedArticles = parsed;
-            }
-
+            return [];
         }
+
+        const articles =
+            JSON.parse(saved);
+
+        if (!Array.isArray(articles)) {
+
+            return [];
+        }
+
+        return articles;
 
     } catch (error) {
 
-        console.warn(
-            "PowerNest Electric: Could not read saved articles.",
+        console.error(
+            "PowerNest Article: Could not read saved articles.",
             error
         );
 
+        return [];
     }
-
-
-    /*
-        Start with the default articles.
-    */
-
-    const mergedArticles = [...defaultArticles];
-
-
-    /*
-        Add or replace defaults with saved articles.
-    */
-
-    savedArticles.forEach(function (savedArticle) {
-
-        if (!savedArticle || !savedArticle.id) {
-            return;
-        }
-
-
-        const existingIndex =
-            mergedArticles.findIndex(function (article) {
-
-                return String(article.id) ===
-                    String(savedArticle.id);
-
-            });
-
-
-        if (existingIndex >= 0) {
-
-            /*
-                Saved Admin version replaces default version.
-            */
-
-            mergedArticles[existingIndex] = {
-                ...mergedArticles[existingIndex],
-                ...savedArticle
-            };
-
-        } else {
-
-            /*
-                New article created from Admin.
-            */
-
-            mergedArticles.push(savedArticle);
-
-        }
-
-    });
-
-
-    return mergedArticles;
 }
 
 
 /* =========================================================
-   GET ARTICLE ID
+   GET ALL ARTICLES
+   Saved admin articles are combined with default articles.
+
+   If an admin article has the same ID as a default article,
+   the saved/admin version takes priority.
+========================================================= */
+
+function getAllArticles() {
+
+    const savedArticles =
+        getSavedArticles();
+
+    const articleMap =
+        new Map();
+
+
+    /* Add default articles first */
+
+    DEFAULT_ARTICLES.forEach(
+        function (article) {
+
+            articleMap.set(
+                String(article.id),
+                article
+            );
+
+        }
+    );
+
+
+    /* Add saved articles second */
+
+    savedArticles.forEach(
+        function (article) {
+
+            if (
+                article &&
+                article.id !== undefined &&
+                article.id !== null
+            ) {
+
+                articleMap.set(
+                    String(article.id),
+                    article
+                );
+            }
+
+        }
+    );
+
+
+    return Array.from(
+        articleMap.values()
+    );
+}
+
+
+/* =========================================================
+   GET ARTICLE ID FROM URL
 ========================================================= */
 
 function getArticleId() {
 
     const params =
-        new URLSearchParams(window.location.search);
+        new URLSearchParams(
+            window.location.search
+        );
 
     return params.get("id");
 }
@@ -463,217 +399,174 @@ function getArticleId() {
    FIND ARTICLE
 ========================================================= */
 
-function findArticle(articleId) {
+function findArticle(
+    articleId
+) {
 
     if (!articleId) {
+
         return null;
     }
 
-    const articles = getArticles();
+    const articles =
+        getAllArticles();
 
-    return articles.find(function (article) {
+    return articles.find(
+        function (article) {
 
-        return String(article.id) ===
-            String(articleId);
-
-    }) || null;
-}
-
-
-/* =========================================================
-   SHOW ARTICLE
-========================================================= */
-
-function displayArticle(article) {
-
-    if (!article) {
-
-        displayArticleNotFound();
-
-        return;
-    }
-
-
-    /*
-        Make sure article page is visible.
-    */
-
-    const articlePage =
-        document.querySelector(".article-page");
-
-    if (articlePage) {
-        articlePage.style.display = "";
-    }
-
-
-    /*
-        Hide not found message.
-    */
-
-    const notFound =
-        document.getElementById("articleNotFound");
-
-    if (notFound) {
-        notFound.style.display = "none";
-    }
-
-
-    /*
-        Page title.
-    */
-
-    document.title =
-        `${article.title} | PowerNest Electric`;
-
-
-    /*
-        Meta description.
-    */
-
-    const metaDescription =
-        document.getElementById(
-            "articleMetaDescription"
-        );
-
-    if (metaDescription) {
-
-        metaDescription.setAttribute(
-            "content",
-            article.excerpt ||
-            article.title ||
-            "PowerNest Electric article."
-        );
-
-    }
-
-
-    /*
-        Article title.
-    */
-
-    const title =
-        document.getElementById("articleTitle");
-
-    if (title) {
-
-        title.textContent =
-            article.title ||
-            "PowerNest Electric";
-
-    }
-
-
-    /*
-        Category.
-    */
-
-    const category =
-        document.getElementById("articleCategory");
-
-    if (category) {
-
-        category.textContent =
-            article.category ||
-            "Electrical & Energy";
-
-    }
-
-
-    /*
-        Date + author.
-    */
-
-    const meta =
-        document.getElementById("articleMeta");
-
-    if (meta) {
-
-        meta.innerHTML = `
-
-            <span>
-                ${escapeHTML(
-                    formatArticleDate(article.date)
-                )}
-            </span>
-
-            <span>•</span>
-
-            <span>
-                ${escapeHTML(
-                    article.author ||
-                    "PowerNest Electric"
-                )}
-            </span>
-
-        `;
-
-    }
-
-
-    /*
-        Featured image.
-    */
-
-    displayArticleImage(article);
-
-
-    /*
-        Article excerpt.
-    */
-
-    const excerpt =
-        document.getElementById("articleExcerpt");
-
-    if (excerpt) {
-
-        if (article.excerpt) {
-
-            excerpt.textContent =
-                article.excerpt;
-
-            excerpt.style.display =
-                "block";
-
-        } else {
-
-            excerpt.style.display =
-                "none";
+            return String(article.id) ===
+                String(articleId);
 
         }
-
-    }
-
-
-    /*
-        Main article content.
-    */
-
-    const content =
-        document.getElementById("articleContent");
-
-    if (content) {
-
-        content.innerHTML =
-            article.content ||
-            "<p>This article does not have any content yet.</p>";
-
-    }
-
-
-    /*
-        Related articles.
-    */
-
-    displayRelatedArticles(article);
-
+    ) || null;
 }
 
 
 /* =========================================================
-   FEATURED IMAGE
+   GET PUBLISHED ARTICLES
 ========================================================= */
 
-function displayArticleImage(article) {
+function getPublishedArticles() {
+
+    return getAllArticles()
+
+        .filter(
+            function (article) {
+
+                /*
+                 * Default articles are treated as published.
+                 * Saved articles respect their status.
+                 */
+
+                return (
+                    !article.status ||
+                    article.status === "published"
+                );
+
+            }
+        )
+
+        .sort(
+            function (a, b) {
+
+                return new Date(
+                    b.date || "1970-01-01"
+                ) -
+                new Date(
+                    a.date || "1970-01-01"
+                );
+
+            }
+        );
+}
+
+
+/* =========================================================
+   FORMAT DATE
+========================================================= */
+
+function formatArticleDate(
+    dateString
+) {
+
+    if (!dateString) {
+
+        return "";
+    }
+
+    const date =
+        new Date(
+            dateString + "T00:00:00"
+        );
+
+    if (
+        Number.isNaN(
+            date.getTime()
+        )
+    ) {
+
+        return dateString;
+    }
+
+    return date.toLocaleDateString(
+        "en-US",
+        {
+            month: "short",
+            day: "numeric",
+            year: "numeric"
+        }
+    );
+}
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHTML(
+    value
+) {
+
+    if (
+        value === null ||
+        value === undefined
+    ) {
+
+        return "";
+    }
+
+    return String(value)
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+}
+
+
+/* =========================================================
+   ARTICLE URL
+========================================================= */
+
+function getArticleURL(
+    article
+) {
+
+    return (
+        `article.html?id=${encodeURIComponent(
+            article.id
+        )}`
+    );
+}
+
+
+/* =========================================================
+   DISPLAY ARTICLE IMAGE
+========================================================= */
+
+function displayArticleImage(
+    article
+) {
 
     const container =
         document.getElementById(
@@ -686,12 +579,19 @@ function displayArticleImage(article) {
         );
 
 
-    if (!container || !image) {
+    if (
+        !container ||
+        !image
+    ) {
+
         return;
     }
 
 
-    if (article.image) {
+    if (
+        article.image &&
+        String(article.image).trim() !== ""
+    ) {
 
         image.src =
             article.image;
@@ -701,12 +601,17 @@ function displayArticleImage(article) {
             "PowerNest Electric article image";
 
 
-        image.onerror = function () {
+        image.onerror =
+            function () {
 
-            container.style.display =
-                "none";
+                console.warn(
+                    "PowerNest Article: Image could not be loaded:",
+                    article.image
+                );
 
-        };
+                container.style.display =
+                    "none";
+            };
 
 
         container.style.display =
@@ -716,9 +621,281 @@ function displayArticleImage(article) {
 
         container.style.display =
             "none";
+    }
+}
 
+
+/* =========================================================
+   DISPLAY ARTICLE
+========================================================= */
+
+function displayArticle(
+    article
+) {
+
+    if (!article) {
+
+        displayArticleNotFound();
+
+        return;
     }
 
+
+    /*
+     * Do not display drafts publicly.
+     */
+
+    if (
+        article.status &&
+        article.status !== "published"
+    ) {
+
+        displayArticleNotFound();
+
+        return;
+    }
+
+
+    const articlePage =
+        document.querySelector(
+            ".article-page"
+        );
+
+    if (articlePage) {
+
+        articlePage.style.display =
+            "";
+    }
+
+
+    const notFound =
+        document.getElementById(
+            "articleNotFound"
+        );
+
+    if (notFound) {
+
+        notFound.style.display =
+            "none";
+    }
+
+
+    /* =====================================================
+       PAGE TITLE
+    ====================================================== */
+
+    document.title =
+        `${article.title || "Article"} | PowerNest Electric`;
+
+
+    /* =====================================================
+       META DESCRIPTION
+    ====================================================== */
+
+    const metaDescription =
+        document.getElementById(
+            "articleMetaDescription"
+        );
+
+    if (metaDescription) {
+
+        metaDescription.setAttribute(
+            "content",
+
+            article.excerpt ||
+            article.title ||
+            "PowerNest Electric electrical and energy article."
+        );
+    }
+
+
+    /* =====================================================
+       ARTICLE TITLE
+    ====================================================== */
+
+    const title =
+        document.getElementById(
+            "articleTitle"
+        );
+
+    if (title) {
+
+        title.textContent =
+            article.title ||
+            "PowerNest Electric";
+    }
+
+
+    /* =====================================================
+       ARTICLE CATEGORY
+    ====================================================== */
+
+    const category =
+        document.getElementById(
+            "articleCategory"
+        );
+
+    if (category) {
+
+        category.textContent =
+            article.category ||
+            "Electrical & Energy";
+    }
+
+
+    /* =====================================================
+       ARTICLE META
+    ====================================================== */
+
+    const meta =
+        document.getElementById(
+            "articleMeta"
+        );
+
+    if (meta) {
+
+        const formattedDate =
+            formatArticleDate(
+                article.date
+            );
+
+        const author =
+            article.author ||
+            "PowerNest Electric";
+
+
+        let metaHTML = "";
+
+
+        if (formattedDate) {
+
+            metaHTML += `
+                <span>
+                    ${escapeHTML(
+                        formattedDate
+                    )}
+                </span>
+            `;
+        }
+
+
+        if (
+            formattedDate &&
+            author
+        ) {
+
+            metaHTML += `
+                <span>•</span>
+            `;
+        }
+
+
+        if (author) {
+
+            metaHTML += `
+                <span>
+                    ${escapeHTML(
+                        author
+                    )}
+                </span>
+            `;
+        }
+
+
+        meta.innerHTML =
+            metaHTML;
+    }
+
+
+    /* =====================================================
+       FEATURED IMAGE
+    ====================================================== */
+
+    displayArticleImage(
+        article
+    );
+
+
+    /* =====================================================
+       ARTICLE EXCERPT
+    ====================================================== */
+
+    const excerpt =
+        document.getElementById(
+            "articleExcerpt"
+        );
+
+    if (excerpt) {
+
+        if (
+            article.excerpt &&
+            String(article.excerpt).trim() !== ""
+        ) {
+
+            excerpt.textContent =
+                article.excerpt;
+
+            excerpt.style.display =
+                "block";
+
+        } else {
+
+            excerpt.style.display =
+                "none";
+        }
+    }
+
+
+    /* =====================================================
+       FULL ARTICLE CONTENT
+    ====================================================== */
+
+    const content =
+        document.getElementById(
+            "articleContent"
+        );
+
+    if (content) {
+
+        if (
+            article.content &&
+            String(article.content).trim() !== ""
+        ) {
+
+            /*
+             * Admin articles may contain simple HTML such as:
+             *
+             * <p>
+             * <h2>
+             * <strong>
+             * <ul>
+             * <li>
+             *
+             * This is intentionally inserted as HTML so
+             * formatted articles display correctly.
+             */
+
+            content.innerHTML =
+                article.content;
+
+        } else {
+
+            content.innerHTML = `
+                <p>
+                    This article does not have any content yet.
+                </p>
+            `;
+        }
+    }
+
+
+    /* =====================================================
+       RELATED ARTICLES
+    ====================================================== */
+
+    displayRelatedArticles(
+        article
+    );
 }
 
 
@@ -726,7 +903,9 @@ function displayArticleImage(article) {
    RELATED ARTICLES
 ========================================================= */
 
-function displayRelatedArticles(currentArticle) {
+function displayRelatedArticles(
+    currentArticle
+) {
 
     const container =
         document.getElementById(
@@ -734,57 +913,76 @@ function displayRelatedArticles(currentArticle) {
         );
 
 
-    if (!container) {
+    if (
+        !container ||
+        !currentArticle
+    ) {
+
         return;
     }
 
 
-    const articles =
-        getArticles()
-            .filter(function (article) {
-
-                return (
-                    String(article.id) !==
-                    String(currentArticle.id)
-                );
-
-            })
-            .filter(function (article) {
-
-                return (
-                    article.status === "published" ||
-                    !article.status
-                );
-
-            });
-
-
     /*
-        Same category first.
-    */
+     * First find articles from the same category.
+     * Then use other published articles if necessary.
+     */
 
-    articles.sort(function (a, b) {
+    const publishedArticles =
+        getPublishedArticles()
+            .filter(
+                function (article) {
 
-        const aSame =
-            a.category === currentArticle.category
-                ? 1
-                : 0;
+                    return String(
+                        article.id
+                    ) !==
+                    String(
+                        currentArticle.id
+                    );
 
-        const bSame =
-            b.category === currentArticle.category
-                ? 1
-                : 0;
-
-        return bSame - aSame;
-
-    });
-
-
-    const related =
-        articles.slice(0, 3);
+                }
+            );
 
 
-    if (related.length === 0) {
+    const sameCategory =
+        publishedArticles.filter(
+            function (article) {
+
+                return (
+                    article.category &&
+                    currentArticle.category &&
+                    article.category ===
+                    currentArticle.category
+                );
+
+            }
+        );
+
+
+    const otherArticles =
+        publishedArticles.filter(
+            function (article) {
+
+                return !sameCategory.includes(
+                    article
+                );
+
+            }
+        );
+
+
+    const relatedArticles =
+        sameCategory
+            .concat(otherArticles)
+            .slice(0, 3);
+
+
+    /* =====================================================
+       NO RELATED ARTICLES
+    ====================================================== */
+
+    if (
+        relatedArticles.length === 0
+    ) {
 
         container.innerHTML = `
             <p>
@@ -796,74 +994,127 @@ function displayRelatedArticles(currentArticle) {
     }
 
 
+    /* =====================================================
+       BUILD RELATED ARTICLE CARDS
+    ====================================================== */
+
     container.innerHTML =
-        related.map(function (article) {
+        relatedArticles
 
-            return `
+            .map(
+                function (article) {
 
-                <article class="related-article">
-
-                    <a
-                        href="article.html?id=${encodeURIComponent(article.id)}">
-
-                        <div class="related-article-image">
-
-                            ${
-                                article.image
-                                    ? `
-                                        <img
-                                            src="${escapeHTML(article.image)}"
-                                            alt="${escapeHTML(article.title)}">
-                                      `
-                                    : `
-                                        <div class="blog-placeholder-icon">
-                                            ⚡
-                                        </div>
-                                      `
-                            }
-
-                        </div>
+                    const articleTitle =
+                        article.title ||
+                        "PowerNest Electric Article";
 
 
-                        <div class="related-article-content">
-
-                            <span class="blog-category">
-
-                                ${escapeHTML(
-                                    article.category ||
-                                    "General"
-                                )}
-
-                            </span>
+                    const articleCategory =
+                        article.category ||
+                        "General";
 
 
-                            <h3>
-
-                                ${escapeHTML(
-                                    article.title
-                                )}
-
-                            </h3>
+                    const articleDate =
+                        formatArticleDate(
+                            article.date
+                        );
 
 
-                            <span>
+                    let imageHTML = "";
 
-                                ${escapeHTML(
-                                    formatArticleDate(article.date)
-                                )}
 
-                            </span>
+                    if (
+                        article.image &&
+                        String(
+                            article.image
+                        ).trim() !== ""
+                    ) {
 
-                        </div>
+                        imageHTML = `
+                            <img
+                                src="${escapeHTML(
+                                    article.image
+                                )}"
+                                alt="${escapeHTML(
+                                    articleTitle
+                                )}"
+                                loading="lazy"
+                                onerror="this.style.display='none';">
+                        `;
 
-                    </a>
+                    } else {
 
-                </article>
+                        imageHTML = `
+                            <div
+                                class="blog-placeholder-icon">
 
-            `;
+                                ⚡
 
-        }).join("");
+                            </div>
+                        `;
+                    }
 
+
+                    return `
+                        <article
+                            class="related-article">
+
+                            <a
+                                href="${getArticleURL(
+                                    article
+                                )}">
+
+                                <div
+                                    class="related-article-image">
+
+                                    ${imageHTML}
+
+                                </div>
+
+
+                                <div
+                                    class="related-article-content">
+
+                                    <span
+                                        class="blog-category">
+
+                                        ${escapeHTML(
+                                            articleCategory
+                                        )}
+
+                                    </span>
+
+
+                                    <h3>
+
+                                        ${escapeHTML(
+                                            articleTitle
+                                        )}
+
+                                    </h3>
+
+
+                                    ${
+                                        articleDate
+                                            ? `
+                                                <span>
+                                                    ${escapeHTML(
+                                                        articleDate
+                                                    )}
+                                                </span>
+                                            `
+                                            : ""
+                                    }
+
+                                </div>
+
+                            </a>
+
+                        </article>
+                    `;
+                }
+            )
+            .join("");
 }
 
 
@@ -874,7 +1125,9 @@ function displayRelatedArticles(currentArticle) {
 function displayArticleNotFound() {
 
     const articlePage =
-        document.querySelector(".article-page");
+        document.querySelector(
+            ".article-page"
+        );
 
     const notFound =
         document.getElementById(
@@ -886,7 +1139,6 @@ function displayArticleNotFound() {
 
         articlePage.style.display =
             "none";
-
     }
 
 
@@ -894,18 +1146,16 @@ function displayArticleNotFound() {
 
         notFound.style.display =
             "block";
-
     }
 
 
     document.title =
         "Article Not Found | PowerNest Electric";
-
 }
 
 
 /* =========================================================
-   INITIALIZE
+   INITIALIZE ARTICLE PAGE
 ========================================================= */
 
 function initializeArticlePage() {
@@ -914,20 +1164,23 @@ function initializeArticlePage() {
         getArticleId();
 
 
-    console.log(
-        "PowerNest Article ID:",
-        articleId
-    );
+    /*
+     * If there is no ?id= in the URL,
+     * show Article Not Found.
+     */
+
+    if (!articleId) {
+
+        displayArticleNotFound();
+
+        return;
+    }
 
 
     const article =
-        findArticle(articleId);
-
-
-    console.log(
-        "PowerNest Article:",
-        article
-    );
+        findArticle(
+            articleId
+        );
 
 
     if (!article) {
@@ -935,21 +1188,22 @@ function initializeArticlePage() {
         displayArticleNotFound();
 
         return;
-
     }
 
 
-    displayArticle(article);
-
+    displayArticle(
+        article
+    );
 }
 
 
 /* =========================================================
-   START
+   START ARTICLE PAGE
 ========================================================= */
 
 document.addEventListener(
     "DOMContentLoaded",
+
     function () {
 
         initializeArticlePage();

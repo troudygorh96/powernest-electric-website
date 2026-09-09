@@ -11,27 +11,952 @@
 
     <meta
         name="description"
-        content="Explore PowerNest Electric residential and industrial electrical projects and field work in Liberia.">
+        content="Explore PowerNest Electric's electrical projects and field work, including residential, industrial, installation, wiring and energy-related work in Liberia.">
 
     <meta
         name="keywords"
-        content="PowerNest Electric, electrical projects Liberia, residential electrical work, industrial electrical work">
+        content="PowerNest Electric projects, electrical projects Liberia, residential electrical work, industrial electrical work, electrical installation Liberia, electrical wiring Liberia, solar energy Liberia">
 
     <meta
         name="author"
         content="PowerNest Electric">
+
+    <meta
+        name="robots"
+        content="index, follow">
 
     <title>
         Projects & Electrical Work | PowerNest Electric
     </title>
 
 
-    <!-- MAIN CSS -->
+    <!-- =========================================================
+         SHARED WEBSITE STYLESHEET
+    ========================================================== -->
 
     <link
         rel="stylesheet"
         href="css/style.css">
 
+
+    <!-- =========================================================
+         PROJECT PAGE STYLES
+    ========================================================== -->
+
+    <style>
+
+        /* =====================================================
+           PROJECT PAGE HERO
+        ====================================================== */
+
+        .projects-hero {
+            position: relative;
+            width: 100%;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 90px 20px;
+            background:
+                radial-gradient(
+                    circle at 50% 25%,
+                    rgba(245, 166, 35, 0.12),
+                    transparent 42%
+                ),
+                linear-gradient(
+                    135deg,
+                    #0b1f3a 0%,
+                    #07172b 100%
+                );
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+
+        .projects-hero::before {
+            content: "";
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            top: -230px;
+            right: -130px;
+            background:
+                rgba(245, 166, 35, 0.055);
+            pointer-events: none;
+        }
+
+
+        .projects-hero::after {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            bottom: -230px;
+            left: -140px;
+            background:
+                rgba(255, 255, 255, 0.025);
+            pointer-events: none;
+        }
+
+
+        .projects-hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+
+        .projects-hero-label {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #f5a623;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            padding: 7px 14px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(245, 166, 35, 0.28);
+            border-radius: 50px;
+            background: rgba(245, 166, 35, 0.06);
+        }
+
+
+        .projects-hero h1 {
+            color: #ffffff;
+            font-size: clamp(38px, 6vw, 62px);
+            font-weight: 900;
+            line-height: 1.08;
+            letter-spacing: -1.4px;
+            margin-bottom: 20px;
+        }
+
+
+        .projects-hero p {
+            max-width: 740px;
+            margin: 0 auto;
+            color: #dce5ee;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           PROJECT INTRO
+        ====================================================== */
+
+        .project-story {
+            display: grid;
+            grid-template-columns:
+                minmax(0, 1.1fr)
+                minmax(0, 0.9fr);
+            gap: 60px;
+            align-items: center;
+        }
+
+
+        .project-story-text h3 {
+            color: #0b1f3a;
+            font-size: 30px;
+            font-weight: 900;
+            line-height: 1.25;
+            margin-bottom: 18px;
+        }
+
+
+        .project-story-text p {
+            color: #65768b;
+            font-size: 15.5px;
+            line-height: 1.85;
+            margin-bottom: 17px;
+        }
+
+
+        .project-story-panel {
+            position: relative;
+            padding: 35px;
+            border-radius: 18px;
+            background:
+                linear-gradient(
+                    145deg,
+                    #f8fafc,
+                    #eef3f7
+                );
+            border: 1px solid #e1e7ee;
+            box-shadow:
+                0 16px 40px rgba(11, 31, 58, 0.07);
+            overflow: hidden;
+        }
+
+
+        .project-story-panel::before {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            top: -80px;
+            right: -50px;
+            background:
+                rgba(245, 166, 35, 0.09);
+        }
+
+
+        .project-story-icon {
+            position: relative;
+            width: 58px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff5e4;
+            border: 1px solid rgba(245, 166, 35, 0.18);
+            border-radius: 14px;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+
+        .project-story-panel h3 {
+            position: relative;
+            color: #0b1f3a;
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+
+        .project-story-panel p {
+            position: relative;
+            color: #697a8f;
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+
+        /* =====================================================
+           PROJECT CATEGORY FILTER SECTION
+        ====================================================== */
+
+        .project-gallery-section {
+            position: relative;
+            background:
+                linear-gradient(
+                    135deg,
+                    #0b1f3a 0%,
+                    #07172b 100%
+                );
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+
+        .project-gallery-section::before {
+            content: "";
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            top: -300px;
+            right: -150px;
+            background:
+                rgba(245, 166, 35, 0.045);
+            pointer-events: none;
+        }
+
+
+        .project-gallery-section .section-header {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .project-gallery-section .section-title {
+            color: #ffffff;
+        }
+
+
+        .project-gallery-section .section-intro {
+            color: #cbd7e4;
+        }
+
+
+        /* =====================================================
+           FILTER BUTTONS
+        ====================================================== */
+
+        .project-filters {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 9px;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 1050px;
+            margin: 0 auto 38px;
+        }
+
+
+        .filter-button {
+            appearance: none;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            background: rgba(255, 255, 255, 0.045);
+            color: #dce5ee;
+            min-height: 43px;
+            padding: 10px 17px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 800;
+            cursor: pointer;
+            transition:
+                background-color 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+
+        .filter-button:hover {
+            color: #ffffff;
+            border-color: rgba(245, 166, 35, 0.42);
+            background: rgba(245, 166, 35, 0.09);
+            transform: translateY(-2px);
+        }
+
+
+        .filter-button.active {
+            background: #f5a623;
+            color: #0b1f3a;
+            border-color: #f5a623;
+            box-shadow:
+                0 7px 20px rgba(245, 166, 35, 0.18);
+        }
+
+
+        /* =====================================================
+           GALLERY
+        ====================================================== */
+
+        .gallery-box {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1150px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+
+        .gallery-item {
+            position: relative;
+            min-width: 0;
+            height: 280px;
+            background: #102743;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow:
+                0 12px 32px rgba(0, 0, 0, 0.18);
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+
+        .gallery-item:hover {
+            transform: translateY(-7px);
+            border-color:
+                rgba(245, 166, 35, 0.38);
+            box-shadow:
+                0 20px 42px rgba(0, 0, 0, 0.28);
+        }
+
+
+        .gallery-item.hidden {
+            display: none;
+        }
+
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition:
+                transform 0.55s ease,
+                filter 0.35s ease;
+        }
+
+
+        .gallery-item:hover img {
+            transform: scale(1.055);
+            filter: brightness(0.78);
+        }
+
+
+        .gallery-item::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(3, 12, 25, 0.88) 0%,
+                    rgba(3, 12, 25, 0.10) 52%,
+                    transparent 100%
+                );
+            pointer-events: none;
+        }
+
+
+        .gallery-caption {
+            position: absolute;
+            z-index: 3;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 22px 20px 19px;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 0.1px;
+        }
+
+
+        .gallery-caption::before {
+            content: "PROJECT";
+            display: block;
+            color: #f5a623;
+            font-size: 9px;
+            font-weight: 900;
+            letter-spacing: 1.7px;
+            margin-bottom: 5px;
+        }
+
+
+        .gallery-open-icon {
+            position: absolute;
+            z-index: 4;
+            top: 14px;
+            right: 14px;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(7, 23, 43, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            color: #ffffff;
+            font-size: 16px;
+            opacity: 0;
+            transform: translateY(-5px);
+            transition:
+                opacity 0.25s ease,
+                transform 0.25s ease;
+        }
+
+
+        .gallery-item:hover .gallery-open-icon {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        .gallery-hint {
+            position: relative;
+            z-index: 2;
+            margin: 27px auto 0;
+            text-align: center;
+            color: #94a7bb;
+            font-size: 12px;
+        }
+
+
+        /* =====================================================
+           EMPTY PROJECT MESSAGE
+        ====================================================== */
+
+        .no-projects-message {
+            position: relative;
+            z-index: 2;
+            max-width: 580px;
+            margin: 35px auto 0;
+            padding: 38px 28px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            border-radius: 16px;
+        }
+
+
+        .no-projects-icon {
+            width: 58px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            background: rgba(245, 166, 35, 0.10);
+            border: 1px solid rgba(245, 166, 35, 0.18);
+            border-radius: 50%;
+            font-size: 25px;
+        }
+
+
+        .no-projects-message h3 {
+            color: #ffffff;
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+
+        .no-projects-message p {
+            color: #b9c7d8;
+            font-size: 14px;
+            line-height: 1.75;
+            margin-bottom: 8px;
+        }
+
+
+        /* =====================================================
+           PROJECT STANDARDS
+        ====================================================== */
+
+        .project-standards-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(4, 1fr);
+            gap: 20px;
+        }
+
+
+        .project-standard-card {
+            position: relative;
+            padding: 29px 23px;
+            text-align: center;
+            background: #ffffff;
+            border: 1px solid #e2e8ef;
+            border-radius: 15px;
+            box-shadow:
+                0 8px 28px rgba(11, 31, 58, 0.055);
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+
+        .project-standard-card:hover {
+            transform: translateY(-6px);
+            border-color:
+                rgba(245, 166, 35, 0.32);
+            box-shadow:
+                0 17px 38px rgba(11, 31, 58, 0.10);
+        }
+
+
+        .project-standard-icon {
+            width: 54px;
+            height: 54px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            background: #fff5e4;
+            border: 1px solid rgba(245, 166, 35, 0.12);
+            font-size: 25px;
+        }
+
+
+        .project-standard-card h3 {
+            color: #0b1f3a;
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 9px;
+        }
+
+
+        .project-standard-card p {
+            color: #697a8f;
+            font-size: 13.5px;
+            line-height: 1.75;
+        }
+
+
+        /* =====================================================
+           PROJECT CTA
+        ====================================================== */
+
+        .projects-cta {
+            position: relative;
+            width: 100%;
+            padding: 95px 20px;
+            text-align: center;
+            color: #ffffff;
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(245, 166, 35, 0.10),
+                    transparent 48%
+                ),
+                linear-gradient(
+                    135deg,
+                    #0b1f3a 0%,
+                    #07172b 100%
+                );
+            overflow: hidden;
+        }
+
+
+        .projects-cta::before {
+            content: "";
+            position: absolute;
+            width: 310px;
+            height: 310px;
+            border-radius: 50%;
+            top: -180px;
+            left: -110px;
+            background:
+                rgba(245, 166, 35, 0.045);
+        }
+
+
+        .projects-cta::after {
+            content: "";
+            position: absolute;
+            width: 330px;
+            height: 330px;
+            border-radius: 50%;
+            bottom: -210px;
+            right: -120px;
+            background:
+                rgba(255, 255, 255, 0.025);
+        }
+
+
+        .projects-cta-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+
+        .projects-cta-content h2 {
+            color: #ffffff;
+            font-size: clamp(31px, 4vw, 44px);
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+
+        .projects-cta-content p {
+            max-width: 690px;
+            margin: 0 auto 31px;
+            color: #d0dbe7;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           IMAGE MODAL
+        ====================================================== */
+
+        .project-modal {
+            position: fixed;
+            z-index: 5000;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            background:
+                rgba(3, 10, 20, 0.94);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition:
+                opacity 0.25s ease,
+                visibility 0.25s ease;
+        }
+
+
+        .project-modal.show {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+
+        .project-modal-image {
+            max-width: min(1100px, 94vw);
+            max-height: 84vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow:
+                0 25px 80px rgba(0, 0, 0, 0.45);
+            transform: scale(0.96);
+            transition:
+                transform 0.3s ease;
+        }
+
+
+        .project-modal.show .project-modal-image {
+            transform: scale(1);
+        }
+
+
+        .project-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            width: 46px;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.07);
+            color: #ffffff;
+            font-size: 28px;
+            line-height: 1;
+            cursor: pointer;
+            transition:
+                background-color 0.25s ease,
+                color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+
+        .project-modal-close:hover {
+            background: #f5a623;
+            color: #0b1f3a;
+            transform: rotate(4deg);
+        }
+
+
+        /* =====================================================
+           PROJECT PAGE RESPONSIVE
+        ====================================================== */
+
+        @media (max-width: 1000px) {
+
+            .project-story {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+
+            .gallery-box {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+
+
+            .project-standards-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .projects-hero {
+                min-height: 470px;
+                padding:
+                    75px 18px 80px;
+            }
+
+
+            .projects-hero-label {
+                font-size: 10px;
+                letter-spacing: 1.8px;
+            }
+
+
+            .projects-hero h1 {
+                font-size: 39px;
+                letter-spacing: -0.7px;
+            }
+
+
+            .projects-hero p {
+                font-size: 15px;
+                line-height: 1.72;
+            }
+
+
+            .project-story-text {
+                text-align: center;
+            }
+
+
+            .project-story-text h3 {
+                font-size: 26px;
+            }
+
+
+            .project-story-panel {
+                padding: 28px 23px;
+                text-align: center;
+            }
+
+
+            .project-story-icon {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+
+            .project-filters {
+                gap: 7px;
+                margin-bottom: 30px;
+            }
+
+
+            .filter-button {
+                font-size: 12px;
+                min-height: 40px;
+                padding:
+                    9px 13px;
+            }
+
+
+            .gallery-box {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+
+            .gallery-item {
+                height: 260px;
+            }
+
+
+            .gallery-open-icon {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+
+            .project-standards-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .projects-cta {
+                padding:
+                    70px 18px;
+            }
+
+
+            .projects-cta-content h2 {
+                font-size: 32px;
+            }
+
+
+            .projects-cta-content p {
+                font-size: 15px;
+            }
+
+
+            .project-modal {
+                padding: 20px;
+            }
+
+
+            .project-modal-image {
+                max-width: 96vw;
+                max-height: 78vh;
+            }
+
+
+            .project-modal-close {
+                top: 14px;
+                right: 14px;
+                width: 42px;
+                height: 42px;
+                font-size: 25px;
+            }
+
+        }
+
+
+        @media (max-width: 450px) {
+
+            .projects-hero {
+                padding:
+                    60px 15px 68px;
+            }
+
+
+            .projects-hero h1 {
+                font-size: 34px;
+            }
+
+
+            .projects-hero p {
+                font-size: 14.5px;
+            }
+
+
+            .gallery-item {
+                height: 235px;
+            }
+
+
+            .gallery-caption {
+                padding:
+                    18px 16px 16px;
+                font-size: 13px;
+            }
+
+
+            .filter-button {
+                font-size: 11px;
+                padding:
+                    8px 10px;
+            }
+
+        }
+
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .gallery-item,
+            .gallery-item img,
+            .project-standard-card,
+            .project-modal,
+            .project-modal-image {
+                transition: none !important;
+            }
+
+        }
+
+    </style>
 
 </head>
 
@@ -48,21 +973,18 @@
     <div class="header-container">
 
 
-        <!-- LOGO -->
-
         <a
             href="index.html"
-            class="logo-link">
+            class="logo-link"
+            aria-label="PowerNest Electric Home">
 
             <img
                 src="logo.png"
-                alt="PowerNest Electric Logo"
+                alt="PowerNest Electric logo"
                 class="site-logo">
 
         </a>
 
-
-        <!-- MOBILE MENU BUTTON -->
 
         <button
             type="button"
@@ -76,11 +998,10 @@
         </button>
 
 
-        <!-- NAVIGATION -->
-
         <nav
             class="nav-links"
-            id="navLinks">
+            id="navLinks"
+            aria-label="Main navigation">
 
             <a href="index.html">
                 Home
@@ -96,7 +1017,8 @@
 
             <a
                 href="projects.html"
-                class="active">
+                class="active"
+                aria-current="page">
 
                 Projects
 
@@ -106,7 +1028,7 @@
                 Blog
             </a>
 
-            <a href="index.html#contact">
+            <a href="contact.html">
                 Contact
             </a>
 
@@ -119,28 +1041,37 @@
 
 
 <!-- =========================================================
-     PAGE HERO
+     MAIN CONTENT
 ========================================================== -->
 
-<section class="page-hero">
+<main>
 
-    <div class="page-hero-content">
 
-        <p class="page-hero-label">
-            POWERNEST ELECTRIC
-        </p>
+<!-- =========================================================
+     HERO
+========================================================== -->
+
+<section class="projects-hero">
+
+    <div class="projects-hero-content">
+
+        <span class="projects-hero-label">
+            OUR PROJECTS
+        </span>
 
 
         <h1>
-            Our Projects & Electrical Work
+            Electrical Work Built Around Real Needs
         </h1>
 
 
         <p>
-            Explore real photographs from
-            PowerNest Electric's residential
-            and industrial electrical work
-            in Liberia.
+
+            Explore selected field photographs from
+            PowerNest Electric's residential,
+            industrial and electrical installation
+            work in Liberia.
+
         </p>
 
     </div>
@@ -150,48 +1081,89 @@
 
 
 <!-- =========================================================
-     PROJECT INTRODUCTION
+     PROJECT STORY
 ========================================================== -->
 
 <section class="section section-white">
 
-    <div class="section-header">
+    <div class="content-container">
 
-        <h2 class="section-title">
-            Real Work. Real Projects.
-        </h2>
+        <div class="project-story">
 
 
-        <p class="section-intro">
+            <div class="project-story-text">
 
-            Our project gallery gives you a look
-            at electrical work carried out by
-            PowerNest Electric.
-
-        </p>
-
-    </div>
+                <span class="section-label">
+                    OUR WORK IN THE FIELD
+                </span>
 
 
-    <div class="project-intro-text">
-
-        <p>
-
-            From residential electrical work
-            to industrial electrical activities,
-            our gallery showcases real field
-            photographs from PowerNest Electric.
-
-        </p>
+                <h3>
+                    Practical Electrical Solutions. Professional Execution.
+                </h3>
 
 
-        <p>
+                <p>
 
-            As we complete additional projects,
-            more categories and photographs
-            will be added to this gallery.
+                    Every electrical project has its own
+                    requirements. Our approach is focused
+                    on understanding those requirements and
+                    delivering practical electrical work with
+                    safety, reliability and quality in mind.
 
-        </p>
+                </p>
+
+
+                <p>
+
+                    This gallery provides a look at selected
+                    electrical activities carried out by
+                    PowerNest Electric. It represents the
+                    type of work we undertake across
+                    residential, industrial and other
+                    electrical environments.
+
+                </p>
+
+
+                <p>
+
+                    As our portfolio continues to grow,
+                    additional completed projects and
+                    project categories will be added.
+
+                </p>
+
+            </div>
+
+
+            <div class="project-story-panel">
+
+                <div class="project-story-icon">
+                    ⚡
+                </div>
+
+
+                <h3>
+                    PowerNest Standard
+                </h3>
+
+
+                <p>
+
+                    We believe good electrical work is more
+                    than simply completing an installation.
+                    It means paying attention to the
+                    requirements of the project, working
+                    carefully and delivering a dependable
+                    result.
+
+                </p>
+
+            </div>
+
+
+        </div>
 
     </div>
 
@@ -200,701 +1172,751 @@
 
 
 <!-- =========================================================
-     PROJECT FILTERS
+     PROJECT GALLERY
 ========================================================== -->
 
-<section class="section section-blue">
+<section class="section project-gallery-section">
 
-    <div class="section-header">
+    <div class="content-container">
 
-        <h2 class="section-title">
-            Browse Our Work
-        </h2>
 
+        <div class="section-header">
 
-        <p class="section-intro">
+            <span class="section-label">
+                PROJECT GALLERY
+            </span>
 
-            Select a category to explore
-            our available project photographs.
 
-        </p>
+            <h2 class="section-title">
+                Explore Our Electrical Work
+            </h2>
 
-    </div>
 
+            <p class="section-intro">
 
-    <div class="project-filters">
+                Browse our project photographs by
+                electrical work category.
 
-
-        <button
-            type="button"
-            class="filter-button active"
-            data-filter="all">
-
-            All Projects
-
-        </button>
-
-
-        <button
-            type="button"
-            class="filter-button"
-            data-filter="residential">
-
-            Residential
-
-        </button>
-
-
-        <button
-            type="button"
-            class="filter-button"
-            data-filter="commercial">
-
-            Commercial
-
-        </button>
-
-
-        <button
-            type="button"
-            class="filter-button"
-            data-filter="industrial">
-
-            Industrial
-
-        </button>
-
-
-        <button
-            type="button"
-            class="filter-button"
-            data-filter="installation">
-
-            Installation & Wiring
-
-        </button>
-
-
-        <button
-            type="button"
-            class="filter-button"
-            data-filter="solar">
-
-            Solar & Energy
-
-        </button>
-
-
-    </div>
-
-
-
-    <!-- =====================================================
-         PROJECT GALLERY
-    ====================================================== -->
-
-    <div
-        class="gallery-box"
-        id="projectGallery">
-
-
-        <!-- =================================================
-             RESIDENTIAL PROJECT 01
-        ================================================== -->
-
-        <div
-            class="gallery-item"
-            data-category="residential"
-            onclick="openModal(this)">
-
-            <img
-                src="photos/RESIDENTIAL%20WORK/01.jpg"
-                alt="PowerNest Electric residential electrical project 1 in Liberia"
-                loading="lazy">
-
-            <div class="gallery-caption">
-
-                Residential Electrical Work
-
-            </div>
-
-        </div>
-
-
-
-        <!-- RESIDENTIAL 02 -->
-
-        <div
-            class="gallery-item"
-            data-category="residential"
-            onclick="openModal(this)">
-
-            <img
-                src="photos/RESIDENTIAL%20WORK/02.jpg"
-                alt="PowerNest Electric residential electrical project 2 in Liberia"
-                loading="lazy">
-
-            <div class="gallery-caption">
-
-                Residential Electrical Work
-
-            </div>
-
-        </div>
-
-
-
-        <!-- RESIDENTIAL 03 -->
-
-        <div
-            class="gallery-item"
-            data-category="residential"
-            onclick="openModal(this)">
-
-            <img
-                src="photos/RESIDENTIAL%20WORK/03.jpg"
-                alt="PowerNest Electric residential electrical project 3 in Liberia"
-                loading="lazy">
-
-            <div class="gallery-caption">
-
-                Residential Electrical Work
-
-            </div>
-
-        </div>
-
-
-
-        <!-- RESIDENTIAL 04 -->
-
-        <div
-            class="gallery-item"
-            data-category="residential"
-            onclick="openModal(this)">
-
-            <img
-                src="photos/RESIDENTIAL%20WORK/04.jpg"
-                alt="PowerNest Electric residential electrical project 4 in Liberia"
-                loading="lazy">
-
-            <div class="gallery-caption">
-
-                Residential Electrical Work
-
-            </div>
-
-        </div>
-
-
-
-        <!-- RESIDENTIAL 05 -->
-
-        <div
-            class="gallery-item"
-            data-category="residential"
-            onclick="openModal(this)">
-
-            <img
-                src="photos/RESIDENTIAL%20WORK/05.jpg"
-                alt="PowerNest Electric residential electrical project 5 in Liberia"
-                loading="lazy">
-
-            <div class="gallery-caption">
-
-                Residential Electrical Work
-
-            </div>
-
-        </div>
-
-
-
-        <!-- RESIDENTIAL 06 -->
-
-        <div
-            class="gallery-item"
-            data-category="residential"
-            onclick="openModal(this)">
-
-            <img
-                src="photos/RESIDENTIAL%20WORK/06.jpg"
-                alt="PowerNest Electric residential electrical project 6 in Liberia"
-                loading="lazy">
-
-            <div class="gallery-caption">
-
-                Residential Electrical Work
-
-            </div>
-
-        </div>
-
-
-
-        <!-- RESIDENTIAL 07 -->
-
-        <div
-            class="gallery-item"
-            data-category="residential"
-            onclick="openModal(this)">
-
-            <img
-                src="photos/RESIDENTIAL%20WORK/07.jpg"
-                alt="PowerNest Electric residential electrical project 7 in Liberia"
-                loading="lazy">
-
-            <div class="gallery-caption">
-
-                Residential Electrical Work
-
-            </div>
-
-        </div>
-
-
-
-        <!-- RESIDENTIAL 08 -->
-
-        <div
-            class="gallery-item"
-            data-category="residential"
-            onclick="openModal(this)">
-
-            <img
-                src="photos/RESIDENTIAL%20WORK/08.jpg"
-                alt="PowerNest Electric residential electrical project 8 in Liberia"
-                loading="lazy">
-
-            <div class="gallery-caption">
-
-                Residential Electrical Work
-
-            </div>
-
-        </div>
-
-
-
-        <!-- RESIDENTIAL 09 -->
-
-        <div
-            class="gallery-item"
-            data-category="residential"
-            onclick="openModal(this)">
-
-            <img
-                src="photos/RESIDENTIAL%20WORK/09.jpg"
-                alt="PowerNest Electric residential electrical project 9 in Liberia"
-                loading="lazy">
-
-            <div class="gallery-caption">
-
-                Residential Electrical Work
-
-            </div>
-
-        </div>
-
-
-
-        <!-- RESIDENTIAL 10 -->
-
-        <div
-            class="gallery-item"
-            data-category="residential"
-            onclick="openModal(this)">
-
-            <img
-                src="photos/RESIDENTIAL%20WORK/10.jpg"
-                alt="PowerNest Electric residential electrical project 10 in Liberia"
-                loading="lazy">
-
-            <div class="gallery-caption">
-
-                Residential Electrical Work
-
-            </div>
-
-        </div>
-
-
-
-        <!-- RESIDENTIAL 11 -->
-
-        <div
-            class="gallery-item"
-            data-category="residential"
-            onclick="openModal(this)">
-
-            <img
-                src="photos/RESIDENTIAL%20WORK/11.jpg"
-                alt="PowerNest Electric residential electrical project 11 in Liberia"
-                loading="lazy">
-
-            <div class="gallery-caption">
-
-                Residential Electrical Work
-
-            </div>
-
-        </div>
-
-
-
-        <!-- RESIDENTIAL 12 -->
-
-        <div
-            class="gallery-item"
-            data-category="residential"
-            onclick="openModal(this)">
-
-            <img
-                src="photos/RESIDENTIAL%20WORK/12.jpg"
-                alt="PowerNest Electric residential electrical project 12 in Liberia"
-                loading="lazy">
-
-            <div class="gallery-caption">
-
-                Residential Electrical Work
-
-            </div>
-
-        </div>
-
-
-
-        <!-- RESIDENTIAL 13 -->
-
-        <div
-            class="gallery-item"
-            data-category="residential"
-            onclick="openModal(this)">
-
-            <img
-                src="photos/RESIDENTIAL%20WORK/13.jpg"
-                alt="PowerNest Electric residential electrical project 13 in Liberia"
-                loading="lazy">
-
-            <div class="gallery-caption">
-
-                Residential Electrical Work
-
-            </div>
+            </p>
 
         </div>
 
 
 
         <!-- =================================================
-             INDUSTRIAL PROJECTS
+             FILTER BUTTONS
         ================================================== -->
 
+        <div
+            class="project-filters"
+            role="group"
+            aria-label="Project categories">
 
-        <!-- INDUSTRIAL 01 -->
+
+            <button
+                type="button"
+                class="filter-button active"
+                data-filter="all">
+
+                All Projects
+
+            </button>
+
+
+            <button
+                type="button"
+                class="filter-button"
+                data-filter="residential">
+
+                Residential
+
+            </button>
+
+
+            <button
+                type="button"
+                class="filter-button"
+                data-filter="commercial">
+
+                Commercial
+
+            </button>
+
+
+            <button
+                type="button"
+                class="filter-button"
+                data-filter="industrial">
+
+                Industrial
+
+            </button>
+
+
+            <button
+                type="button"
+                class="filter-button"
+                data-filter="installation">
+
+                Installation & Wiring
+
+            </button>
+
+
+            <button
+                type="button"
+                class="filter-button"
+                data-filter="solar">
+
+                Solar & Energy
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             PROJECT GALLERY
+        ================================================== -->
 
         <div
-            class="gallery-item"
-            data-category="industrial"
-            onclick="openModal(this)">
+            class="gallery-box"
+            id="projectGallery">
 
-            <img
-                src="photos/INDUSTRIAL%20WORK/1000277398.jpg"
-                alt="PowerNest Electric industrial electrical project 1 in Liberia"
-                loading="lazy">
 
-            <div class="gallery-caption">
+            <!-- =================================================
+                 RESIDENTIAL PROJECTS
+            ================================================== -->
 
-                Industrial Electrical Work
 
-            </div>
+            <article
+                class="gallery-item"
+                data-category="residential"
+                tabindex="0"
+                role="button"
+                aria-label="Open residential electrical project 1">
+
+                <img
+                    src="photos/RESIDENTIAL%20WORK/01.jpg"
+                    alt="PowerNest Electric residential electrical work in Liberia"
+                    loading="lazy">
+
+                <span class="gallery-open-icon">
+                    ↗
+                </span>
+
+                <div class="gallery-caption">
+                    Residential Electrical Work
+                </div>
+
+            </article>
+
+
+            <article
+                class="gallery-item"
+                data-category="residential"
+                tabindex="0"
+                role="button"
+                aria-label="Open residential electrical project 2">
+
+                <img
+                    src="photos/RESIDENTIAL%20WORK/02.jpg"
+                    alt="PowerNest Electric residential electrical work in Liberia"
+                    loading="lazy">
+
+                <span class="gallery-open-icon">
+                    ↗
+                </span>
+
+                <div class="gallery-caption">
+                    Residential Electrical Work
+                </div>
+
+            </article>
+
+
+            <article
+                class="gallery-item"
+                data-category="residential"
+                tabindex="0"
+                role="button"
+                aria-label="Open residential electrical project 3">
+
+                <img
+                    src="photos/RESIDENTIAL%20WORK/03.jpg"
+                    alt="PowerNest Electric residential electrical work in Liberia"
+                    loading="lazy">
+
+                <span class="gallery-open-icon">
+                    ↗
+                </span>
+
+                <div class="gallery-caption">
+                    Residential Electrical Work
+                </div>
+
+            </article>
+
+
+            <article
+                class="gallery-item"
+                data-category="residential"
+                tabindex="0"
+                role="button"
+                aria-label="Open residential electrical project 4">
+
+                <img
+                    src="photos/RESIDENTIAL%20WORK/04.jpg"
+                    alt="PowerNest Electric residential electrical work in Liberia"
+                    loading="lazy">
+
+                <span class="gallery-open-icon">
+                    ↗
+                </span>
+
+                <div class="gallery-caption">
+                    Residential Electrical Work
+                </div>
+
+            </article>
+
+
+            <article
+                class="gallery-item"
+                data-category="residential"
+                tabindex="0"
+                role="button"
+                aria-label="Open residential electrical project 5">
+
+                <img
+                    src="photos/RESIDENTIAL%20WORK/05.jpg"
+                    alt="PowerNest Electric residential electrical work in Liberia"
+                    loading="lazy">
+
+                <span class="gallery-open-icon">
+                    ↗
+                </span>
+
+                <div class="gallery-caption">
+                    Residential Electrical Work
+                </div>
+
+            </article>
+
+
+            <article
+                class="gallery-item"
+                data-category="residential"
+                tabindex="0"
+                role="button"
+                aria-label="Open residential electrical project 6">
+
+                <img
+                    src="photos/RESIDENTIAL%20WORK/06.jpg"
+                    alt="PowerNest Electric residential electrical work in Liberia"
+                    loading="lazy">
+
+                <span class="gallery-open-icon">
+                    ↗
+                </span>
+
+                <div class="gallery-caption">
+                    Residential Electrical Work
+                </div>
+
+            </article>
+
+
+            <article
+                class="gallery-item"
+                data-category="residential"
+                tabindex="0"
+                role="button"
+                aria-label="Open residential electrical project 7">
+
+                <img
+                    src="photos/RESIDENTIAL%20WORK/07.jpg"
+                    alt="PowerNest Electric residential electrical work in Liberia"
+                    loading="lazy">
+
+                <span class="gallery-open-icon">
+                    ↗
+                </span>
+
+                <div class="gallery-caption">
+                    Residential Electrical Work
+                </div>
+
+            </article>
+
+
+            <article
+                class="gallery-item"
+                data-category="residential"
+                tabindex="0"
+                role="button"
+                aria-label="Open residential electrical project 8">
+
+                <img
+                    src="photos/RESIDENTIAL%20WORK/08.jpg"
+                    alt="PowerNest Electric residential electrical work in Liberia"
+                    loading="lazy">
+
+                <span class="gallery-open-icon">
+                    ↗
+                </span>
+
+                <div class="gallery-caption">
+                    Residential Electrical Work
+                </div>
+
+            </article>
+
+
+            <article
+                class="gallery-item"
+                data-category="residential"
+                tabindex="0"
+                role="button"
+                aria-label="Open residential electrical project 9">
+
+                <img
+                    src="photos/RESIDENTIAL%20WORK/09.jpg"
+                    alt="PowerNest Electric residential electrical work in Liberia"
+                    loading="lazy">
+
+                <span class="gallery-open-icon">
+                    ↗
+                </span>
+
+                <div class="gallery-caption">
+                    Residential Electrical Work
+                </div>
+
+            </article>
+
+
+            <article
+                class="gallery-item"
+                data-category="residential"
+                tabindex="0"
+                role="button"
+                aria-label="Open residential electrical project 10">
+
+                <img
+                    src="photos/RESIDENTIAL%20WORK/10.jpg"
+                    alt="PowerNest Electric residential electrical work in Liberia"
+                    loading="lazy">
+
+                <span class="gallery-open-icon">
+                    ↗
+                </span>
+
+                <div class="gallery-caption">
+                    Residential Electrical Work
+                </div>
+
+            </article>
+
+
+            <article
+                class="gallery-item"
+                data-category="residential"
+                tabindex="0"
+                role="button"
+                aria-label="Open residential electrical project 11">
+
+                <img
+                    src="photos/RESIDENTIAL%20WORK/11.jpg"
+                    alt="PowerNest Electric residential electrical work in Liberia"
+                    loading="lazy">
+
+                <span class="gallery-open-icon">
+                    ↗
+                </span>
+
+                <div class="gallery-caption">
+                    Residential Electrical Work
+                </div>
+
+            </article>
+
+
+            <article
+                class="gallery-item"
+                data-category="residential"
+                tabindex="0"
+                role="button"
+                aria-label="Open residential electrical project 12">
+
+                <img
+                    src="photos/RESIDENTIAL%20WORK/12.jpg"
+                    alt="PowerNest Electric residential electrical work in Liberia"
+                    loading="lazy">
+
+                <span class="gallery-open-icon">
+                    ↗
+                </span>
+
+                <div class="gallery-caption">
+                    Residential Electrical Work
+                </div>
+
+            </article>
+
+
+            <article
+                class="gallery-item"
+                data-category="residential"
+                tabindex="0"
+                role="button"
+                aria-label="Open residential electrical project 13">
+
+                <img
+                    src="photos/RESIDENTIAL%20WORK/13.jpg"
+                    alt="PowerNest Electric residential electrical work in Liberia"
+                    loading="lazy">
+
+                <span class="gallery-open-icon">
+                    ↗
+                </span>
+
+                <div class="gallery-caption">
+                    Residential Electrical Work
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 INDUSTRIAL PROJECTS
+            ================================================== -->
+
+
+            <article
+                class="gallery-item"
+                data-category="industrial"
+                tabindex="0"
+                role="button"
+                aria-label="Open industrial electrical project 1">
+
+                <img
+                    src="photos/INDUSTRIAL%20WORK/1000277398.jpg"
+                    alt="PowerNest Electric industrial electrical work in Liberia"
+                    loading="lazy">
+
+                <span class="gallery-open-icon">
+                    ↗
+                </span>
+
+                <div class="gallery-caption">
+                    Industrial Electrical Work
+                </div>
+
+            </article>
+
+
+            <article
+                class="gallery-item"
+                data-category="industrial"
+                tabindex="0"
+                role="button"
+                aria-label="Open industrial electrical project 2">
+
+                <img
+                    src="photos/INDUSTRIAL%20WORK/1000277400.jpg"
+                    alt="PowerNest Electric industrial electrical work in Liberia"
+                    loading="lazy">
+
+                <span class="gallery-open-icon">
+                    ↗
+                </span>
+
+                <div class="gallery-caption">
+                    Industrial Electrical Work
+                </div>
+
+            </article>
+
+
+            <article
+                class="gallery-item"
+                data-category="industrial"
+                tabindex="0"
+                role="button"
+                aria-label="Open industrial electrical project 3">
+
+                <img
+                    src="photos/INDUSTRIAL%20WORK/1000277406.jpg"
+                    alt="PowerNest Electric industrial electrical work in Liberia"
+                    loading="lazy">
+
+                <span class="gallery-open-icon">
+                    ↗
+                </span>
+
+                <div class="gallery-caption">
+                    Industrial Electrical Work
+                </div>
+
+            </article>
+
+
+            <article
+                class="gallery-item"
+                data-category="industrial"
+                tabindex="0"
+                role="button"
+                aria-label="Open industrial electrical project 4">
+
+                <img
+                    src="photos/INDUSTRIAL%20WORK/1000277435.jpg"
+                    alt="PowerNest Electric industrial electrical work in Liberia"
+                    loading="lazy">
+
+                <span class="gallery-open-icon">
+                    ↗
+                </span>
+
+                <div class="gallery-caption">
+                    Industrial Electrical Work
+                </div>
+
+            </article>
+
+
+            <article
+                class="gallery-item"
+                data-category="industrial"
+                tabindex="0"
+                role="button"
+                aria-label="Open industrial electrical project 5">
+
+                <img
+                    src="photos/INDUSTRIAL%20WORK/1000277436.jpg"
+                    alt="PowerNest Electric industrial electrical work in Liberia"
+                    loading="lazy">
+
+                <span class="gallery-open-icon">
+                    ↗
+                </span>
+
+                <div class="gallery-caption">
+                    Industrial Electrical Work
+                </div>
+
+            </article>
+
+
+            <article
+                class="gallery-item"
+                data-category="industrial"
+                tabindex="0"
+                role="button"
+                aria-label="Open industrial electrical project 6">
+
+                <img
+                    src="photos/INDUSTRIAL%20WORK/1000277437.jpg"
+                    alt="PowerNest Electric industrial electrical work in Liberia"
+                    loading="lazy">
+
+                <span class="gallery-open-icon">
+                    ↗
+                </span>
+
+                <div class="gallery-caption">
+                    Industrial Electrical Work
+                </div>
+
+            </article>
+
 
         </div>
 
 
-
-        <!-- INDUSTRIAL 02 -->
+        <!-- =================================================
+             EMPTY CATEGORY
+        ================================================== -->
 
         <div
-            class="gallery-item"
-            data-category="industrial"
-            onclick="openModal(this)">
+            id="noProjectsMessage"
+            class="no-projects-message"
+            hidden>
 
-            <img
-                src="photos/INDUSTRIAL%20WORK/1000277400.jpg"
-                alt="PowerNest Electric industrial electrical project 2 in Liberia"
-                loading="lazy">
-
-            <div class="gallery-caption">
-
-                Industrial Electrical Work
-
+            <div class="no-projects-icon">
+                ⚡
             </div>
 
-        </div>
+
+            <h3>
+                More Projects Coming Soon
+            </h3>
 
 
+            <p>
 
-        <!-- INDUSTRIAL 03 -->
+                We do not have project photographs
+                available for this category yet.
 
-        <div
-            class="gallery-item"
-            data-category="industrial"
-            onclick="openModal(this)">
-
-            <img
-                src="photos/INDUSTRIAL%20WORK/1000277406.jpg"
-                alt="PowerNest Electric industrial electrical project 3 in Liberia"
-                loading="lazy">
-
-            <div class="gallery-caption">
-
-                Industrial Electrical Work
-
-            </div>
-
-        </div>
+            </p>
 
 
+            <p>
 
-        <!-- INDUSTRIAL 04 -->
+                As PowerNest Electric completes
+                additional electrical work, new
+                project photographs will be added.
 
-        <div
-            class="gallery-item"
-            data-category="industrial"
-            onclick="openModal(this)">
-
-            <img
-                src="photos/INDUSTRIAL%20WORK/1000277435.jpg"
-                alt="PowerNest Electric industrial electrical project 4 in Liberia"
-                loading="lazy">
-
-            <div class="gallery-caption">
-
-                Industrial Electrical Work
-
-            </div>
+            </p>
 
         </div>
 
 
+        <p class="gallery-hint">
 
-        <!-- INDUSTRIAL 05 -->
-
-        <div
-            class="gallery-item"
-            data-category="industrial"
-            onclick="openModal(this)">
-
-            <img
-                src="photos/INDUSTRIAL%20WORK/1000277436.jpg"
-                alt="PowerNest Electric industrial electrical project 5 in Liberia"
-                loading="lazy">
-
-            <div class="gallery-caption">
-
-                Industrial Electrical Work
-
-            </div>
-
-        </div>
-
-
-
-        <!-- INDUSTRIAL 06 -->
-
-        <div
-            class="gallery-item"
-            data-category="industrial"
-            onclick="openModal(this)">
-
-            <img
-                src="photos/INDUSTRIAL%20WORK/1000277437.jpg"
-                alt="PowerNest Electric industrial electrical project 6 in Liberia"
-                loading="lazy">
-
-            <div class="gallery-caption">
-
-                Industrial Electrical Work
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-
-    <!-- =====================================================
-         EMPTY CATEGORY MESSAGE
-    ====================================================== -->
-
-    <div
-        id="noProjectsMessage"
-        class="no-projects-message"
-        style="display:none;">
-
-
-        <div class="no-projects-icon">
-            ⚡
-        </div>
-
-
-        <h3>
-            More Projects Coming Soon
-        </h3>
-
-
-        <p>
-
-            We do not have photographs available
-            for this category yet.
+            Select a category or click any project
+            photograph to view it in detail.
 
         </p>
 
 
-        <p>
-
-            PowerNest Electric will continue
-            adding real project photographs as
-            new electrical work is completed.
-
-        </p>
-
     </div>
-
-
-    <p class="gallery-hint">
-
-        Click any project photo to view it larger.
-
-    </p>
-
 
 </section>
 
 
 
 <!-- =========================================================
-     PROJECT INFORMATION
+     PROJECT STANDARDS
 ========================================================== -->
 
 <section class="section section-light">
 
-    <div class="section-header">
-
-        <h2 class="section-title">
-            Our Electrical Work
-        </h2>
+    <div class="content-container">
 
 
-        <p class="section-intro">
+        <div class="section-header">
 
-            Practical electrical solutions for
-            different power needs.
-
-        </p>
-
-    </div>
+            <span class="section-label">
+                THE POWERNEST STANDARD
+            </span>
 
 
-    <div class="why-container">
+            <h2 class="section-title">
+                What We Bring to Every Project
+            </h2>
 
 
-        <div class="why-card">
+            <p class="section-intro">
 
-            <div class="why-icon">
-                🏠
-            </div>
-
-
-            <h3>
-                Residential
-            </h3>
-
-
-            <p>
-
-                Electrical work for homes and
-                residential properties, including
-                wiring, lighting and related
-                electrical installations.
+                Our work is guided by the principles
+                that matter most in professional
+                electrical service.
 
             </p>
 
         </div>
 
 
-
-        <div class="why-card">
-
-            <div class="why-icon">
-                🏭
-            </div>
+        <div class="project-standards-grid">
 
 
-            <h3>
-                Industrial
-            </h3>
+            <article class="project-standard-card">
+
+                <div class="project-standard-icon">
+                    🛡️
+                </div>
 
 
-            <p>
+                <h3>
+                    Safety First
+                </h3>
 
-                Electrical activities and
-                support for industrial facilities,
-                equipment and power requirements.
 
-            </p>
+                <p>
+
+                    We approach electrical work with
+                    safety as a fundamental priority
+                    from planning through completion.
+
+                </p>
+
+            </article>
+
+
+            <article class="project-standard-card">
+
+                <div class="project-standard-icon">
+                    ⚙️
+                </div>
+
+
+                <h3>
+                    Practical Solutions
+                </h3>
+
+
+                <p>
+
+                    We focus on electrical solutions
+                    that are appropriate for the
+                    actual requirements of the project.
+
+                </p>
+
+            </article>
+
+
+            <article class="project-standard-card">
+
+                <div class="project-standard-icon">
+                    ✓
+                </div>
+
+
+                <h3>
+                    Quality Work
+                </h3>
+
+
+                <p>
+
+                    Attention to detail and dependable
+                    workmanship are central to how we
+                    approach our electrical services.
+
+                </p>
+
+            </article>
+
+
+            <article class="project-standard-card">
+
+                <div class="project-standard-icon">
+                    🤝
+                </div>
+
+
+                <h3>
+                    Customer Focus
+                </h3>
+
+
+                <p>
+
+                    We aim to understand each customer's
+                    needs and communicate clearly
+                    throughout the work.
+
+                </p>
+
+            </article>
+
 
         </div>
-
-
-
-        <div class="why-card">
-
-            <div class="why-icon">
-                💡
-            </div>
-
-
-            <h3>
-                Installation
-            </h3>
-
-
-            <p>
-
-                Safe electrical installation,
-                wiring, lighting and power
-                distribution work.
-
-            </p>
-
-        </div>
-
-
-
-        <div class="why-card">
-
-            <div class="why-icon">
-                ☀️
-            </div>
-
-
-            <h3>
-                Energy Solutions
-            </h3>
-
-
-            <p>
-
-                Modern energy solutions designed
-                around practical power needs.
-
-            </p>
-
-        </div>
-
 
     </div>
 
@@ -906,31 +1928,61 @@
      CTA
 ========================================================== -->
 
-<section class="cta">
+<section class="projects-cta">
 
-    <h2>
-        Have an Electrical Project?
-    </h2>
+    <div class="projects-cta-content">
 
-
-    <p>
-
-        Tell us about your electrical project,
-        installation, wiring, maintenance,
-        repair or energy requirement.
-
-    </p>
+        <span class="section-label">
+            START YOUR PROJECT
+        </span>
 
 
-    <a
-        href="index.html#contact"
-        class="button">
+        <h2>
+            Have an Electrical Project in Mind?
+        </h2>
 
-        Get a Free Quote
 
-    </a>
+        <p>
+
+            Whether you need electrical installation,
+            wiring, maintenance, repairs or an energy
+            solution, PowerNest Electric is ready to
+            discuss your requirements.
+
+        </p>
+
+
+        <div class="cta-buttons">
+
+
+            <a
+                href="contact.html"
+                class="button">
+
+                Request a Quote
+
+            </a>
+
+
+            <a
+                href="https://wa.me/231880947513"
+                class="button-outline"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                💬 WhatsApp Us
+
+            </a>
+
+
+        </div>
+
+    </div>
 
 </section>
+
+
+</main>
 
 
 
@@ -939,16 +1991,19 @@
 ========================================================== -->
 
 <div
-    class="modal"
-    id="imageModal"
-    onclick="backgroundClose(event)">
+    class="project-modal"
+    id="projectModal"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Project photograph viewer"
+    aria-hidden="true">
 
 
     <button
         type="button"
-        class="close-modal"
-        onclick="closeModal()"
-        aria-label="Close image">
+        class="project-modal-close"
+        id="projectModalClose"
+        aria-label="Close project photograph">
 
         &times;
 
@@ -956,9 +2011,10 @@
 
 
     <img
-        id="modalImage"
+        id="projectModalImage"
+        class="project-modal-image"
         src=""
-        alt="PowerNest Electric project">
+        alt="PowerNest Electric project photograph">
 
 </div>
 
@@ -968,7 +2024,7 @@
      FOOTER
 ========================================================== -->
 
-<footer>
+<footer class="site-footer">
 
     <div class="footer-container">
 
@@ -977,6 +2033,12 @@
 
         <div class="footer-column">
 
+            <img
+                src="logo.png"
+                alt="PowerNest Electric logo"
+                class="footer-logo">
+
+
             <h3>
                 PowerNest Electric
             </h3>
@@ -984,28 +2046,24 @@
 
             <p>
 
-                Reliable electrical installation,
-                maintenance, repair, wiring,
-                solar and energy solutions.
+                Professional electrical installation,
+                wiring, maintenance, repairs and
+                energy solutions.
 
             </p>
 
 
             <p>
 
-                Serving electrical and energy
-                needs in Liberia.
+                Serving residential, commercial and
+                industrial electrical needs in Liberia.
 
             </p>
 
 
-            <p>
-
-                <strong>
-                    Future is Bright. So We Are.
-                </strong>
-
-            </p>
+            <strong>
+                Future is Bright. So We Are.
+            </strong>
 
         </div>
 
@@ -1045,8 +2103,50 @@
             </a>
 
 
-            <a href="index.html#contact">
+            <a href="contact.html">
                 Contact
+            </a>
+
+        </div>
+
+
+
+        <!-- SERVICES -->
+
+        <div class="footer-column">
+
+            <h3>
+                Services
+            </h3>
+
+
+            <a href="services.html#residential">
+                Residential
+            </a>
+
+
+            <a href="services.html#commercial">
+                Commercial
+            </a>
+
+
+            <a href="services.html#industrial">
+                Industrial
+            </a>
+
+
+            <a href="services.html#installation">
+                Installation & Wiring
+            </a>
+
+
+            <a href="services.html#maintenance">
+                Maintenance & Repairs
+            </a>
+
+
+            <a href="services.html#solar">
+                Solar & Energy
             </a>
 
         </div>
@@ -1105,17 +2205,13 @@
     <div class="footer-bottom">
 
         <p>
-
             © 2025 PowerNest Electric.
             All Rights Reserved.
-
         </p>
 
 
         <p>
-
             Reliable Power. Better Future.
-
         </p>
 
     </div>
@@ -1145,15 +2241,15 @@
      BACK TO TOP
 ========================================================== -->
 
-<a
-    href="index.html"
+<button
+    type="button"
     class="back-to-top"
     id="backToTop"
     aria-label="Back to top">
 
     ↑
 
-</a>
+</button>
 
 
 
@@ -1165,7 +2261,7 @@
 
 
 /* =========================================================
-   MOBILE MENU
+   MOBILE NAVIGATION
 ========================================================== */
 
 const menuToggle =
@@ -1177,66 +2273,50 @@ const navLinks =
 
 if (menuToggle && navLinks) {
 
-
     menuToggle.addEventListener(
         "click",
         function () {
 
-
-            navLinks.classList.toggle(
-                "active"
-            );
-
+            navLinks.classList.toggle("active");
 
             const isOpen =
-                navLinks.classList.contains(
-                    "active"
-                );
-
+                navLinks.classList.contains("active");
 
             menuToggle.innerHTML =
                 isOpen ? "✕" : "☰";
-
 
             menuToggle.setAttribute(
                 "aria-expanded",
                 String(isOpen)
             );
 
-
         }
     );
 
 
-    document
-        .querySelectorAll(".nav-links a")
+    navLinks
+        .querySelectorAll("a")
         .forEach(
             function (link) {
-
 
                 link.addEventListener(
                     "click",
                     function () {
 
-
                         navLinks.classList.remove(
                             "active"
                         );
 
-
                         menuToggle.innerHTML =
                             "☰";
-
 
                         menuToggle.setAttribute(
                             "aria-expanded",
                             "false"
                         );
 
-
                     }
                 );
-
 
             }
         );
@@ -1246,91 +2326,197 @@ if (menuToggle && navLinks) {
 
 
 /* =========================================================
+   PROJECT FILTER
+========================================================== */
+
+const filterButtons =
+    document.querySelectorAll(
+        ".filter-button"
+    );
+
+
+const projectItems =
+    document.querySelectorAll(
+        ".gallery-item"
+    );
+
+
+const noProjectsMessage =
+    document.getElementById(
+        "noProjectsMessage"
+    );
+
+
+filterButtons.forEach(
+    function (button) {
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                const filter =
+                    button.getAttribute(
+                        "data-filter"
+                    );
+
+
+                filterButtons.forEach(
+                    function (item) {
+
+                        item.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+
+                button.classList.add(
+                    "active"
+                );
+
+
+                let visibleCount = 0;
+
+
+                projectItems.forEach(
+                    function (item) {
+
+                        const category =
+                            item.getAttribute(
+                                "data-category"
+                            );
+
+
+                        if (
+                            filter === "all" ||
+                            category === filter
+                        ) {
+
+                            item.classList.remove(
+                                "hidden"
+                            );
+
+                            visibleCount++;
+
+                        } else {
+
+                            item.classList.add(
+                                "hidden"
+                            );
+
+                        }
+
+                    }
+                );
+
+
+                if (noProjectsMessage) {
+
+                    noProjectsMessage.hidden =
+                        visibleCount !== 0;
+
+                }
+
+            }
+        );
+
+    }
+);
+
+
+
+/* =========================================================
    IMAGE MODAL
 ========================================================== */
 
-function openModal(element) {
+const projectModal =
+    document.getElementById(
+        "projectModal"
+    );
 
 
-    if (!element) {
+const projectModalImage =
+    document.getElementById(
+        "projectModalImage"
+    );
+
+
+const projectModalClose =
+    document.getElementById(
+        "projectModalClose"
+    );
+
+
+function openProjectModal(item) {
+
+    if (
+        !item ||
+        !projectModal ||
+        !projectModalImage
+    ) {
         return;
     }
 
 
     const image =
-        element.querySelector("img");
+        item.querySelector("img");
 
 
-    const modal =
-        document.getElementById(
-            "imageModal"
-        );
-
-
-    const modalImage =
-        document.getElementById(
-            "modalImage"
-        );
-
-
-    if (
-        !image ||
-        !modal ||
-        !modalImage
-    ) {
-
+    if (!image) {
         return;
-
     }
 
 
-    modalImage.src =
+    projectModalImage.src =
         image.src;
 
 
-    modalImage.alt =
+    projectModalImage.alt =
         image.alt ||
-        "PowerNest Electric project";
+        "PowerNest Electric project photograph";
 
 
-    modal.classList.add(
+    projectModal.classList.add(
         "show"
+    );
+
+
+    projectModal.setAttribute(
+        "aria-hidden",
+        "false"
     );
 
 
     document.body.style.overflow =
         "hidden";
 
+
+    if (projectModalClose) {
+
+        projectModalClose.focus();
+
+    }
+
 }
 
 
 
-/* =========================================================
-   CLOSE MODAL
-========================================================== */
+function closeProjectModal() {
 
-function closeModal() {
-
-
-    const modal =
-        document.getElementById(
-            "imageModal"
-        );
-
-
-    const modalImage =
-        document.getElementById(
-            "modalImage"
-        );
-
-
-    if (!modal) {
+    if (!projectModal) {
         return;
     }
 
 
-    modal.classList.remove(
+    projectModal.classList.remove(
         "show"
+    );
+
+
+    projectModal.setAttribute(
+        "aria-hidden",
+        "true"
     );
 
 
@@ -1338,9 +2524,9 @@ function closeModal() {
         "";
 
 
-    if (modalImage) {
+    if (projectModalImage) {
 
-        modalImage.src = "";
+        projectModalImage.src = "";
 
     }
 
@@ -1349,20 +2535,79 @@ function closeModal() {
 
 
 /* =========================================================
-   CLOSE MODAL BY BACKGROUND
+   OPEN PROJECTS WITH CLICK
 ========================================================== */
 
-function backgroundClose(event) {
+projectItems.forEach(
+    function (item) {
+
+        item.addEventListener(
+            "click",
+            function () {
+
+                openProjectModal(item);
+
+            }
+        );
 
 
-    if (
-        event.target.id ===
-        "imageModal"
-    ) {
+        item.addEventListener(
+            "keydown",
+            function (event) {
 
-        closeModal();
+                if (
+                    event.key === "Enter" ||
+                    event.key === " "
+                ) {
+
+                    event.preventDefault();
+
+                    openProjectModal(item);
+
+                }
+
+            }
+        );
 
     }
+);
+
+
+
+/* =========================================================
+   CLOSE MODAL
+========================================================== */
+
+if (projectModalClose) {
+
+    projectModalClose.addEventListener(
+        "click",
+        function () {
+
+            closeProjectModal();
+
+        }
+    );
+
+}
+
+
+if (projectModal) {
+
+    projectModal.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                event.target === projectModal
+            ) {
+
+                closeProjectModal();
+
+            }
+
+        }
+    );
 
 }
 
@@ -1376,151 +2621,13 @@ document.addEventListener(
     "keydown",
     function (event) {
 
-
         if (
-            event.key ===
-            "Escape"
+            event.key === "Escape"
         ) {
 
-            closeModal();
+            closeProjectModal();
 
         }
-
-    }
-);
-
-
-
-/* =========================================================
-   PROJECT CATEGORY FILTER
-========================================================== */
-
-const filterButtons =
-    document.querySelectorAll(
-        ".filter-button"
-    );
-
-
-const projectItems =
-    document.querySelectorAll(
-        "#projectGallery .gallery-item"
-    );
-
-
-const noProjectsMessage =
-    document.getElementById(
-        "noProjectsMessage"
-    );
-
-
-filterButtons.forEach(
-    function (button) {
-
-
-        button.addEventListener(
-            "click",
-            function () {
-
-
-                const filter =
-                    button.getAttribute(
-                        "data-filter"
-                    );
-
-
-                /* REMOVE ACTIVE */
-
-                filterButtons.forEach(
-                    function (btn) {
-
-
-                        btn.classList.remove(
-                            "active"
-                        );
-
-
-                    }
-                );
-
-
-                /* ADD ACTIVE */
-
-                button.classList.add(
-                    "active"
-                );
-
-
-                let visibleCount =
-                    0;
-
-
-                /* FILTER PROJECTS */
-
-                projectItems.forEach(
-                    function (item) {
-
-
-                        const category =
-                            item.getAttribute(
-                                "data-category"
-                            );
-
-
-                        if (
-                            filter === "all" ||
-                            category === filter
-                        ) {
-
-
-                            item.classList.remove(
-                                "hidden"
-                            );
-
-
-                            visibleCount++;
-
-
-                        } else {
-
-
-                            item.classList.add(
-                                "hidden"
-                            );
-
-
-                        }
-
-                    }
-                );
-
-
-                /* EMPTY CATEGORY */
-
-                if (noProjectsMessage) {
-
-
-                    if (
-                        visibleCount === 0
-                    ) {
-
-
-                        noProjectsMessage.style.display =
-                            "block";
-
-
-                    } else {
-
-
-                        noProjectsMessage.style.display =
-                            "none";
-
-
-                    }
-
-                }
-
-            }
-        );
 
     }
 );
@@ -1539,30 +2646,23 @@ const backToTop =
 
 if (backToTop) {
 
-
     window.addEventListener(
         "scroll",
         function () {
 
-
             if (
-                window.scrollY >
-                500
+                window.scrollY > 500
             ) {
-
 
                 backToTop.classList.add(
                     "show"
                 );
 
-
             } else {
-
 
                 backToTop.classList.remove(
                     "show"
                 );
-
 
             }
 
@@ -1570,20 +2670,20 @@ if (backToTop) {
     );
 
 
+    backToTop.addEventListener(
+        "click",
+        function () {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+    );
+
 }
 
-
-
-/* =========================================================
-   INITIAL PROJECT STATE
-========================================================== */
-
-if (noProjectsMessage) {
-
-    noProjectsMessage.style.display =
-        "none";
-
-}
 
 </script>
 
