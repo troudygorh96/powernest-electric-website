@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
@@ -9,20 +10,17 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>
-        About | PowerNest Electric
-    </title>
+    <title>About | PowerNest Electric</title>
 
+    <link rel="stylesheet" href="styles.css">
 
     <style>
 
-        /* =========================================================
-           GLOBAL
-        ========================================================== */
+        /* =====================================================
+           ABOUT PAGE - MATCHES POWERNEST HOME DESIGN
+        ====================================================== */
 
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
         }
 
@@ -31,575 +29,1000 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
             background: #f5f7fa;
+            color: #333;
+        }
 
-            color: #222;
+        a {
+            text-decoration: none;
+        }
 
-            line-height: 1.7;
+        img {
+            max-width: 100%;
         }
 
 
-        /* =========================================================
+        /* =====================================================
            HEADER
-        ========================================================== */
+           Designed to match Home page
+        ====================================================== */
 
-        .site-header {
-
+        .about-page .site-header {
             background: #0b1f3a;
-
-            color: white;
-
-            padding: 15px 30px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            position: sticky;
-
-            top: 0;
-
+            width: 100%;
+            position: relative;
             z-index: 1000;
-
-            box-shadow:
-                0 3px 12px rgba(0, 0, 0, 0.12);
         }
 
-
-        .header-container {
-
-            width: 100%;
-
-            max-width: 1150px;
+        .about-page .header-container {
+            max-width: 1200px;
+            margin: auto;
+            min-height: 90px;
+            padding: 12px 25px;
 
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
+        }
 
+        .about-page .logo-link {
+            display: flex;
+            align-items: center;
+        }
+
+        .about-page .site-logo {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .about-page .nav-links {
+            display: flex;
+            align-items: center;
             gap: 30px;
         }
 
-
-        /* LOGO */
-
-        .logo-link {
-
-            display: flex;
-
-            align-items: center;
-
-            text-decoration: none;
-
-            flex-shrink: 0;
-        }
-
-
-        .site-logo {
-
-            width: 75px;
-
-            height: 75px;
-
-            object-fit: contain;
-        }
-
-
-        /* NAVIGATION */
-
-        .nav-links {
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: flex-end;
-
-            gap: 25px;
-        }
-
-
-        .nav-links a {
-
+        .about-page .nav-links a {
             color: white;
-
-            text-decoration: none;
-
-            font-weight: bold;
-
             font-size: 15px;
-
-            transition: 0.2s;
+            font-weight: 700;
+            transition: color 0.25s ease;
         }
 
-
-        .nav-links a:hover {
-
+        .about-page .nav-links a:hover,
+        .about-page .nav-links a.active {
             color: #f5a623;
         }
 
-
-        .nav-links a.active {
-
-            color: #f5a623;
-        }
-
-
-        /* MENU */
-
-        .menu-toggle {
-
+        .about-page .menu-toggle {
             display: none;
-
             background: transparent;
-
             border: none;
-
             color: white;
-
             font-size: 28px;
-
             cursor: pointer;
         }
 
 
-        /* =========================================================
-           PAGE HERO
-        ========================================================== */
+        /* =====================================================
+           ABOUT HERO
+        ====================================================== */
 
-        .page-hero {
-
+        .about-hero {
             background:
                 linear-gradient(
-                    rgba(11, 31, 58, 0.94),
-                    rgba(11, 31, 58, 0.94)
+                    rgba(11, 31, 58, 0.96),
+                    rgba(11, 31, 58, 0.96)
                 );
 
             color: white;
-
-            padding: 90px 20px;
-
+            padding: 90px 20px 95px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
+        .about-hero::before {
+            content: "";
+            position: absolute;
 
-        .page-hero-content {
+            width: 420px;
+            height: 420px;
 
-            max-width: 850px;
+            border: 1px solid rgba(245,166,35,0.16);
 
+            border-radius: 50%;
+
+            top: -220px;
+            right: -150px;
+        }
+
+        .about-hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 320px;
+            height: 320px;
+
+            border: 1px solid rgba(245,166,35,0.12);
+
+            border-radius: 50%;
+
+            bottom: -190px;
+            left: -130px;
+        }
+
+        .about-hero-content {
+            position: relative;
+            z-index: 2;
+
+            max-width: 900px;
             margin: auto;
         }
 
-
-        .section-label {
-
+        .about-hero-badge {
             display: inline-block;
 
+            background: #f5a623;
             color: #0b1f3a;
 
-            background: #f5a623;
-
-            padding: 7px 16px;
+            padding: 9px 20px;
 
             border-radius: 30px;
 
             font-size: 12px;
+            font-weight: 700;
 
-            font-weight: bold;
+            letter-spacing: 1.4px;
 
             text-transform: uppercase;
 
-            letter-spacing: 1px;
-
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
+        .about-hero h1 {
+            color: white;
 
-        .page-hero h1 {
+            font-size: 50px;
+            line-height: 1.12;
 
-            font-size: 48px;
+            margin: 0 0 22px;
 
-            line-height: 1.15;
-
-            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: -1px;
         }
 
+        .about-hero h1 span {
+            color: #f5a623;
+        }
 
-        .page-hero p {
-
-            max-width: 720px;
+        .about-hero p {
+            max-width: 800px;
 
             margin: auto;
 
             color: #dce3ed;
 
-            font-size: 18px;
+            font-size: 17px;
+            line-height: 1.8;
         }
 
 
-        /* =========================================================
-           SECTIONS
-        ========================================================== */
+        /* =====================================================
+           GENERAL
+        ====================================================== */
 
-        .section {
-
-            padding: 70px 20px;
-        }
-
-
-        .section-light {
-
-            background: #ffffff;
-        }
-
-
-        .section-white {
-
-            background: #f5f7fa;
-        }
-
-
-        .content-container {
-
+        .about-container {
             max-width: 1150px;
-
             margin: auto;
         }
 
-
-        /* =========================================================
-           SECTION HEADER
-        ========================================================== */
-
-        .section-header {
-
+        .about-section-heading {
             text-align: center;
+            max-width: 780px;
 
-            max-width: 750px;
-
-            margin: 0 auto 45px;
+            margin: 0 auto 50px;
         }
 
+        .about-label {
+            display: inline-block;
 
-        .section-title {
-
+            background: #fff4dc;
             color: #0b1f3a;
 
-            font-size: 34px;
+            padding: 8px 17px;
 
-            margin-bottom: 12px;
+            border-radius: 30px;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 1.4px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
         }
 
+        .about-section-heading h2 {
+            color: #0b1f3a;
 
-        .section-intro {
+            font-size: 38px;
+            line-height: 1.2;
 
+            margin: 0 0 15px;
+
+            font-weight: 800;
+        }
+
+        .about-section-heading p {
             color: #666;
 
             font-size: 16px;
+            line-height: 1.8;
 
-            max-width: 750px;
-
-            margin: auto;
+            margin: 0;
         }
 
 
-        /* =========================================================
-           ABOUT INTRO
-        ========================================================== */
+        /* =====================================================
+           WHO WE ARE / INTRO
+        ====================================================== */
 
-        .about-grid {
+        .about-intro {
+            background: white;
+            padding: 85px 20px;
+        }
 
+        .core-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 24px;
+        }
+
+        .core-card {
+            background: white;
+
+            border: 1px solid #e6ebf0;
+
+            border-radius: 14px;
+
+            padding: 34px 28px;
+
+            text-align: center;
+
+            box-shadow:
+                0 5px 20px rgba(11,31,58,0.05);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .core-card:hover {
+            transform: translateY(-6px);
+
+            border-color: #f5a623;
+
+            box-shadow:
+                0 12px 30px rgba(11,31,58,0.10);
+        }
+
+        .core-icon {
+            width: 65px;
+            height: 65px;
+
+            margin: 0 auto 19px;
+
+            border-radius: 50%;
+
+            background: #fff4dc;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 27px;
+        }
+
+        .core-card h3 {
+            color: #0b1f3a;
+
+            font-size: 21px;
+
+            margin: 0 0 11px;
+        }
+
+        .core-card p {
+            color: #666;
+
+            font-size: 14px;
+
+            line-height: 1.75;
+
+            margin: 0;
+        }
+
+
+        /* =====================================================
+           MISSION & VISION
+        ====================================================== */
+
+        .mission-section {
+            background: #f5f7fa;
+
+            padding: 85px 20px;
+        }
+
+        .mission-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 28px;
+        }
+
+        .mission-card {
+            background: white;
+
+            border-radius: 15px;
+
+            padding: 38px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border: 1px solid #e5e9ed;
+
+            box-shadow:
+                0 7px 25px rgba(11,31,58,0.06);
+
+            border-top: 4px solid #f5a623;
+        }
+
+        .mission-card::after {
+            content: "";
+
+            position: absolute;
+
+            width: 170px;
+            height: 170px;
+
+            border-radius: 50%;
+
+            background: rgba(245,166,35,0.05);
+
+            right: -80px;
+            bottom: -80px;
+        }
+
+        .mission-icon {
+            width: 60px;
+            height: 60px;
+
+            border-radius: 50%;
+
+            background: #fff4dc;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 26px;
+
+            margin-bottom: 20px;
+        }
+
+        .mission-card .small-label {
+            color: #f5a623;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            letter-spacing: 1.5px;
+
+            margin-bottom: 8px;
+
+            display: block;
+        }
+
+        .mission-card h3 {
+            color: #0b1f3a;
+
+            font-size: 26px;
+            line-height: 1.3;
+
+            margin: 0 0 15px;
+        }
+
+        .mission-card p {
+            color: #666;
+
+            font-size: 15px;
+            line-height: 1.8;
+
+            margin: 0 0 14px;
+        }
+
+        .mission-card p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* =====================================================
+           WHO WE ARE
+        ====================================================== */
+
+        .who-section {
+            background: white;
+
+            padding: 90px 20px;
+        }
+
+        .who-grid {
             display: grid;
 
             grid-template-columns:
                 1.1fr
                 0.9fr;
 
-            gap: 45px;
+            gap: 55px;
 
             align-items: center;
         }
 
-
-        .about-content h2 {
-
+        .who-content h2 {
             color: #0b1f3a;
 
-            font-size: 34px;
+            font-size: 40px;
+            line-height: 1.2;
 
-            margin-bottom: 18px;
+            margin: 0 0 20px;
+
+            font-weight: 800;
         }
 
+        .who-content h2 span {
+            color: #f5a623;
+        }
 
-        .about-content p {
-
-            color: #555;
+        .who-content p {
+            color: #666;
 
             font-size: 16px;
 
-            margin-bottom: 18px;
+            line-height: 1.85;
+
+            margin-bottom: 17px;
         }
 
+        .commitment-box {
+            background: #0b1f3a;
 
-        /* ABOUT PANEL */
+            color: white;
 
-        .about-panel {
+            padding: 38px;
 
-            background: white;
-
-            border-radius: 14px;
-
-            padding: 35px;
+            border-radius: 16px;
 
             box-shadow:
-                0 5px 20px rgba(0, 0, 0, 0.08);
+                0 10px 30px rgba(11,31,58,0.16);
 
-            border-top:
-                4px solid #f5a623;
+            border-left: 5px solid #f5a623;
         }
 
+        .commitment-box h3 {
+            color: white;
 
-        .about-panel h3 {
+            font-size: 25px;
 
-            color: #0b1f3a;
-
-            font-size: 22px;
-
-            margin-bottom: 15px;
+            margin: 0 0 14px;
         }
 
+        .commitment-box p {
+            color: #dce3ed;
 
-        .about-panel p {
+            font-size: 14px;
 
-            color: #666;
+            line-height: 1.75;
 
             margin-bottom: 20px;
         }
 
+        .commitment-list {
+            list-style: none;
 
-        .about-panel ul {
+            padding: 0;
+            margin: 0;
+        }
 
-            padding-left: 20px;
+        .commitment-list li {
+            color: #e8edf4;
+
+            padding: 10px 0;
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.10);
+
+            font-size: 14px;
+        }
+
+        .commitment-list li:last-child {
+            border-bottom: none;
+        }
+
+        .commitment-list li::before {
+            content: "✓";
+
+            color: #f5a623;
+
+            font-weight: 700;
+
+            margin-right: 10px;
         }
 
 
-        .about-panel li {
+        /* =====================================================
+           CORE VALUES
+        ====================================================== */
 
-            color: #555;
+        .values-section {
+            background: #f5f7fa;
 
-            margin-bottom: 8px;
+            padding: 90px 20px;
         }
-
-
-        /* =========================================================
-           VALUES
-        ========================================================== */
 
         .values-grid {
-
             display: grid;
 
             grid-template-columns:
                 repeat(3, 1fr);
 
-            gap: 22px;
+            gap: 20px;
         }
-
 
         .value-card {
-
             background: white;
 
-            padding: 30px;
+            border-radius: 14px;
 
-            border-radius: 12px;
+            padding: 29px 25px;
 
-            text-align: center;
+            border: 1px solid #e5e9ed;
 
-            box-shadow:
-                0 4px 16px rgba(0, 0, 0, 0.07);
+            position: relative;
 
-            border-bottom:
-                3px solid transparent;
-
-            transition: 0.2s;
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
         }
-
 
         .value-card:hover {
-
             transform: translateY(-5px);
 
-            border-bottom-color:
-                #f5a623;
+            border-color: #f5a623;
+
+            box-shadow:
+                0 12px 28px rgba(11,31,58,0.08);
         }
 
+        .value-number {
+            position: absolute;
+
+            top: 18px;
+            right: 20px;
+
+            color: #e2e7ec;
+
+            font-size: 29px;
+
+            font-weight: 800;
+        }
 
         .value-icon {
-
-            width: 55px;
-
-            height: 55px;
-
-            margin:
-                0 auto 15px;
-
-            background: #fff4dc;
-
-            color: #0b1f3a;
+            width: 54px;
+            height: 54px;
 
             border-radius: 50%;
+
+            background: #fff4dc;
 
             display: flex;
 
             align-items: center;
-
             justify-content: center;
 
-            font-size: 24px;
+            font-size: 22px;
+
+            margin-bottom: 17px;
         }
 
-
         .value-card h3 {
-
             color: #0b1f3a;
 
             font-size: 20px;
 
+            margin: 0 0 9px;
+        }
+
+        .value-card p {
+            color: #707070;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            margin: 0;
+        }
+
+
+        /* =====================================================
+           LEADERSHIP
+        ====================================================== */
+
+        .leadership-section {
+            background: white;
+
+            padding: 95px 20px;
+        }
+
+        .ceo-profile {
+            display: grid;
+
+            grid-template-columns:
+                0.75fr
+                1.25fr;
+
+            gap: 55px;
+
+            align-items: center;
+
+            background: #f8fafc;
+
+            border-radius: 20px;
+
+            padding: 42px;
+
+            border: 1px solid #e6ebf0;
+
+            box-shadow:
+                0 8px 30px rgba(11,31,58,0.06);
+        }
+
+        .ceo-photo-wrap {
+            position: relative;
+
+            max-width: 360px;
+
+            margin: auto;
+        }
+
+        .ceo-photo-wrap::before {
+            content: "";
+
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            border: 3px solid #f5a623;
+
+            border-radius: 18px;
+
+            top: 13px;
+            left: 13px;
+
+            z-index: 0;
+        }
+
+        .ceo-photo {
+            position: relative;
+
+            z-index: 1;
+
+            display: block;
+
+            width: 100%;
+            height: 430px;
+
+            object-fit: cover;
+
+            object-position: center;
+
+            border-radius: 18px;
+
+            background: #ddd;
+
+            box-shadow:
+                0 10px 30px rgba(11,31,58,0.15);
+        }
+
+        .ceo-info {
+            padding: 10px 0;
+        }
+
+        .ceo-role {
+            color: #f5a623;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            letter-spacing: 1.6px;
+
+            text-transform: uppercase;
+
+            display: block;
+
             margin-bottom: 10px;
         }
 
+        .ceo-info h2 {
+            color: #0b1f3a;
 
-        .value-card p {
+            font-size: 38px;
 
-            color: #777;
+            line-height: 1.2;
+
+            margin: 0 0 16px;
+
+            font-weight: 800;
+        }
+
+        .ceo-info .ceo-title {
+            color: #555;
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            margin-bottom: 20px;
+        }
+
+        .ceo-info p {
+            color: #666;
+
+            font-size: 15px;
+
+            line-height: 1.85;
+
+            margin-bottom: 16px;
+        }
+
+        .ceo-highlights {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 12px;
+
+            margin-top: 27px;
+        }
+
+        .ceo-highlight {
+            background: white;
+
+            border-radius: 10px;
+
+            padding: 16px 12px;
+
+            border: 1px solid #e5e9ed;
+
+            text-align: center;
+        }
+
+        .ceo-highlight strong {
+            display: block;
+
+            color: #0b1f3a;
 
             font-size: 14px;
+
+            margin-bottom: 5px;
+        }
+
+        .ceo-highlight span {
+            color: #777;
+
+            font-size: 11px;
+
+            line-height: 1.4;
         }
 
 
-        /* =========================================================
-           BLUE SECTION
-        ========================================================== */
+        /* =====================================================
+           TEAM
+        ====================================================== */
 
-        .section-blue {
+        .team-section {
+            background: #f5f7fa;
 
+            padding: 95px 20px;
+        }
+
+        .team-gallery {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 23px;
+        }
+
+        .team-card {
+            background: white;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            border: 1px solid #e5e9ed;
+
+            box-shadow:
+                0 5px 20px rgba(11,31,58,0.05);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 14px 30px rgba(11,31,58,0.10);
+        }
+
+        .team-photo {
+            display: block;
+
+            width: 100%;
+            height: 290px;
+
+            object-fit: cover;
+
+            object-position: center;
+        }
+
+        .team-card-content {
+            padding: 22px;
+
+            text-align: center;
+        }
+
+        .team-card-content h3 {
+            color: #0b1f3a;
+
+            font-size: 19px;
+
+            margin: 0 0 8px;
+        }
+
+        .team-card-content p {
+            color: #777;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+            margin: 0;
+        }
+
+
+        /* =====================================================
+           OUR APPROACH
+        ====================================================== */
+
+        .approach-section {
             background: #0b1f3a;
 
             color: white;
+
+            padding: 90px 20px;
         }
 
+        .approach-section .about-label {
+            background: #f5a623;
+            color: #0b1f3a;
+        }
 
-        .section-blue .section-title {
-
+        .approach-section .about-section-heading h2 {
             color: white;
         }
 
-
-        .section-blue .section-intro {
-
+        .approach-section .about-section-heading p {
             color: #cdd6e2;
         }
 
-
-        /* =========================================================
-           WHY US
-        ========================================================== */
-
-        .why-grid {
-
+        .approach-grid {
             display: grid;
 
             grid-template-columns:
                 repeat(4, 1fr);
 
-            gap: 25px;
+            gap: 18px;
         }
 
+        .approach-card {
+            background: rgba(255,255,255,0.055);
 
-        .why-card {
+            border:
+                1px solid rgba(255,255,255,0.10);
 
-            background: white;
+            border-radius: 14px;
+
+            padding: 29px 20px;
 
             text-align: center;
 
-            padding: 30px;
-
-            border-radius: 12px;
-
-            box-shadow:
-                0 4px 16px rgba(0, 0, 0, 0.07);
-
-            border-bottom:
-                3px solid transparent;
-
-            transition: 0.2s;
+            transition:
+                background 0.25s ease,
+                transform 0.25s ease;
         }
 
-
-        .why-card:hover {
+        .approach-card:hover {
+            background: rgba(255,255,255,0.10);
 
             transform: translateY(-5px);
-
-            border-bottom-color:
-                #f5a623;
         }
 
-
-        .why-icon {
-
-            width: 55px;
-
-            height: 55px;
-
-            margin:
-                0 auto 15px;
-
-            background: #fff4dc;
-
-            color: #0b1f3a;
+        .approach-number {
+            width: 48px;
+            height: 48px;
 
             border-radius: 50%;
+
+            background: #f5a623;
+            color: #0b1f3a;
 
             display: flex;
 
             align-items: center;
-
             justify-content: center;
 
-            font-size: 22px;
-        }
-
-
-        .why-card h3 {
-
-            color: #0b1f3a;
+            margin: 0 auto 16px;
 
             font-size: 17px;
-
-            margin-bottom: 8px;
+            font-weight: 800;
         }
 
+        .approach-card h3 {
+            color: white;
 
-        .why-card p {
+            font-size: 19px;
 
-            color: #777;
+            margin: 0 0 9px;
+        }
+
+        .approach-card p {
+            color: #cdd6e2;
 
             font-size: 13px;
+
+            line-height: 1.65;
+
+            margin: 0;
         }
 
 
-        /* =========================================================
-           CTA
-        ========================================================== */
+        /* =====================================================
+           FINAL CTA
+        ====================================================== */
 
-        .cta-section {
-
+        .about-cta {
             background:
                 linear-gradient(
                     135deg,
@@ -607,128 +1030,104 @@
                     #102f55
                 );
 
-            color: white;
-
-            padding: 65px 25px;
+            padding: 80px 20px;
 
             text-align: center;
         }
 
-
-        .cta-content {
-
+        .about-cta-inner {
             max-width: 750px;
-
             margin: auto;
         }
 
-
-        .cta-section h2 {
-
-            font-size: 34px;
-
-            margin-bottom: 12px;
+        .about-cta .about-label {
+            background: #f5a623;
+            color: #0b1f3a;
         }
 
+        .about-cta h2 {
+            color: white;
 
-        .cta-section p {
+            font-size: 38px;
 
+            line-height: 1.25;
+
+            margin: 0 0 15px;
+
+            font-weight: 800;
+        }
+
+        .about-cta p {
             color: #dce3ed;
 
-            max-width: 650px;
+            font-size: 16px;
 
-            margin:
-                0 auto 25px;
+            line-height: 1.8;
+
+            margin: 0 auto 28px;
+
+            max-width: 650px;
         }
 
-
-        .cta-buttons {
-
+        .about-cta-buttons {
             display: flex;
 
             justify-content: center;
 
-            gap: 15px;
+            gap: 14px;
 
             flex-wrap: wrap;
         }
 
-
-        /* BUTTONS */
-
-        .button {
-
+        .about-cta-button {
             display: inline-block;
 
+            padding: 13px 25px;
+
+            border-radius: 7px;
+
+            font-weight: 700;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .about-cta-primary {
             background: #f5a623;
-
             color: #0b1f3a;
-
-            padding: 13px 24px;
-
-            border-radius: 6px;
-
-            font-weight: bold;
-
-            transition: 0.2s;
         }
 
-
-        .button:hover {
-
-            transform: translateY(-2px);
-
-            opacity: 0.92;
-        }
-
-
-        .button-outline {
-
-            display: inline-block;
-
+        .about-cta-secondary {
             background: transparent;
 
             color: white;
 
-            border:
-                2px solid #f5a623;
-
-            padding: 11px 22px;
-
-            border-radius: 6px;
-
-            font-weight: bold;
-
-            transition: 0.2s;
+            border: 2px solid #f5a623;
         }
 
+        .about-cta-button:hover {
+            transform: translateY(-2px);
+        }
 
-        .button-outline:hover {
-
+        .about-cta-secondary:hover {
             background: #f5a623;
-
             color: #0b1f3a;
         }
 
 
-        /* =========================================================
+        /* =====================================================
            FOOTER
-        ========================================================== */
+        ====================================================== */
 
-        .site-footer {
-
-            background: #07152a;
-
+        .about-page .site-footer {
+            background: #0b1f3a;
             color: white;
 
-            text-align: center;
-
-            padding: 30px 20px;
+            padding: 55px 20px 0;
         }
 
-
-        .footer-container {
-
+        .about-page .footer-container {
             max-width: 1150px;
 
             margin: auto;
@@ -736,261 +1135,236 @@
             display: grid;
 
             grid-template-columns:
-                repeat(4, 1fr);
+                1.3fr
+                1fr
+                1fr
+                1fr;
 
-            gap: 35px;
+            gap: 40px;
 
-            text-align: left;
-
-            padding-bottom: 30px;
+            padding-bottom: 45px;
         }
 
-
-        .footer-logo {
-
-            width: 75px;
-
-            height: 75px;
-
-            object-fit: contain;
-
-            margin-bottom: 10px;
-        }
-
-
-        .footer-column h3 {
-
-            color: white;
-
-            font-size: 18px;
+        .about-page .footer-logo {
+            width: 100px;
+            height: auto;
 
             margin-bottom: 12px;
         }
 
+        .about-page .footer-column h3 {
+            color: white;
 
-        .footer-column p {
+            font-size: 17px;
 
-            color: #cdd6e2;
-
-            font-size: 13px;
-
-            margin-bottom: 8px;
+            margin: 0 0 18px;
         }
 
+        .about-page .footer-column p {
+            color: #cdd6e2;
 
-        .footer-column a {
+            font-size: 14px;
 
+            line-height: 1.7;
+
+            margin: 0 0 10px;
+        }
+
+        .about-page .footer-column a {
             display: block;
 
             color: #cdd6e2;
 
-            text-decoration: none;
+            font-size: 14px;
 
-            font-size: 13px;
+            margin-bottom: 11px;
 
-            margin-bottom: 8px;
+            transition: color 0.2s ease;
         }
 
-
-        .footer-column a:hover {
-
+        .about-page .footer-column a:hover {
             color: #f5a623;
         }
 
+        .about-page .footer-bottom {
+            max-width: 1150px;
 
-        .footer-column strong {
+            margin: auto;
 
-            color: #f5a623;
-
-            font-size: 13px;
-        }
-
-
-        .footer-bottom {
+            padding: 20px 0;
 
             border-top:
-                1px solid rgba(255,255,255,0.12);
+                1px solid rgba(255,255,255,0.10);
 
-            padding-top: 20px;
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
         }
 
-
-        .footer-bottom p {
-
-            color: #cdd6e2;
+        .about-page .footer-bottom p {
+            color: #aeb9c7;
 
             font-size: 13px;
 
-            margin-bottom: 5px;
+            margin: 0;
         }
 
 
-        /* =========================================================
-           WHATSAPP
-        ========================================================== */
+        /* =====================================================
+           FLOATING WHATSAPP
+        ====================================================== */
 
-        .floating-whatsapp {
-
+        .about-page .floating-whatsapp {
             position: fixed;
 
-            right: 25px;
+            right: 24px;
+            bottom: 22px;
 
-            bottom: 25px;
+            width: 56px;
+            height: 56px;
 
-            width: 55px;
-
-            height: 55px;
+            border-radius: 50%;
 
             background: #25D366;
 
             color: white;
 
-            border-radius: 50%;
-
             display: flex;
 
             align-items: center;
-
             justify-content: center;
-
-            text-decoration: none;
 
             font-size: 25px;
 
+            box-shadow:
+                0 6px 20px rgba(0,0,0,0.18);
+
             z-index: 999;
 
-            box-shadow:
-                0 4px 15px rgba(0, 0, 0, 0.2);
+            transition:
+                transform 0.2s ease;
+        }
+
+        .about-page .floating-whatsapp:hover {
+            transform: scale(1.08);
         }
 
 
-        /* =========================================================
+        /* =====================================================
            BACK TO TOP
-        ========================================================== */
+        ====================================================== */
 
-        .back-to-top {
-
+        .about-page .back-to-top {
             position: fixed;
 
-            right: 25px;
-
+            right: 24px;
             bottom: 90px;
 
-            width: 45px;
+            width: 42px;
+            height: 42px;
 
-            height: 45px;
+            border-radius: 50%;
 
             background: #0b1f3a;
 
             color: white;
 
-            border: none;
-
-            border-radius: 50%;
-
             display: flex;
 
             align-items: center;
-
             justify-content: center;
-
-            text-decoration: none;
 
             font-size: 20px;
 
-            cursor: pointer;
-
-            z-index: 998;
-
             opacity: 0;
-
             visibility: hidden;
 
-            transition: 0.2s;
+            transition:
+                opacity 0.25s ease,
+                visibility 0.25s ease,
+                transform 0.25s ease;
+
+            z-index: 998;
         }
 
-
-        .back-to-top.show {
-
+        .about-page .back-to-top.show {
             opacity: 1;
-
             visibility: visible;
         }
 
+        .about-page .back-to-top:hover {
+            background: #f5a623;
+            color: #0b1f3a;
+            transform: translateY(-2px);
+        }
 
-        /* =========================================================
-           TABLET
-        ========================================================== */
 
-        @media (max-width: 900px) {
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
 
-            .about-grid {
+        @media (max-width: 950px) {
 
+            .about-page .nav-links {
+                gap: 20px;
+            }
+
+            .core-grid,
+            .values-grid,
+            .team-gallery {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .approach-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .who-grid {
                 grid-template-columns: 1fr;
             }
 
-            .values-grid {
-
-                grid-template-columns:
-                    repeat(2, 1fr);
+            .ceo-profile {
+                grid-template-columns: 1fr;
             }
 
-            .why-grid {
-
-                grid-template-columns:
-                    repeat(2, 1fr);
+            .ceo-photo-wrap {
+                max-width: 360px;
             }
 
-            .footer-container {
-
+            .about-page .footer-container {
                 grid-template-columns:
                     repeat(2, 1fr);
             }
         }
 
 
-        /* =========================================================
-           MOBILE
-        ========================================================== */
-
         @media (max-width: 700px) {
 
-            .site-header {
-
-                padding: 15px;
+            .about-page .header-container {
+                min-height: 78px;
+                padding: 10px 18px;
             }
 
-
-            .header-container {
-
-                flex-direction: row;
-
-                justify-content: space-between;
+            .about-page .site-logo {
+                width: 68px;
+                height: 68px;
             }
 
-
-            .site-logo {
-
-                width: 75px;
-
-                height: 75px;
-            }
-
-
-            .menu-toggle {
-
+            .about-page .menu-toggle {
                 display: block;
             }
 
-
-            .nav-links {
-
+            .about-page .nav-links {
                 position: absolute;
 
-                top: 105px;
-
+                top: 78px;
                 left: 0;
-
                 right: 0;
 
                 background: #0b1f3a;
@@ -999,172 +1373,159 @@
 
                 flex-direction: column;
 
+                align-items: flex-start;
+
                 gap: 0;
 
-                padding:
-                    12px 20px 20px;
+                padding: 10px 20px 20px;
+
+                box-shadow:
+                    0 10px 20px rgba(0,0,0,0.15);
             }
 
-
-            .nav-links.active {
-
+            .about-page .nav-links.active {
                 display: flex;
             }
 
-
-            .nav-links a {
-
+            .about-page .nav-links a {
                 width: 100%;
 
-                padding: 12px;
+                padding: 14px 5px;
 
-                text-align: center;
+                border-bottom:
+                    1px solid rgba(255,255,255,0.08);
             }
 
-
-            .page-hero {
-
-                padding:
-                    65px 20px;
+            .about-hero {
+                padding: 72px 18px 78px;
             }
 
-
-            .page-hero h1 {
-
-                font-size: 36px;
+            .about-hero h1 {
+                font-size: 37px;
             }
 
-
-            .page-hero p {
-
-                font-size: 16px;
+            .about-hero p {
+                font-size: 15px;
             }
 
-
-            .section {
-
-                padding:
-                    50px 20px;
+            .about-intro,
+            .mission-section,
+            .who-section,
+            .values-section,
+            .leadership-section,
+            .team-section,
+            .approach-section {
+                padding: 65px 18px;
             }
 
-
-            .section-title {
-
-                font-size: 29px;
+            .about-section-heading {
+                margin-bottom: 35px;
             }
 
-
-            .about-content h2 {
-
-                font-size: 29px;
+            .about-section-heading h2 {
+                font-size: 30px;
             }
 
-
+            .core-grid,
+            .mission-grid,
             .values-grid,
-            .why-grid {
-
+            .team-gallery,
+            .approach-grid {
                 grid-template-columns: 1fr;
             }
 
-
-            .cta-section {
-
-                padding:
-                    50px 20px;
+            .core-card {
+                padding: 28px 22px;
             }
 
-
-            .cta-section h2 {
-
-                font-size: 29px;
+            .mission-card {
+                padding: 30px 24px;
             }
 
-
-            .cta-buttons {
-
-                flex-direction: column;
-
-                align-items: center;
+            .who-content h2 {
+                font-size: 31px;
             }
 
+            .commitment-box {
+                padding: 30px 24px;
+            }
 
-            .button,
-            .button-outline {
+            .ceo-profile {
+                padding: 25px 18px;
+            }
 
-                width: 90%;
+            .ceo-photo {
+                height: 390px;
+            }
 
+            .ceo-info h2 {
+                font-size: 30px;
+            }
+
+            .ceo-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .team-photo {
+                height: 320px;
+            }
+
+            .about-cta {
+                padding: 65px 18px;
+            }
+
+            .about-cta h2 {
+                font-size: 30px;
+            }
+
+            .about-cta-button {
+                width: 100%;
                 max-width: 310px;
-
                 text-align: center;
             }
 
-
-            .footer-container {
-
+            .about-page .footer-container {
                 grid-template-columns: 1fr;
-
-                text-align: center;
+                gap: 30px;
             }
 
-
-            .footer-column {
-
-                text-align: center;
+            .about-page .footer-bottom {
+                flex-direction: column;
             }
 
+            .about-page .floating-whatsapp {
+                right: 18px;
+                bottom: 18px;
+            }
 
-            .footer-logo {
-
-                margin-left: auto;
-
-                margin-right: auto;
+            .about-page .back-to-top {
+                right: 18px;
+                bottom: 84px;
             }
         }
 
 
-        /* =========================================================
-           VERY SMALL PHONES
-        ========================================================== */
-
         @media (max-width: 450px) {
 
-            .page-hero h1 {
+            .about-page .site-logo {
+                width: 65px;
+                height: 65px;
+            }
 
+            .about-hero h1 {
                 font-size: 32px;
             }
 
-
-            .page-hero p {
-
-                font-size: 15px;
+            .about-hero-badge {
+                font-size: 10px;
             }
 
-
-            .section {
-
-                padding:
-                    45px 15px;
+            .ceo-photo {
+                height: 350px;
             }
 
-
-            .section-title {
-
-                font-size: 27px;
-            }
-
-
-            .about-panel {
-
-                padding:
-                    27px 22px;
-            }
-
-
-            .value-card,
-            .why-card {
-
-                padding:
-                    25px 22px;
+            .team-photo {
+                height: 290px;
             }
         }
 
@@ -1173,12 +1534,12 @@
 </head>
 
 
-<body>
+<body class="about-page">
 
 
-<!-- =========================================================
+<!-- =====================================================
      HEADER
-========================================================== -->
+===================================================== -->
 
 <header class="site-header">
 
@@ -1246,27 +1607,27 @@
 </header>
 
 
+<!-- =====================================================
+     ABOUT HERO
+===================================================== -->
 
-<!-- =========================================================
-     HERO
-========================================================== -->
+<section class="about-hero">
 
-<section class="page-hero">
+    <div class="about-hero-content">
 
-    <div class="page-hero-content">
-
-        <span class="section-label">
+        <span class="about-hero-badge">
             About PowerNest Electric
         </span>
 
         <h1>
-            Reliable Power. Better Future.
+            Powering a <span>Brighter Future</span>
         </h1>
 
         <p>
-            PowerNest Electric is focused on providing reliable,
-            safe, and modern electrical solutions for homes,
-            businesses, and industries.
+            PowerNest Electric is committed to delivering
+            reliable, safe, and professional electrical and
+            energy solutions for homes, businesses, industries,
+            and communities.
         </p>
 
     </div>
@@ -1274,26 +1635,211 @@
 </section>
 
 
+<!-- =====================================================
+     WHO WE ARE
+===================================================== -->
 
-<!-- =========================================================
-     ABOUT INTRO
-========================================================== -->
+<section class="about-intro">
 
-<section class="section section-light">
+    <div class="about-container">
 
-    <div class="content-container">
+        <div class="about-section-heading">
 
-        <div class="about-grid">
+            <span class="about-label">
+                Who We Are
+            </span>
+
+            <h2>
+                Powering Homes, Businesses &amp; Industries
+            </h2>
+
+            <p>
+                We provide dependable electrical solutions that
+                help people, businesses, and industries operate
+                safely, efficiently, and confidently.
+            </p>
+
+        </div>
 
 
-            <div class="about-content">
+        <div class="core-grid">
 
-                <span class="section-label">
-                    Who We Are
+            <div class="core-card">
+
+                <div class="core-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Reliable Power
+                </h3>
+
+                <p>
+                    Dependable electrical solutions designed
+                    to support modern homes, businesses,
+                    industries, and communities.
+                </p>
+
+            </div>
+
+
+            <div class="core-card">
+
+                <div class="core-icon">
+                    🛡
+                </div>
+
+                <h3>
+                    Safe Solutions
+                </h3>
+
+                <p>
+                    Safety, quality, and responsible electrical
+                    work remain at the center of every project
+                    we undertake.
+                </p>
+
+            </div>
+
+
+            <div class="core-card">
+
+                <div class="core-icon">
+                    🌍
+                </div>
+
+                <h3>
+                    Better Future
+                </h3>
+
+                <p>
+                    We support practical modern energy solutions
+                    that contribute to a stronger and more
+                    sustainable future.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MISSION & VISION
+===================================================== -->
+
+<section class="mission-section">
+
+    <div class="about-container">
+
+        <div class="about-section-heading">
+
+            <span class="about-label">
+                Our Purpose
+            </span>
+
+            <h2>
+                Mission &amp; Vision
+            </h2>
+
+            <p>
+                Our mission guides what we do today, while our
+                vision represents the future we are working to build.
+            </p>
+
+        </div>
+
+
+        <div class="mission-grid">
+
+            <div class="mission-card">
+
+                <div class="mission-icon">
+                    🎯
+                </div>
+
+                <span class="small-label">
+                    OUR MISSION
+                </span>
+
+                <h3>
+                    To Deliver Reliable Electrical Solutions
+                </h3>
+
+                <p>
+                    Our mission is to provide safe, reliable,
+                    professional, and practical electrical services
+                    that meet the needs of homes, businesses,
+                    industries, and communities.
+                </p>
+
+                <p>
+                    We are committed to quality workmanship,
+                    customer satisfaction, safety, and dependable
+                    service in every project we undertake.
+                </p>
+
+            </div>
+
+
+            <div class="mission-card">
+
+                <div class="mission-icon">
+                    👁
+                </div>
+
+                <span class="small-label">
+                    OUR VISION
+                </span>
+
+                <h3>
+                    A Brighter, More Reliable Electrical Future
+                </h3>
+
+                <p>
+                    Our vision is to become a trusted electrical
+                    and energy solutions company recognized for
+                    reliability, professionalism, innovation,
+                    and quality service.
+                </p>
+
+                <p>
+                    We aim to contribute to a future where
+                    dependable and modern electrical solutions
+                    support stronger homes, businesses,
+                    industries, and communities.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     OUR STORY / WHO WE ARE
+===================================================== -->
+
+<section class="who-section">
+
+    <div class="about-container">
+
+        <div class="who-grid">
+
+            <div class="who-content">
+
+                <span class="about-label">
+                    Our Story
                 </span>
 
                 <h2>
-                    Powering a Brighter Future
+                    Powering a <span>Brighter Future</span>
                 </h2>
 
                 <p>
@@ -1312,13 +1858,13 @@
                 <p>
                     We believe reliable electricity is an important
                     part of building stronger homes, businesses,
-                    and communities.
+                    industries, and communities.
                 </p>
 
             </div>
 
 
-            <div class="about-panel">
+            <div class="commitment-box">
 
                 <h3>
                     Our Commitment
@@ -1326,11 +1872,11 @@
 
                 <p>
                     We are committed to delivering electrical solutions
-                    that are practical, reliable, and built around the
-                    needs of our customers.
+                    that are practical, reliable, professional, and
+                    built around the needs of our customers.
                 </p>
 
-                <ul>
+                <ul class="commitment-list">
 
                     <li>
                         Reliable electrical services
@@ -1363,29 +1909,27 @@
 </section>
 
 
+<!-- =====================================================
+     CORE VALUES
+===================================================== -->
 
-<!-- =========================================================
-     VALUES
-========================================================== -->
+<section class="values-section">
 
-<section class="section section-white">
+    <div class="about-container">
 
-    <div class="content-container">
+        <div class="about-section-heading">
 
-        <div class="section-header">
-
-            <span class="section-label">
-                Our Values
+            <span class="about-label">
+                What Guides Us
             </span>
 
-            <h2 class="section-title">
-                What Guides Our Work
+            <h2>
+                Our 9 Core Values
             </h2>
 
-            <p class="section-intro">
-                Every project is approached with a focus on
-                reliability, professionalism, safety, and
-                long-term value.
+            <p>
+                These values guide how PowerNest Electric works,
+                serves customers, and builds lasting relationships.
             </p>
 
         </div>
@@ -1396,17 +1940,15 @@
 
             <div class="value-card">
 
-                <div class="value-icon">
-                    🛡
-                </div>
+                <span class="value-number">01</span>
 
-                <h3>
-                    Reliable &amp; Safe
-                </h3>
+                <div class="value-icon">🛡</div>
+
+                <h3>Safety</h3>
 
                 <p>
-                    We put dependable service and electrical
-                    safety at the center of our work.
+                    We put safety first in our electrical work,
+                    decisions, and service to customers.
                 </p>
 
             </div>
@@ -1414,17 +1956,15 @@
 
             <div class="value-card">
 
-                <div class="value-icon">
-                    ★
-                </div>
+                <span class="value-number">02</span>
 
-                <h3>
-                    Professional Service
-                </h3>
+                <div class="value-icon">⚡</div>
+
+                <h3>Reliability</h3>
 
                 <p>
-                    We aim to provide quality-focused
-                    electrical services for every customer.
+                    We strive to provide dependable electrical
+                    solutions that customers can trust.
                 </p>
 
             </div>
@@ -1432,17 +1972,111 @@
 
             <div class="value-card">
 
-                <div class="value-icon">
-                    ⚡
-                </div>
+                <span class="value-number">03</span>
 
-                <h3>
-                    Modern Solutions
-                </h3>
+                <div class="value-icon">★</div>
+
+                <h3>Quality</h3>
 
                 <p>
-                    We embrace practical electrical and
-                    energy solutions for a better future.
+                    We focus on quality workmanship and practical
+                    solutions built to deliver lasting value.
+                </p>
+
+            </div>
+
+
+            <div class="value-card">
+
+                <span class="value-number">04</span>
+
+                <div class="value-icon">🤝</div>
+
+                <h3>Integrity</h3>
+
+                <p>
+                    We believe in honesty, transparency,
+                    responsibility, and doing the right thing.
+                </p>
+
+            </div>
+
+
+            <div class="value-card">
+
+                <span class="value-number">05</span>
+
+                <div class="value-icon">👥</div>
+
+                <h3>Professionalism</h3>
+
+                <p>
+                    We approach our work with discipline,
+                    respect, responsibility, and professionalism.
+                </p>
+
+            </div>
+
+
+            <div class="value-card">
+
+                <span class="value-number">06</span>
+
+                <div class="value-icon">❤️</div>
+
+                <h3>Customer Focus</h3>
+
+                <p>
+                    We listen to our customers and work to
+                    understand and meet their needs.
+                </p>
+
+            </div>
+
+
+            <div class="value-card">
+
+                <span class="value-number">07</span>
+
+                <div class="value-icon">💡</div>
+
+                <h3>Innovation</h3>
+
+                <p>
+                    We embrace modern ideas, technologies,
+                    and practical energy solutions.
+                </p>
+
+            </div>
+
+
+            <div class="value-card">
+
+                <span class="value-number">08</span>
+
+                <div class="value-icon">🌱</div>
+
+                <h3>Sustainability</h3>
+
+                <p>
+                    We support responsible energy solutions
+                    that contribute to a better future.
+                </p>
+
+            </div>
+
+
+            <div class="value-card">
+
+                <span class="value-number">09</span>
+
+                <div class="value-icon">🚀</div>
+
+                <h3>Continuous Improvement</h3>
+
+                <p>
+                    We continually seek better ways to improve
+                    our services, skills, and customer experience.
                 </p>
 
             </div>
@@ -1454,40 +2088,365 @@
 </section>
 
 
+<!-- =====================================================
+     LEADERSHIP
+===================================================== -->
 
-<!-- =========================================================
-     OUR APPROACH
-========================================================== -->
+<section class="leadership-section">
 
-<section class="section section-blue">
+    <div class="about-container">
 
-    <div class="content-container">
+        <div class="about-section-heading">
 
-        <div class="section-header">
-
-            <span class="section-label">
-                Our Approach
+            <span class="about-label">
+                Leadership
             </span>
 
-            <h2 class="section-title">
-                Simple. Professional. Dependable.
+            <h2>
+                Meet Our CEO
             </h2>
 
-            <p class="section-intro">
-                We believe good electrical work starts with
-                understanding the customer's needs and ends
-                with a solution that is safe and reliable.
+            <p>
+                Strong leadership, clear direction, and a commitment
+                to reliable electrical solutions.
             </p>
 
         </div>
 
 
-        <div class="why-grid">
+        <div class="ceo-profile">
+
+            <div class="ceo-photo-wrap">
+
+                <img
+                    src="photos/CEO/01.jpg"
+                    alt="Chief Executive Officer of PowerNest Electric"
+                    class="ceo-photo"
+                >
+
+            </div>
 
 
-            <div class="why-card">
+            <div class="ceo-info">
 
-                <div class="why-icon">
+                <span class="ceo-role">
+                    Chief Executive Officer
+                </span>
+
+                <h2>
+                    CEO, PowerNest Electric
+                </h2>
+
+                <p class="ceo-title">
+                    Leadership • Responsibility • Vision
+                </p>
+
+                <p>
+                    PowerNest Electric is led by a team committed
+                    to building a reliable, professional, and
+                    customer-focused electrical services company.
+                </p>
+
+                <p>
+                    Our leadership is focused on delivering
+                    dependable electrical solutions while promoting
+                    safety, quality, professionalism, and innovation.
+                </p>
+
+                <p>
+                    Through PowerNest Electric, we aim to contribute
+                    to stronger homes, businesses, industries, and
+                    communities through reliable power and modern
+                    energy solutions.
+                </p>
+
+
+                <div class="ceo-highlights">
+
+                    <div class="ceo-highlight">
+
+                        <strong>
+                            Leadership
+                        </strong>
+
+                        <span>
+                            Strong direction and responsibility
+                        </span>
+
+                    </div>
+
+
+                    <div class="ceo-highlight">
+
+                        <strong>
+                            Commitment
+                        </strong>
+
+                        <span>
+                            Quality and customer satisfaction
+                        </span>
+
+                    </div>
+
+
+                    <div class="ceo-highlight">
+
+                        <strong>
+                            Future
+                        </strong>
+
+                        <span>
+                            Modern electrical and energy solutions
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     OUR TEAM
+===================================================== -->
+
+<section class="team-section">
+
+    <div class="about-container">
+
+        <div class="about-section-heading">
+
+            <span class="about-label">
+                Our Team
+            </span>
+
+            <h2>
+                The People Behind PowerNest Electric
+            </h2>
+
+            <p>
+                Our team brings together people who are committed
+                to practical electrical work, safety, teamwork,
+                and dependable service.
+            </p>
+
+        </div>
+
+
+        <div class="team-gallery">
+
+
+            <div class="team-card">
+
+                <img
+                    src="photos/OUR TEAM/1000277396.jpg"
+                    alt="PowerNest Electric team"
+                    class="team-photo"
+                >
+
+                <div class="team-card-content">
+
+                    <h3>
+                        PowerNest Electric Team
+                    </h3>
+
+                    <p>
+                        Working together to deliver reliable
+                        electrical solutions.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="team-card">
+
+                <img
+                    src="photos/OUR TEAM/1000277398.jpg"
+                    alt="PowerNest Electric electrical work"
+                    class="team-photo"
+                >
+
+                <div class="team-card-content">
+
+                    <h3>
+                        Electrical Work
+                    </h3>
+
+                    <p>
+                        Practical work focused on safety and
+                        dependable electrical service.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="team-card">
+
+                <img
+                    src="photos/OUR TEAM/1000277400.jpg"
+                    alt="PowerNest Electric team members"
+                    class="team-photo"
+                >
+
+                <div class="team-card-content">
+
+                    <h3>
+                        Our People
+                    </h3>
+
+                    <p>
+                        Teamwork and professionalism in every project.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="team-card">
+
+                <img
+                    src="photos/OUR TEAM/1000277402.jpg"
+                    alt="PowerNest Electric team"
+                    class="team-photo"
+                >
+
+                <div class="team-card-content">
+
+                    <h3>
+                        Teamwork
+                    </h3>
+
+                    <p>
+                        Working together to achieve quality results.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="team-card">
+
+                <img
+                    src="photos/OUR TEAM/1000277404.jpg"
+                    alt="PowerNest Electric field team"
+                    class="team-photo"
+                >
+
+                <div class="team-card-content">
+
+                    <h3>
+                        Field Team
+                    </h3>
+
+                    <p>
+                        Supporting electrical projects through
+                        practical field work.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="team-card">
+
+                <img
+                    src="photos/OUR TEAM/1000277406.jpg"
+                    alt="PowerNest Electric team member"
+                    class="team-photo"
+                >
+
+                <div class="team-card-content">
+
+                    <h3>
+                        Professional Service
+                    </h3>
+
+                    <p>
+                        Dedicated people committed to quality service.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="team-card">
+
+                <img
+                    src="photos/OUR TEAM/1000277408.jpg"
+                    alt="PowerNest Electric team"
+                    class="team-photo"
+                >
+
+                <div class="team-card-content">
+
+                    <h3>
+                        Together We Power the Future
+                    </h3>
+
+                    <p>
+                        Building a stronger future through reliable
+                        electrical solutions.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     OUR APPROACH
+===================================================== -->
+
+<section class="approach-section">
+
+    <div class="about-container">
+
+        <div class="about-section-heading">
+
+            <span class="about-label">
+                Our Approach
+            </span>
+
+            <h2>
+                Simple. Professional. Dependable.
+            </h2>
+
+            <p>
+                Good electrical work starts with understanding
+                the customer's needs and ends with a solution
+                that is safe, reliable, and practical.
+            </p>
+
+        </div>
+
+
+        <div class="approach-grid">
+
+
+            <div class="approach-card">
+
+                <div class="approach-number">
                     1
                 </div>
 
@@ -1496,16 +2455,16 @@
                 </h3>
 
                 <p>
-                    We listen to the customer's needs
-                    and understand the project.
+                    We listen to the customer's needs and
+                    understand the project requirements.
                 </p>
 
             </div>
 
 
-            <div class="why-card">
+            <div class="approach-card">
 
-                <div class="why-icon">
+                <div class="approach-number">
                     2
                 </div>
 
@@ -1515,15 +2474,15 @@
 
                 <p>
                     We consider the practical requirements
-                    of the electrical work.
+                    and develop the right approach.
                 </p>
 
             </div>
 
 
-            <div class="why-card">
+            <div class="approach-card">
 
-                <div class="why-icon">
+                <div class="approach-number">
                     3
                 </div>
 
@@ -1532,16 +2491,16 @@
                 </h3>
 
                 <p>
-                    We focus on providing quality,
+                    We focus on quality, safety, and
                     dependable electrical solutions.
                 </p>
 
             </div>
 
 
-            <div class="why-card">
+            <div class="approach-card">
 
-                <div class="why-icon">
+                <div class="approach-number">
                     4
                 </div>
 
@@ -1556,6 +2515,7 @@
 
             </div>
 
+
         </div>
 
     </div>
@@ -1563,16 +2523,15 @@
 </section>
 
 
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
 
-<!-- =========================================================
-     CTA
-========================================================== -->
+<section class="about-cta">
 
-<section class="cta-section">
+    <div class="about-cta-inner">
 
-    <div class="cta-content">
-
-        <span class="section-label">
+        <span class="about-label">
             Work With Us
         </span>
 
@@ -1587,19 +2546,18 @@
         </p>
 
 
-        <div class="cta-buttons">
+        <div class="about-cta-buttons">
 
             <a
                 href="services.html"
-                class="button"
+                class="about-cta-button about-cta-primary"
             >
                 View Our Services
             </a>
 
-
             <a
                 href="contact.html"
-                class="button-outline"
+                class="about-cta-button about-cta-secondary"
             >
                 Contact Us
             </a>
@@ -1611,10 +2569,9 @@
 </section>
 
 
-
-<!-- =========================================================
+<!-- =====================================================
      FOOTER
-========================================================== -->
+===================================================== -->
 
 <footer class="site-footer">
 
@@ -1706,6 +2663,7 @@
 
         </div>
 
+
     </div>
 
 
@@ -1725,34 +2683,37 @@
 </footer>
 
 
-
-<!-- =========================================================
-     WHATSAPP
-========================================================== -->
+<!-- =====================================================
+     FLOATING WHATSAPP
+===================================================== -->
 
 <a
-    href="#"
+    href="https://wa.me/231880947513"
     class="floating-whatsapp"
     aria-label="Contact PowerNest Electric on WhatsApp"
+    target="_blank"
 >
     💬
 </a>
 
 
-
-<!-- =========================================================
+<!-- =====================================================
      BACK TO TOP
-========================================================== -->
+===================================================== -->
 
 <a
     href="#"
     class="back-to-top"
     id="backToTop"
+    aria-label="Back to top"
 >
     ↑
 </a>
 
 
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script>
 
@@ -1766,37 +2727,61 @@
     }
 
 
-    window.addEventListener("scroll", function () {
+    window.addEventListener(
+        "scroll",
+        function () {
 
-        const button =
-            document.getElementById("backToTop");
+            const button =
+                document.getElementById("backToTop");
 
-        if (window.scrollY > 400) {
+            if (window.scrollY > 400) {
 
-            button.classList.add("show");
+                button.classList.add("show");
 
-        } else {
+            } else {
 
-            button.classList.remove("show");
+                button.classList.remove("show");
+
+            }
 
         }
-
-    });
+    );
 
 
     document
         .getElementById("backToTop")
-        .addEventListener("click", function (event) {
+        .addEventListener(
+            "click",
+            function (event) {
 
-            event.preventDefault();
+                event.preventDefault();
 
-            window.scrollTo({
+                window.scrollTo({
 
-                top: 0,
+                    top: 0,
 
-                behavior: "smooth"
+                    behavior: "smooth"
 
-            });
+                });
+
+            }
+        );
+
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    document
+                        .getElementById("navLinks")
+                        .classList.remove("active");
+
+                }
+            );
 
         });
 
@@ -1804,4 +2789,5 @@
 
 
 </body>
+
 </html>
